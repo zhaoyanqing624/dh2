@@ -79,9 +79,17 @@ class Common:
             if result == None:
                 self.mouse.click_element(11 + 200, i + 190)
 
-# if __name__ == '__main__':
-#     common = Common()
-#     common.get_focus()
-#     # time.sleep(1)
-#     # common.change_dog(4)
-#     common.clear_task()
+    def iswalking(self):
+        self.screen.cut_screen_by_PIL(30, 65, 140, 85, "E:\\dh2\\system\\2.PNG")
+        time.sleep(2)
+        self.screen.cut_screen_by_PIL(30, 65, 140, 85, "E:\\dh2\\system\\2_.PNG")
+
+
+
+if __name__ == '__main__':
+    common = Common()
+    # common.get_focus()
+    # time.sleep(1)
+    # common.change_dog(4)
+    # common.clear_task()
+    common.iswalking()

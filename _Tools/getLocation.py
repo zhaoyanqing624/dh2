@@ -16,9 +16,9 @@ def getPictureLocation(filename,num=0.5):
 # if __name__ == '__main__':
 # #     # for a in range(0,200):
 #         _Tools.getCutPicture.window_capture()
-#         loca = getPictureLocation("E:\\dh2\\houzi\\1.png")
+#         loca = getPictureLocation("E:\\dh2\\xiuluo\\0.png")
 #         print(loca)
-#         if loca!=0 and loca[0]>200 and loca[1]>140:
-#             pyautogui.moveTo(loca[0], loca[1]-40)
-#             pyautogui.click()
+#         # if loca!=0 and loca[0]>200 and loca[1]>140:
+#         #     pyautogui.moveTo(loca[0], loca[1]-40)
+#         #     pyautogui.click()
 

@@ -85,7 +85,9 @@ def hz_start(i_):
                 time.sleep(2)
                 flag = False
                 for i in range(0, 50):
+                    time.sleep(0.5)
                     _Tools.getCutPicture.window_capture()
+                    time.sleep(0.5)
                     loca22 = _Tools.getLocation.getPictureLocation("E:\\dh2\\houzi\\1.png", 0.6)
                     if loca22 != 0:
                         pyautogui.moveTo(loca22[0], loca22[1] - 40)

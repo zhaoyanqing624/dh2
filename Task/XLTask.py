@@ -50,8 +50,8 @@ def doing_fighting(a):
                 keyBoard('alt', 'a', 0.3)
                 keyBoard('alt', '8', 0.3)
             elif i==4:
-                pyautogui.keyDown('f7')
-                pyautogui.keyUp('f7')
+                pyautogui.keyDown('f5')
+                pyautogui.keyUp('f5')
                 click_fast(203, 334)
                 keyBoard('alt', 'd', 0.3)
                 keyBoard('alt', '8', 0.3)
@@ -191,7 +191,7 @@ def XLstartTask(times):
             time.sleep(1.5)
             _Tools.getCutPicture.window_capture()
             time.sleep(1.5)
-            location = pyautogui.locateCenterOnScreen("E:\\dh2\\xiuluo\\0.PNG")
+            location = _Tools.getLocation.getPictureLocation("E:\\dh2\\xiuluo\\0.png")
             if location != None:
                 pyautogui.moveTo(location[0],location[1]-50)
                 pyautogui.click()
@@ -243,6 +243,7 @@ def XLstartTask(times):
                              pyautogui.easeInQuad)
             pyautogui.click()
         # 判断是否掉进了冰窟里
+        print("掉进冰窟")
         ice()
         time.sleep(3)
         # 是否需要巫医

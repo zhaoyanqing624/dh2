@@ -17,27 +17,30 @@ def getCutPicture_grayscale(dir,grayscale=True):
             break
 # 截全屏
 def window_capture():
-    hwnd = 0  # 窗口的编号，0号表示当前活跃窗口
-    # 根据窗口句柄获取窗口的设备上下文DC（Divice Context）
-    hwndDC = win32gui.GetWindowDC(hwnd)
-    # 根据窗口的DC获取mfcDC
-    mfcDC = win32ui.CreateDCFromHandle(hwndDC)
-    # mfcDC创建可兼容的DC
-    saveDC = mfcDC.CreateCompatibleDC()
-    # 创建bigmap准备保存图片
-    saveBitMap = win32ui.CreateBitmap()
-    # 获取监控器信息
-    MoniterDev = win32api.EnumDisplayMonitors(None, None)
-    w = MoniterDev[0][2][2]
-    h = MoniterDev[0][2][3]
-    # print w,h　　　#图片大小
-    # 为bitmap开辟空间
-    saveBitMap.CreateCompatibleBitmap(mfcDC, w, h)
-    # 高度saveDC，将截图保存到saveBitmap中
-    saveDC.SelectObject(saveBitMap)
-    # 截取从左上角（0，0）长宽为（w，h）的图片
-    saveDC.BitBlt((0, 0), (820, 650), mfcDC, (0, 0), win32con.SRCCOPY)
-    saveBitMap.SaveBitmapFile(saveDC, "E:\\dh2\\system\\0.PNG")
+    try:
+        hwnd = 0  # 窗口的编号，0号表示当前活跃窗口
+        # 根据窗口句柄获取窗口的设备上下文DC（Divice Context）
+        hwndDC = win32gui.GetWindowDC(hwnd)
+        # 根据窗口的DC获取mfcDC
+        mfcDC = win32ui.CreateDCFromHandle(hwndDC)
+        # mfcDC创建可兼容的DC
+        saveDC = mfcDC.CreateCompatibleDC()
+        # 创建bigmap准备保存图片
+        saveBitMap = win32ui.CreateBitmap()
+        # 获取监控器信息
+        MoniterDev = win32api.EnumDisplayMonitors(None, None)
+        w = MoniterDev[0][2][2]
+        h = MoniterDev[0][2][3]
+        # print w,h　　　#图片大小
+        # 为bitmap开辟空间
+        saveBitMap.CreateCompatibleBitmap(mfcDC, w, h)
+        # 高度saveDC，将截图保存到saveBitmap中
+        saveDC.SelectObject(saveBitMap)
+        # 截取从左上角（0，0）长宽为（w，h）的图片
+        saveDC.BitBlt((0, 0), (820, 650), mfcDC, (0, 0), win32con.SRCCOPY)
+        saveBitMap.SaveBitmapFile(saveDC, "E:\\dh2\\system\\0.PNG")
+    except:
+        pass
 
 
 

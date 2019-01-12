@@ -10,5 +10,5 @@ if __name__ == '__main__':
 
     # hz_start(60)
     # time.sleep(3)
-    xl_start(160)
+    xl_start(200)
 

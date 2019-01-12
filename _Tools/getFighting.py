@@ -69,7 +69,7 @@ def death():
     time.sleep(1.5)
     list = [75, 250, 400, 545, 700]
     a = []
-    for i in range(2, 6):
+    for i in range(3, 7):
         time.sleep(0.5)
         location = _Tools.getLocation.getPictureLocation("E:\\dh2\\system\\" + str(i) + "_.png", 0.95)
         if location != 0:
@@ -107,13 +107,13 @@ def death():
         time.sleep(1)
         _Tools.getCutPicture.window_capture()
         time.sleep(1.5)
-        location2 = _Tools.getLocation.getPictureLocation("E:\\dh2\\system\\2.png", 0.95)
+        location2 = _Tools.getLocation.getPictureLocation("E:\\dh2\\system\\3.png", 0.95)
         time.sleep(0.5)
-        location3 = _Tools.getLocation.getPictureLocation("E:\\dh2\\system\\3.png", 0.95)
+        location3 = _Tools.getLocation.getPictureLocation("E:\\dh2\\system\\4.png", 0.95)
         time.sleep(0.5)
-        location4 = _Tools.getLocation.getPictureLocation("E:\\dh2\\system\\4.png", 0.95)
+        location4 = _Tools.getLocation.getPictureLocation("E:\\dh2\\system\\5.png", 0.95)
         time.sleep(0.5)
-        location5 = _Tools.getLocation.getPictureLocation("E:\\dh2\\system\\5.png", 0.95)
+        location5 = _Tools.getLocation.getPictureLocation("E:\\dh2\\system\\6.png", 0.95)
         time.sleep(0.5)
         if location2 !=0 and location3 !=0 and location4 !=0 and location5!=0:
             break

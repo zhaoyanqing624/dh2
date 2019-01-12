@@ -40,6 +40,8 @@ class JieFang:
             self.mouse.click_element(408, 354)
             self.mouse.click_element(182, 346)
             time.sleep(1)
+            # for y_ in range(14):
+
             self.mouse.click_element(92, 227)
             for y in range(30):
                 if y < 13:
@@ -54,10 +56,12 @@ class JieFang:
                 list_flower = [[556, 267], [483, 294], [426, 328],
                                [488, 365], [545, 398], [602, 360],
                                [672, 329], [617, 295]]
+                time.sleep(1)
                 self.screen.cut_screen()
+                time.sleep(1)
                 for index, j in enumerate(list_flower):
                     index = index
-                    result = self.screen.find_color_ele(j[0], j[1], 10, 10, 190, 220, 10, 40, 0, 30)
+                    result = self.screen.find_color_ele(j[0], j[1], 30, 15, 190, 210, 10, 40, 0, 20)
                     if result != None:
                         self.mouse.click_element(list[index][0], list[index][1])
                         self.mouse.click_element(167, 327)
@@ -71,16 +75,20 @@ class JieFang:
                             if len(result_)>0:
                                 list_ = []
                                 lists = []
-                                for i in result_:
-                                    list_.append(i[0] + 1)
-                                for i in result:
-                                    if i[0] in list_:
-                                        str = i[0], i[1]
-                                        list.append(str)
-                                for i in lists:
-                                    self.mouse.click_element(i[0], i[1])
-                                    self.click_element(169, 359)
-                                    time.sleep(4)
+                                for c in result_:
+                                    list_.append(c[0] + 1)
+                                for c in result:
+                                    if c[0] in list_:
+                                        str_ = c[0], c[1]
+                                        lists.append(str_)
+                                for c in lists:
+                                    self.mouse.click_element(c[0], c[1])
+                                    self.mouse.click_element(169, 359)
+                                    time.sleep(3)
+                        self.mouse.click_element(760, 184)
+                        self.mouse.click_element(408, 350)
+                        self.mouse.click_element(182, 327)
+
 
     def jiefang_task(self):
         # 清除任务栏信息
@@ -92,7 +100,7 @@ class JieFang:
 
 if __name__ == '__main__':
     ie = JieFang()
-    ie.jiefang_task()
+    ie.find_flowers()
 
     # ie.common.get_focus()
     # for w in range(4):
