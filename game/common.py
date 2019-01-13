@@ -3,6 +3,7 @@ from system.mouse import Mouse
 from system.transform import TransForm
 from system.keyboard import KeyBoard
 from system.screen import Screen
+from game.walking import Walking
 import time
 
 
@@ -83,13 +84,39 @@ class Common:
         self.screen.cut_screen_by_PIL(30, 65, 140, 85, "E:\\dh2\\system\\2.PNG")
         time.sleep(2)
         self.screen.cut_screen_by_PIL(30, 65, 140, 85, "E:\\dh2\\system\\2_.PNG")
+        result = Walking().iswalking()
+        if result is 0:
+            return False
+        else:
+            return True
 
+    def click_until_find(self, file_name, x, y):
+        Mouse().click_element(x, y)
+        Screen().cut_screen()
+        result = Screen().get_location_picture(file_name)
+        if result is not 0:
+            return True
+        return False
 
+    def capation_eat_xiang(self):
+        KeyBoard().press_shortcut_key('alt', 'e')
+        Mouse().click_element(344, 397)
+        Mouse().click_element(44, 454, right=True)
+        KeyBoard().press_shortcut_key('alt', 'e')
 
-if __name__ == '__main__':
-    common = Common()
-    # common.get_focus()
-    # time.sleep(1)
-    # common.change_dog(4)
-    # common.clear_task()
-    common.iswalking()
+    def score_for_shifu(self):
+        Screen().cut_screen()
+        result = Screen().get_location_picture("E:\\dh2\\game\\system\\3.PNG")
+        if result is not 0:
+            Mouse().click_element(222, 264)
+            Mouse().click_element(409, 506)
+
+    def task_box(self):
+        pass
+# if __name__ == '__main__':
+#     common = Common()
+#     # common.get_focus()
+#     # time.sleep(1)
+#     # common.change_dog(4)
+#     # common.clear_task()
+#     common.iswalking()

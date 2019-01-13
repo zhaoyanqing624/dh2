@@ -3,11 +3,14 @@ import time
 
 class Mouse:
     # 点击元素
-    def click_element(self, x, y, times=1):
+    def click_element(self, x, y, times=1, right=None):
         time.sleep(0.5)
         pyautogui.moveTo(x, y, times, pyautogui.easeInQuad)
         time.sleep(0.5)
-        pyautogui.click()
+        if right is not None:
+            pyautogui.rightClick()
+        else:
+            pyautogui.click()
 
     def click_element_right(self, x, y, times=1):
         time.sleep(times)
