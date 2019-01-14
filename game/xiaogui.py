@@ -13,9 +13,13 @@ class XiaoGui():
     def task_start(self):
         time.sleep(2)
         KeyBoard().press_shortcut_key('alt', '1')
-        Mouse().click_element(285, 269)
+        time.sleep(1)
+        Mouse().click_element(321, 273)
+        time.sleep(3)
+        Mouse().click_element(262, 269)
+        time.sleep(0.5)
         KeyBoard().press_shortcut_key('alt', '1')
-        time.sleep(2)
+        time.sleep(3)
         KeyBoard().press_shortcut_key('alt', '5')
         time.sleep(1.5)
         Screen().cut_screen()
@@ -49,13 +53,15 @@ class XiaoGui():
         Screen().find_ele_picture('game\\xiaogui\\2', 'mouse', myself=True)
         time.sleep(1)
         Screen().cut_screen()
-        box_result = Screen().get_location_picture('E:\\dh2\\game\\xiaogui\\3.png')
+        box_result = Screen().get_location_picture('E:\\dh2\\game\\xiaogui\\3.png',0.8)
         if box_result is not 0:
             Mouse().click_element(327, 535)
+        Common().score_for_shifu()
 
 
 if __name__ == '__main__':
     Common().get_focus()
     for i in range(60):
-
+        print("第 "+str(i+1)+" 次")
         XiaoGui().task_start()
+

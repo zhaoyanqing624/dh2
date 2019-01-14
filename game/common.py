@@ -85,7 +85,7 @@ class Common:
         time.sleep(2)
         self.screen.cut_screen_by_PIL(30, 65, 140, 85, "E:\\dh2\\system\\2_.PNG")
         result = Walking().iswalking()
-        if result is 0:
+        if result < 10:
             return False
         else:
             return True
