@@ -14,7 +14,7 @@ class XiaoGui():
         time.sleep(2)
         KeyBoard().press_shortcut_key('alt', '1')
         time.sleep(1)
-        Mouse().click_element(321, 273)
+        Mouse().click_element(332, 273)
         time.sleep(3)
         Mouse().click_element(262, 269)
         time.sleep(0.5)
@@ -27,6 +27,7 @@ class XiaoGui():
         zhongkui = Screen().get_location_picture('E:\\dh2\\game\\xiaogui\\0.png')
         if zhongkui is not 0:
             Mouse().click_element(zhongkui[0] - 5, zhongkui[1] - 30)
+
         Mouse().click_element(237, 399)
         time.sleep(0.5)
         Mouse().click_element(237, 399)
@@ -39,13 +40,20 @@ class XiaoGui():
             time.sleep(0.5)
             Mouse().click_element(237, 399)
             Mouse().click_element(27, 256)
+
+            if Common().iswalking() is False:
+                Mouse().click_element(zhongkui[0] - 5, zhongkui[1] - 30)
+                Mouse().click_element(237, 399)
+                time.sleep(0.5)
+                Mouse().click_element(237, 399)
+                Mouse().click_element(27, 256)
         Common().capation_eat_xiang()
         time.sleep(15)
         Screen().find_ele_picture('game\\xiaogui\\1', 'mouse', 207, 355)
         for i in range(5):
             KeyBoard().press_shortcut_key('alt', '8')
             Common().change_teamer()
-            Mouse().click_element(183, 355)
+            Mouse().click_element(412, 429)
             if i is 4:
                 pass
             else:
@@ -61,7 +69,7 @@ class XiaoGui():
 
 if __name__ == '__main__':
     Common().get_focus()
-    for i in range(60):
+    for i in range(200):
         print("第 "+str(i+1)+" 次")
         XiaoGui().task_start()
 
