@@ -27,11 +27,9 @@ class XiaoGui():
         zhongkui = Screen().get_location_picture('E:\\dh2\\game\\xiaogui\\0.png')
         if zhongkui is not 0:
             Mouse().click_element(zhongkui[0] - 5, zhongkui[1] - 30)
-
         Mouse().click_element(237, 399)
         time.sleep(0.5)
         Mouse().click_element(237, 399)
-
         Mouse().click_element(27, 256)
         time.sleep(1)
         if Common().iswalking() is False:
@@ -40,7 +38,6 @@ class XiaoGui():
             time.sleep(0.5)
             Mouse().click_element(237, 399)
             Mouse().click_element(27, 256)
-
             if Common().iswalking() is False:
                 Mouse().click_element(zhongkui[0] - 5, zhongkui[1] - 30)
                 Mouse().click_element(237, 399)
@@ -65,11 +62,10 @@ class XiaoGui():
         if box_result is not 0:
             Mouse().click_element(327, 535)
         Common().score_for_shifu()
-
-
+        
 if __name__ == '__main__':
     Common().get_focus()
     for i in range(200):
-        print("第 "+str(i+1)+" 次")
+        print("第 "+str(i+1)+" 次 ")
         XiaoGui().task_start()
 
