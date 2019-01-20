@@ -14,7 +14,7 @@ class XiaoGui():
         time.sleep(2)
         KeyBoard().press_shortcut_key('alt', '1')
         time.sleep(1)
-        Mouse().click_element(332, 273)
+        Mouse().click_element(337, 295)
         time.sleep(3)
         Mouse().click_element(262, 269)
         time.sleep(0.5)
