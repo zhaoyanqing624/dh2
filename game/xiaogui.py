@@ -62,7 +62,7 @@ class XiaoGui():
         if box_result is not 0:
             Mouse().click_element(327, 535)
         Common().score_for_shifu()
-        
+
 if __name__ == '__main__':
     Common().get_focus()
     for i in range(200):
