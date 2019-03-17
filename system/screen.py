@@ -64,7 +64,7 @@ class Screen:
         result = None
         for i in range(x - x_offset, x + x_offset):
             for j in range(y - y_offset, y + y_offset):
-                if r1 < img_array[i, j][0] < r2 and g1 < img_array[i, j][1] < g2 and b1 < img_array[i, j][2] < b2:
+                if r1 <= img_array[i, j][0] <= r2 and g1 <= img_array[i, j][1] <= g2 and b1 <= img_array[i, j][2] <= b2:
                     result = x, y
         return result
 

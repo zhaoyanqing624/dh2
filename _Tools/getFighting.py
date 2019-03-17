@@ -119,5 +119,58 @@ def death():
             break
 
 
-
+def death2():
+    time.sleep(1.5)
+    _Tools.getCutPicture.window_capture()
+    time.sleep(1.5)
+    list = [75, 250, 400, 545, 700]
+    a = []
+    for i in range(2, 6):
+        time.sleep(0.5)
+        location = _Tools.getLocation.getPictureLocation("E:\\dh2\\game\\system\\00\\" + str(i) + "_.png", 0.95)
+        if location != 0:
+            a.append(i)
+            # 获取焦点
+            time.sleep(1)
+            pyautogui.moveTo(list[i-1] + random.randint(0, 5), 45 + random.randint(0, 5), 1, pyautogui.easeInQuad)
+            pyautogui.click()
+            # 去除提示
+            time.sleep(1)
+            pyautogui.moveTo(317 + random.randint(0, 5), 364 + random.randint(0, 5), 1, pyautogui.easeInQuad)
+            pyautogui.click()
+            # 点击加血
+            time.sleep(1)
+            pyautogui.moveTo(544, 608, 1, pyautogui.easeInQuad)
+            pyautogui.rightClick()
+            time.sleep(0.5)
+            pyautogui.moveTo(578, 608, 1, pyautogui.easeInQuad)
+            pyautogui.rightClick()
+            # 点击归队
+            time.sleep(1)
+            pyautogui.moveTo(location[0] -20, location[1] +20, 1, pyautogui.easeInQuad)
+            pyautogui.click()
+            # 点击自动归队
+            time.sleep(1)
+            pyautogui.moveTo(198, 347, 1, pyautogui.easeInQuad)
+            pyautogui.click()
+            # 点击返回队长
+            time.sleep(1)
+            pyautogui.moveTo(75, 45, 1, pyautogui.easeInQuad)
+            pyautogui.click()
+    while True:
+        time.sleep(0.5)
+        pyautogui.moveTo(419, 401, 1, pyautogui.easeInQuad)
+        time.sleep(1)
+        _Tools.getCutPicture.window_capture()
+        time.sleep(1.5)
+        location2 = _Tools.getLocation.getPictureLocation("E:\\dh2\\game\\system\\00\\2.png", 0.95)
+        time.sleep(0.5)
+        location3 = _Tools.getLocation.getPictureLocation("E:\\dh2\\game\\system\\00\\3.png", 0.95)
+        time.sleep(0.5)
+        location4 = _Tools.getLocation.getPictureLocation("E:\\dh2\\game\\system\\00\\4.png", 0.95)
+        time.sleep(0.5)
+        location5 = _Tools.getLocation.getPictureLocation("E:\\dh2\\game\\system\\00\\5.png", 0.95)
+        time.sleep(0.5)
+        if location2 !=0 and location3 !=0 and location4 !=0 and location5!=0:
+            break
 
