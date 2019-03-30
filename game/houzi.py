@@ -12,8 +12,7 @@ class HouZi:
         self.keyboard = KeyBoard()
         self.screen = Screen()
         self.mouse = Mouse()
-
+    def houzi_task(self):
+        pass
 if __name__ == '__main__':
-    img = io.imread('E:\\dh2\\system\\0.png')
-    io.imshow(img)
-    io.show()
+    print(1)

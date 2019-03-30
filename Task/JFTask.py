@@ -21,7 +21,7 @@ def click(x, y):
     time.sleep(1)
     pyautogui.moveTo(x, y, 1, pyautogui.easeInQuad)
     pyautogui.click()
-def start():
+def start(flag):
     # 点击街坊 领取任务
     pyautogui.moveTo(760 + random.randint(0, 5), 180 + random.randint(0, 5), 1, pyautogui.easeInQuad)
     pyautogui.click()
@@ -35,7 +35,7 @@ def start():
     time.sleep(1)
     pyautogui.click()
     # 任务过程
-    taskClassify()
+    taskClassify(flag)
     # 是否战斗
     time.sleep(3)
     _Tools.getFighting.isFighting_JF()
@@ -56,7 +56,7 @@ def goHome():
         if(location!=None):
             pyautogui.moveTo(location[0] + random.randint(0, 5), location[1], 1, pyautogui.easeInQuad)
             pyautogui.click()
-def taskClassify():
+def taskClassify(flag):
     global q
     pyautogui.keyDown('alt')
     pyautogui.keyDown('q')
@@ -225,17 +225,21 @@ def find_npc_home():
                     result = a
     return result
 
-def JFstartTask():
+def JFstartTask(flag=False):
     # 75  45  250
     global q
     list = [75, 250, 400, 545, 700]
     for x in list:
+
         q=0
         # 获取焦点
         pyautogui.moveTo(x + random.randint(0, 5), 45 + random.randint(0, 5), 2, pyautogui.easeInQuad)
         pyautogui.click()
         for y in range(0, 10):
-            start()
+            try:
+                start(flag)
+            except:
+                pass
 
 
 # JFstartTask()

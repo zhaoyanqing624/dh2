@@ -27,8 +27,13 @@ class Mouse:
         time.sleep(0.5)
         pyautogui.scroll(x)
 
-if __name__ == '__main__':
-    mouse = Mouse()
-    mouse.click_element(280,265)
-    time.sleep(3)
-    mouse.mouse_scroll(-10)
+# if __name__ == '__main__':
+#     mouse = Mouse()
+#     for i in range(71):
+#         mouse.click_element(400,345)
+#         time.sleep(2)
+#         mouse.click_element(550, 500)
+#         time.sleep(0.5)
+#         mouse.click_element(325, 400)
+#         time.sleep(0.5)
+

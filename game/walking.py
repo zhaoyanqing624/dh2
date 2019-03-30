@@ -1,5 +1,6 @@
-import cv2
+import cv2, time
 import numpy as np
+from system.screen import Screen
 
 
 class Walking():
@@ -31,10 +32,17 @@ class Walking():
             if hash1[i] != hash2[i]:
                 n = n + 1
         return n
+
     def iswalking(self):
+        screen = Screen()
+        screen.cut_screen_by_PIL(30, 65, 140, 85, "E:\\dh2\\system\\2.png")
+        time.sleep(3)
+        screen.cut_screen_by_PIL(30, 65, 140, 85, "E:\\dh2\\system\\2_.png")
         img1 = cv2.imread('E:\\dh2\\system\\2.png')
         img2 = cv2.imread('E:\\dh2\\system\\2_.png')
         hash1 = self.dHash(img1)
         hash2 = self.dHash(img2)
         n = self.cmpHash(hash1, hash2)
         return n
+
+

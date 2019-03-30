@@ -97,3 +97,5 @@ def Hamming_distance(hash1,hash2):
 # click(616, 140)
 # grab_screen_1(50, 65, 140, 85, "position0")
 # click(616, 140)
+
+

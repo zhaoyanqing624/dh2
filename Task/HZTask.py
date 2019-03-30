@@ -105,11 +105,13 @@ def hz_start(i_):
                     if i_ == 0:
                         time.sleep(2)
                         doing_fighting()
-                    time.sleep(22)
+                    time.sleep(8)
+                    _Tools.getFighting.isFight(i_)
+
                     keyBoard('alt', 'q')
                     time.sleep(1)
                     keyBoard('alt', 'c')
-                    click(482, 255)
+                    click(482, 236)
                     time.sleep(1)
                     keyBoard('alt', 'q')
                     time.sleep(10)

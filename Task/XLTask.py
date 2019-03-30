@@ -7,7 +7,7 @@ import _Tools.getFighting
 import _Tools.getLocation
 import _Tools.isWalking
 import aircv as ac
-
+from system.screen import Screen
 import time
 import random
 def click_fast(x, y):
@@ -86,6 +86,8 @@ def ice():
 
 def findNPC(flag=1):
     # 寻路开始
+    pyautogui.moveTo(142, 340, 1, pyautogui.easeInQuad)
+    pyautogui.click()
     time.sleep(1)
     pyautogui.moveTo(38 + random.randint(0, 2), 253 + random.randint(0, 2), 1, pyautogui.easeInQuad)
     pyautogui.click()
@@ -164,42 +166,45 @@ def XLstartTask(times):
         pyautogui.keyDown('1')
         pyautogui.keyUp('1')
         pyautogui.keyUp('alt')
-        # 移动到任务人
-        pyautogui.moveTo(417, 303, 1, pyautogui.easeInQuad)
-        pyautogui.click()
+        # # 移动到任务人
+        # pyautogui.moveTo(417, 303, 1, pyautogui.easeInQuad)
+        # pyautogui.click()
+        # time.sleep(1)
+        # _Tools.isWalking.isWalking()
+        # pyautogui.moveTo(377, 301, 1, pyautogui.easeInQuad)
+        # pyautogui.click()
+        # _Tools.isWalking.isWalking()
+        # # 关闭地图
+        # pyautogui.keyDown('alt')
+        # pyautogui.keyDown('1')
+        # pyautogui.keyUp('1')
+        # pyautogui.keyUp('alt')
+        # time.sleep(1)
+        # # 屏蔽周围的人
+        # pyautogui.keyDown('alt')
+        # pyautogui.keyDown('5')
+        # pyautogui.keyUp('5')
+        # pyautogui.keyUp('alt')
         time.sleep(1)
-        _Tools.isWalking.isWalking()
-        pyautogui.moveTo(377, 301, 1, pyautogui.easeInQuad)
+        pyautogui.moveTo(368, 316, 1, pyautogui.easeInQuad)
         pyautogui.click()
-        _Tools.isWalking.isWalking()
-        # 关闭地图
-        pyautogui.keyDown('alt')
-        pyautogui.keyDown('1')
-        pyautogui.keyUp('1')
-        pyautogui.keyUp('alt')
-        time.sleep(1)
-        # 屏蔽周围的人
-        pyautogui.keyDown('alt')
-        pyautogui.keyDown('5')
-        pyautogui.keyUp('5')
-        pyautogui.keyUp('alt')
-        time.sleep(1)
-        pyautogui.moveTo(349,341)
-        pyautogui.click()
+        time.sleep(5)
         # 点击任务
-        while True:
-            time.sleep(1.5)
-            _Tools.getCutPicture.window_capture()
-            time.sleep(1.5)
-            location = _Tools.getLocation.getPictureLocation("E:\\dh2\\xiuluo\\0.png")
-            if location != None:
-                pyautogui.moveTo(location[0],location[1]-50)
-                pyautogui.click()
-                time.sleep(1)
-                _Tools.getCutPicture.window_capture()
-                location_1 = pyautogui.locateCenterOnScreen("E:\\dh2\\xiuluo\\0_1.PNG")
-                if location_1 != None:
-                    break
+        # while True:
+        #     time.sleep(1.5)
+        #     _Tools.getCutPicture.window_capture()
+        #     time.sleep(1.5)
+        #     location_zhao = Screen().get_location_picture("E:\\dh2\\xiuluo\\0.png",num=0.9)
+        #     print(location_zhao)
+        #     if location_zhao != None and location_zhao !=0:
+        #         pyautogui.moveTo(location_zhao[0],location_zhao[1]-50)
+        #         # pyautogui.moveTo(340, 463)
+        #         pyautogui.click()
+        #         time.sleep(1)
+        #         _Tools.getCutPicture.window_capture()
+        #         location_1 = pyautogui.locateCenterOnScreen("E:\\dh2\\xiuluo\\0_1.PNG")
+        #         if location_1 != None:
+        #             break
 
         # 点击帮忙
         time.sleep(1)

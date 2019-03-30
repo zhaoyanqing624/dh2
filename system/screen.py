@@ -9,7 +9,6 @@ import cv2 as cv
 import numpy as np
 from PIL import ImageGrab
 
-
 class Screen:
     def __init__(self):
         self.keyboard = KeyBoard()
@@ -17,21 +16,18 @@ class Screen:
         pass
 
     def cut_screen(self):
-        try:
-            hwnd = 0
-            hwndDC = win32gui.GetWindowDC(hwnd)
-            mfcDC = win32ui.CreateDCFromHandle(hwndDC)
-            saveDC = mfcDC.CreateCompatibleDC()
-            saveBitMap = win32ui.CreateBitmap()
-            MoniterDev = win32api.EnumDisplayMonitors(None, None)
-            w = MoniterDev[0][2][2]
-            h = MoniterDev[0][2][3]
-            saveBitMap.CreateCompatibleBitmap(mfcDC, w, h)
-            saveDC.SelectObject(saveBitMap)
-            saveDC.BitBlt((0, 0), (820, 650), mfcDC, (0, 0), win32con.SRCCOPY)
-            saveBitMap.SaveBitmapFile(saveDC, "E:\\dh2\\system\\0.PNG")
-        except:
-            pass
+        hwnd = 0
+        hwndDC = win32gui.GetWindowDC(hwnd)
+        mfcDC = win32ui.CreateDCFromHandle(hwndDC)
+        saveDC = mfcDC.CreateCompatibleDC()
+        saveBitMap = win32ui.CreateBitmap()
+        MoniterDev = win32api.EnumDisplayMonitors(None, None)
+        w = MoniterDev[0][2][2]
+        h = MoniterDev[0][2][3]
+        saveBitMap.CreateCompatibleBitmap(mfcDC, w, h)
+        saveDC.SelectObject(saveBitMap)
+        saveDC.BitBlt((0, 0), (820, 650), mfcDC, (0, 0), win32con.SRCCOPY)
+        saveBitMap.SaveBitmapFile(saveDC, "E:\\dh2\\system\\0.PNG")
 
     def cut_screen_by_PIL(self, x, y, w, h, file_path):
         bbox = (x, y, w, h)
@@ -94,21 +90,28 @@ class Screen:
         else:
             return pos
 
-    def find_ele_picture(self, file_path, handle=None, k1=None, k2=None, myself=None):
+    def get_deal_locations_picture(self, filename, mubiao_file,num=0.5):
+        imsrc = ac.imread(mubiao_file)
+        imobj = ac.imread(filename)
+        pos = ac.find_all_template(imsrc, imobj, num)
+        if pos == None:
+            return 0
+        else:
+            return pos
+
+    def find_ele_picture(self, file_path, handle=None, k1=None, k2=None):
         while True:
             pyautogui.moveTo(412 + random.randint(0, 5), 590 + random.randint(0, 5), 1, pyautogui.easeInQuad)
             time.sleep(1)
             self.cut_screen()
             time.sleep(1)
             location = self.get_location_picture("E:\\dh2\\" + file_path + ".png", 0.8)
+            print(location)
             if location != 0:
                 if handle == 'keyboard':
                     self.keyboard.press_shortcut_key(k1, k2)
                 elif handle == 'mouse':
-                    if myself is not None:
-                        self.mouse.click_element(location[0], location[1])
-                    else:
-                        self.mouse.click_element(k1, k2)
+                    self.mouse.click_element(k1, k2)
                 break
 
     def template_image(self, file_path, dir_path="E:\\dh2\\system\\0.PNG"):
@@ -129,16 +132,7 @@ class Screen:
             cv.rectangle(target, tl, br, [0, 0, 0])
         return list
 
-if __name__ == '__main__':
-    # 504 288
-    list = [[556, 267], [483, 294], [426, 328],
-            [488, 365], [545, 398], [602, 360],
-            [672, 329], [617, 295]]
-    sceen = Screen()
-#     # sceen.cut_screen_location(267, 136, 373, 209)
-    sceen.cut_screen()
-#     result = sceen.get_locations_picture('E:\\dh2\\game\\jiefang\\1.png')
-#     for i in result:
-#         result = sceen.find_color_ele(int(i['result'][0]), int(i['result'][1]) - 167, 2, 2, 50, 55, 30, 35, 15, 20)
-#         if result!=0:
-#             Mouse().click_element(result[0], result[1]+20)
+# if __name__ == '__main__':
+#     Screen().cut_screen()
+#     print(Screen().get_location_picture("E:\\dh2\\xiuluo\\0.png",num=0.9))
+

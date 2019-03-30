@@ -73,10 +73,11 @@ def death():
         time.sleep(0.5)
         location = _Tools.getLocation.getPictureLocation("E:\\dh2\\system\\" + str(i) + "_.png", 0.95)
         if location != 0:
+            print(i)
             a.append(i)
             # 获取焦点
             time.sleep(1)
-            pyautogui.moveTo(list[i-1] + random.randint(0, 5), 45 + random.randint(0, 5), 1, pyautogui.easeInQuad)
+            pyautogui.moveTo(list[i-2] + random.randint(0, 5), 45 + random.randint(0, 5), 1, pyautogui.easeInQuad)
             pyautogui.click()
             # 去除提示
             time.sleep(1)
@@ -117,7 +118,4 @@ def death():
         time.sleep(0.5)
         if location2 !=0 and location3 !=0 and location4 !=0 and location5!=0:
             break
-
-
-
 

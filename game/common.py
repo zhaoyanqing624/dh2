@@ -69,7 +69,7 @@ class Common:
     def clear_task(self):
         # 清除任务列表
         self.keyboard.press_shortcut_key('alt', 'q')
-        for i in range(15):
+        for i in range(5):
             self.mouse.click_element(359, 223)
         list = [27, 46, 65, 85, 103, 122, 141]
         for i in list:
