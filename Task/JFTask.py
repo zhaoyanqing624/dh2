@@ -21,10 +21,7 @@ def click(x, y):
     time.sleep(1)
     pyautogui.moveTo(x, y, 1, pyautogui.easeInQuad)
     pyautogui.click()
-def start(flag):
-    # 点击街坊 领取任务
-    pyautogui.moveTo(760 + random.randint(0, 5), 180 + random.randint(0, 5), 1, pyautogui.easeInQuad)
-    pyautogui.click()
+def start_0():
     # 点击祭坛
     pyautogui.moveTo(410 + random.randint(0, 5), 355 + random.randint(0, 5), 1, pyautogui.easeInQuad)
     pyautogui.click()
@@ -34,8 +31,17 @@ def start(flag):
     # 再点击一次 关闭任务
     time.sleep(1)
     pyautogui.click()
+def start(flag):
+    # 点击街坊 领取任务
+    pyautogui.moveTo(760 + random.randint(0, 5), 180 + random.randint(0, 5), 1, pyautogui.easeInQuad)
+    pyautogui.click()
+
     # 任务过程
-    taskClassify(flag)
+    while True:
+        start_0()
+        result = taskClassify(flag)
+        if result is 'ok':
+            break
     # 是否战斗
     time.sleep(3)
     _Tools.getFighting.isFighting_JF()
@@ -84,18 +90,23 @@ def taskClassify(flag):
         if(location!=0):
             if(x=="1_1"):
                 print("寻找公输般")
-                pyautogui.moveTo(location[0] + random.randint(0, 5), location[1], 1, pyautogui.easeInQuad)
-                pyautogui.click()
-                time.sleep(2)
-                _Tools.getWalking.isWalking_JF("1_1_1")
-                # 点击提交
-                pay_location_ = pyautogui.locateCenterOnScreen("E:\\dh2\\jiefang\\1_1_1.PNG", grayscale=True)
-                pyautogui.moveTo(pay_location_[0] + random.randint(0, 5), pay_location_[1], 1, pyautogui.easeInQuad)
-                pyautogui.click()
-                time.sleep(1)
-                pay_location = pyautogui.locateCenterOnScreen("E:\\dh2\\jiefang\\1_1_2.PNG", grayscale=True)
-                pyautogui.moveTo(pay_location[0] + random.randint(0, 5), pay_location[1], 1, pyautogui.easeInQuad)
-                pyautogui.click()
+                if flag is True:
+                    clear_task()
+                    return "no"
+                else:
+                    pyautogui.moveTo(location[0] + random.randint(0, 5), location[1], 1, pyautogui.easeInQuad)
+                    pyautogui.click()
+                    time.sleep(2)
+                    _Tools.getWalking.isWalking_JF("1_1_1")
+                    # 点击提交
+                    pay_location_ = pyautogui.locateCenterOnScreen("E:\\dh2\\jiefang\\1_1_1.PNG", grayscale=True)
+                    pyautogui.moveTo(pay_location_[0] + random.randint(0, 5), pay_location_[1], 1, pyautogui.easeInQuad)
+                    pyautogui.click()
+                    time.sleep(1)
+                    pay_location = pyautogui.locateCenterOnScreen("E:\\dh2\\jiefang\\1_1_2.PNG", grayscale=True)
+                    pyautogui.moveTo(pay_location[0] + random.randint(0, 5), pay_location[1], 1, pyautogui.easeInQuad)
+                    pyautogui.click()
+                    return "ok"
             elif(x=="1_2"):
                 print("潇潇")
                 pyautogui.moveTo(location[0] + random.randint(0, 5), location[1], 1, pyautogui.easeInQuad)
@@ -113,6 +124,7 @@ def taskClassify(flag):
                     time.sleep(2.5)
                     cicle('1_2_2')
                     click(197, 348)
+                return "ok"
                 # # 探访的坐标
                 # tanfang_pos = [[544,303],[483,332],[427,362],[487,391],[544,424],[606,390],[665,360],[606,327]]
                 # for x in tanfang_pos:
@@ -163,6 +175,7 @@ def taskClassify(flag):
                         do_fighting()
                         q+=1
                         time.sleep(2)
+                return "ok"
 
                 # # 探访的坐标
                 # tanfang_pos = [[544,303],[483,332],[427,362],[487,391],[544,424],[606,390],[665,360],[606,327]]
@@ -192,6 +205,18 @@ def taskClassify(flag):
                 #                 pyautogui.moveTo(191 + random.randint(0, 5), 328, 1, pyautogui.easeInQuad)
                 #                 pyautogui.click()
                 #                 break
+def clear_task():
+    time.sleep(1)
+    pyautogui.moveTo(612, 521, 1, pyautogui.easeInQuad)
+    pyautogui.click()
+    time.sleep(1)
+    pyautogui.moveTo(170, 332, 1, pyautogui.easeInQuad)
+    pyautogui.click()
+    time.sleep(1)
+    pyautogui.keyDown('alt')
+    pyautogui.keyDown('q')
+    pyautogui.keyUp('q')
+    pyautogui.keyUp('alt')
 def click_fast(x, y):
     pyautogui.moveTo(x, y, 0.5, pyautogui.easeInQuad)
     pyautogui.click()
@@ -230,7 +255,6 @@ def JFstartTask(flag=False):
     global q
     list = [75, 250, 400, 545, 700]
     for x in list:
-
         q=0
         # 获取焦点
         pyautogui.moveTo(x + random.randint(0, 5), 45 + random.randint(0, 5), 2, pyautogui.easeInQuad)
