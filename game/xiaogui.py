@@ -48,6 +48,7 @@ class XiaoGui():
         time.sleep(15)
         Screen().find_ele_picture('game\\xiaogui\\1', 'mouse', 207, 355)
         for i in range(5):
+            time.sleep(2)
             KeyBoard().press_shortcut_key('alt', '8')
             Common().change_teamer()
             Mouse().click_element(412, 429)
@@ -62,7 +63,7 @@ class XiaoGui():
         if box_result is not 0:
             Mouse().click_element(327, 535)
         Common().score_for_shifu()
-        
+
 if __name__ == '__main__':
     Common().get_focus()
     for i in range(200):
