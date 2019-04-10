@@ -68,17 +68,29 @@ class Common:
 
     def clear_task(self):
         # 清除任务列表
-        self.keyboard.press_shortcut_key('alt', 'q')
-        for i in range(5):
-            self.mouse.click_element(359, 223)
-        list = [27, 46, 65, 85, 103, 122, 141]
-        for i in list:
-            time.sleep(1)
-            self.screen.cut_screen_location(width=200, height=300, x=150, y=190)
-            result = self.screen.find_color_ele(11, i, 2, 1, 190, 220, 60, 75, 50, 60, True)
-            print(result)
-            if result == None:
-                self.mouse.click_element(11 + 200, i + 190)
+        # self.keyboard.press_shortcut_key('alt', 'q')
+        # for i in range(5):
+        #     self.mouse.click_element(359, 223)
+        # list = [27, 46, 65, 85, 103, 122, 141]
+        # for i in list:
+        #     time.sleep(1)
+        #     self.screen.cut_screen_location(width=200, height=300, x=150, y=190)
+        #     result = self.screen.find_color_ele(11, i, 2, 1, 190, 220, 60, 75, 50, 60, True)
+        #     print(result)
+        #     if result == None:
+        #         self.mouse.click_element(11 + 200, i + 190)
+        self.keyboard.press_shortcut_key('alt', '2')
+        time.sleep(1)
+        self.mouse.click_element(507, 419)
+        time.sleep(1)
+        self.mouse.click_element(310, 381)
+        self.screen.find_ele_picture('game\\bangpai\\0_', 'mouse', 220, 328)
+        time.sleep(2)
+        self.keyboard.press_shortcut_key('alt', '1')
+        time.sleep(1)
+        self.mouse.click_element(500, 313)
+
+
 
     def iswalking(self):
         self.screen.cut_screen_by_PIL(30, 65, 140, 85, "E:\\dh2\\system\\2.PNG")

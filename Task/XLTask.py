@@ -212,7 +212,11 @@ def XLstartTask(times):
         pyautogui.click()
         time.sleep(2)
         pyautogui.click()
-
+        time.sleep(1)
+        pyautogui.keyDown('alt')
+        pyautogui.keyDown('1')
+        pyautogui.keyUp('1')
+        pyautogui.keyUp('alt')
         # 飞起来
         time.sleep(1)
         # pyautogui.keyDown('alt')

@@ -17,17 +17,16 @@ class BangPai:
     def find_bangpai_task(self):
         for j in range(10):
             if j == 0:
-                # 寻找NPC
-                self.common.clear_task()
-                self.screen.cut_screen()
-                result_task = self.screen.get_location_picture('E:\\dh2\\game\\system\\task\\1.png')
-                self.mouse.click_element(result_task[0] + 50, result_task[1], 0.7)
-
-                self.screen.cut_screen()
-                result_task_bangpai = self.screen.get_location_picture('E:\\dh2\\game\\system\\task\\2.png')
-                self.mouse.click_element(result_task_bangpai[0] + 50, result_task_bangpai[1], 0.7)
-                self.mouse.click_element(428, 240)
-                time.sleep(5)
+                self.keyboard.press_shortcut_key('alt', '2')
+                time.sleep(1)
+                self.mouse.click_element(507, 419)
+                time.sleep(1)
+                self.mouse.click_element(310, 381)
+                self.screen.find_ele_picture('game\\bangpai\\0_', 'mouse', 220, 328)
+                time.sleep(2)
+                self.keyboard.press_shortcut_key('alt', '1')
+                time.sleep(1)
+                self.mouse.click_element(500, 313)
                 # 领取任务
                 self.screen.find_ele_picture('game\\bangpai\\0', 'mouse', 223, 329)
                 self.mouse.click_element(163, 350)
@@ -137,7 +136,7 @@ class BangPai:
         self.screen.find_ele_picture('game\\bangpai\\0_1', 'mouse', 193, 327)
         self.mouse.click_element(193, 327)
         time.sleep(3)
-        self.mouse.click_element(460, 290)
+        self.mouse.click_element(469, 272)
 
     def bangpai_start(self):
         self.common.get_focus()
@@ -146,5 +145,5 @@ class BangPai:
             self.find_bangpai_task()
             self.common.change_teamer()
 
-if __name__ == '__main__':
-    BangPai().bangpai_start()
+# if __name__ == '__main__':
+#     BangPai().bangpai_start()
