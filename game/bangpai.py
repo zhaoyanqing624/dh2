@@ -66,9 +66,8 @@ class BangPai:
                         print("订酒")
                         self.mouse.click_element(448, 240)
                         self.keyboard.press_shortcut_key('alt', 'q')
-                        time.sleep(10)
                         self.screen.find_ele_picture('game\\bangpai\\3_1', 'mouse', 182, 345)
-                        self.mouse.click_element(182, 345)
+                        self.mouse.click_element(182, 328)
                         self.return_bangpai_npc()
                     elif i == 4:
                         print("药")
@@ -123,7 +122,13 @@ class BangPai:
                         print("收银票")
                         self.mouse.click_element(455, 240)
                         self.keyboard.press_shortcut_key('alt', 'q')
-                        self.screen.find_ele_picture('game\\bangpai\\9_1', 'mouse', 182, 345)
+                        while True:
+                            self.screen.cut_screen()
+                            result1 = self.screen.get_location_picture("E:\\dh2\\game\\bangpai\\9_1.png",num=0.8)
+                            result2 = self.screen.get_location_picture("E:\\dh2\\game\\bangpai\\9_2.png", num=0.8)
+                            if result1 is not 0 or result2 is not 0:
+                                break
+                        # self.screen.find_ele_picture('game\\bangpai\\9_1', 'mouse', 182, 345)
                         self.return_bangpai_npc()
                     else:
                         print("找不到")
@@ -146,4 +151,10 @@ class BangPai:
             self.common.change_teamer()
 
 # if __name__ == '__main__':
-#     BangPai().bangpai_start()
+#     while True:
+#         Screen().cut_screen()
+#         result1 = Screen().get_location_picture("E:\\dh2\\game\\bangpai\\9_1.png", num=0.8)
+#         result2 = Screen().get_location_picture("E:\\dh2\\game\\bangpai\\9_2.png", num=0.8)
+#         if result1 is not 0 or result2 is not 0:
+#             print(1)
+#             break
