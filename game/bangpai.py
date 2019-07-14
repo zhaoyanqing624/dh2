@@ -27,15 +27,13 @@ class BangPai:
                 self.keyboard.press_shortcut_key('alt', '1')
                 time.sleep(1)
                 self.mouse.click_element(500, 313)
-                # 领取任务
-                self.screen.find_ele_picture('game\\bangpai\\0', 'mouse', 223, 329)
-                self.mouse.click_element(163, 350)
+                self.mouse.click_element(500, 313)
             else:
                 self.mouse.click_element(461, 288)
-                # 领取任务
-                self.screen.find_ele_picture('game\\bangpai\\0', 'mouse', 223, 329)
-                self.mouse.click_element(163, 350)
-                self.keyboard.press_shortcut_key('alt', 'q')
+            # 领取任务
+            self.screen.find_ele_picture('game\\bangpai\\0', 'mouse', 223, 329)
+            self.mouse.click_element(163, 350)
+            self.keyboard.press_shortcut_key('alt', 'q')
             self.screen.cut_screen_location(267, 136, 373, 209)
             for i in range(1, 10):
                 print(i)
@@ -76,6 +74,7 @@ class BangPai:
                         self.mouse.click_element(201, 328)
                         time.sleep(3)
                         self.mouse.click_element(201, 328)
+
                     elif i == 5:
                         print("无名侠女")
                         self.mouse.click_element(500, 240)

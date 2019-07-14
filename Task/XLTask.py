@@ -48,6 +48,7 @@ def doing_fighting(a):
                 pyautogui.keyUp('f7')
                 click_fast(203, 334)
                 keyBoard('alt', 'a', 0.3)
+                # keyBoard('alt', 'd', 0.3)
                 keyBoard('alt', '8', 0.3)
             elif i==4:
                 pyautogui.keyDown('f5')
@@ -138,27 +139,6 @@ def XLstartTask(times):
     pyautogui.click()
 
     for i in range(1, times):
-        if i ==1:
-            time.sleep(0.5)
-            click(113, 609)
-            time.sleep(0.5)
-            keyBoard('ctrl', 'tab')
-            time.sleep(0.5)
-            click(113, 609)
-            time.sleep(0.5)
-            keyBoard('ctrl', 'tab')
-            time.sleep(0.5)
-            click(113, 609)
-            time.sleep(0.5)
-            keyBoard('ctrl', 'tab')
-            time.sleep(0.5)
-            click(113, 609)
-            time.sleep(0.5)
-            keyBoard('ctrl', 'tab')
-            time.sleep(0.5)
-            click(113, 609)
-            time.sleep(0.5)
-            keyBoard('ctrl', 'tab')
         print("------第"+str(i)+"次修罗------")
         print(time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time())))
         # 打开点图
@@ -185,10 +165,10 @@ def XLstartTask(times):
         # pyautogui.keyDown('5')
         # pyautogui.keyUp('5')
         # pyautogui.keyUp('alt')
-        time.sleep(1)
+        time.sleep(3)
         pyautogui.moveTo(368, 316, 1, pyautogui.easeInQuad)
         pyautogui.click()
-        time.sleep(5)
+        time.sleep(15)
         # 点击任务
         # while True:
         #     time.sleep(1.5)
@@ -246,6 +226,10 @@ def XLstartTask(times):
         # 返回
         print("返回")
         time.sleep(2)
+        if i ==60:
+            pyautogui.moveTo(739, 567, 1, pyautogui.easeInQuad)
+            pyautogui.click()
+            time.sleep(1)
         return_location = pyautogui.locateCenterOnScreen("E:\\dh2\\xiuluo\\4.PNG")
         if (return_location != None):
             pyautogui.moveTo(return_location[0] + random.randint(0, 5), return_location[1] + random.randint(0, 2), 1,
@@ -268,7 +252,7 @@ def XLstartTask(times):
             pyautogui.moveTo(199, 311, 1, pyautogui.easeInQuad)
             pyautogui.click()
             time.sleep(1)
-            pyautogui.moveTo(402, 346, 1, pyautogui.easeInQuad)
+            pyautogui.moveTo(384, 342, 1, pyautogui.easeInQuad)
             pyautogui.click()
             time.sleep(1)
             list = [75, 250, 400, 545, 700]
