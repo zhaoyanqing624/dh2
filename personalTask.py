@@ -6,7 +6,7 @@ from game.bangpai import BangPai
 import time
 if __name__ == '__main__':
     try:
-        jf_start(False)
+        jf_start(True)
         time.sleep(3)
         BangPai().bangpai_start()
     except:

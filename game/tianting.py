@@ -52,7 +52,7 @@ class TianTing():
             if lijing is not 0:
                 # Mouse().click_element(184, 396)
                 break
-        _Tools.getFighting.death2()
+        # _Tools.getFighting.death2()
 
 
 

@@ -48,7 +48,7 @@ class BangPai:
                         for j in range(5):
                             self.mouse.click_element_right(10, 582)
                             time.sleep(1)
-                            self.mouse.click_element(787, 539)
+                            self.mouse.click_element(790, 520)
                         self.return_bangpai_npc()
                     elif i == 2:
                         print("武官")
@@ -64,7 +64,7 @@ class BangPai:
                         self.return_bangpai_npc()
                     elif i == 3:
                         print("订酒")
-                        self.mouse.click_element(448, 240)
+                        self.mouse.click_element(448, 235)
                         self.keyboard.press_shortcut_key('alt', 'q')
                         self.screen.find_ele_picture('game\\bangpai\\3_1', 'mouse', 182, 345)
                         self.mouse.click_element(182, 328)

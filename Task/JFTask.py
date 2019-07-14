@@ -8,6 +8,7 @@ import _Tools.getFighting
 import _Tools.getLocation
 from PIL import Image
 q = 0
+pyautogui.FAILSAFE = False
 def cicle(x):
     while True:
         pyautogui.moveTo(412 + random.randint(0, 5), 590 + random.randint(0, 5), 1, pyautogui.easeInQuad)

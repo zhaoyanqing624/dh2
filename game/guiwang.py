@@ -27,7 +27,7 @@ class GuiWang():
             self.mouse.click_element(392, 350)
             time.sleep(1)
             self.screen.cut_screen()
-            result = self.screen.get_locations_picture("E:\\dh2\\game\\guiwang\\0.png",0.95)
+            result = self.screen.get_locations_picture("E:\\dh2\\game\\guiwang\\0.png",0.9)
             if result is not 0:
                 self.mouse.click_element(225, 383)
                 time.sleep(0.5)
@@ -39,11 +39,11 @@ class GuiWang():
                     self.mouse.click_element(392, 350)
                     time.sleep(1)
                     self.screen.cut_screen()
-                    result = self.screen.get_locations_picture("E:\\dh2\\game\\guiwang\\0.png", 0.75)
+                    result = self.screen.get_locations_picture("E:\\dh2\\game\\guiwang\\0.png", 0.9)
                     if result is not 0:
                         self.mouse.click_element(268, 330)
-                        time.sleep(0.5)
-                        self.mouse.click_element(29, 255)
+                        time.sleep(1)
+                        self.mouse.click_element(268, 330)
                 else:
                     break
         # 返回长安 开始寻路
@@ -55,7 +55,7 @@ class GuiWang():
             result = self.screen.get_locations_picture("E:\\dh2\\game\\guiwang\\0.png",0.75)
             if result is not 0:
                 self.mouse.click_element(268, 365)
-                time.sleep(0.5)
+                time.sleep(2)
                 self.mouse.click_element(29, 255)
                 break
 
@@ -76,6 +76,7 @@ class GuiWang():
         time.sleep(1)
         print("回家 判断")
         self.return_home()
+
     def is_ghostKing(self):
         self.screen.cut_screen_by_PIL(20,265,50,300,"E:\\dh2\\system\\1.PNG")
         result = self.screen.find_color_ele(10,10,8,8,255,255,0,0,0,0,True)
