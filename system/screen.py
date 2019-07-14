@@ -133,6 +133,7 @@ class Screen:
         return list
 
 # if __name__ == '__main__':
-#     Screen().cut_screen()
-#     print(Screen().get_location_picture("E:\\dh2\\xiuluo\\0.png",num=0.9))
+#     # Screen().cut_screen()
+#     # time.sleep(1)
+#     print(Screen().get_location_picture("E:\\dh2\\game\\shimen\\1.png",num=0.8))
 
