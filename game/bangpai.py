@@ -74,7 +74,9 @@ class BangPai:
                         self.mouse.click_element(201, 328)
                         time.sleep(3)
                         self.mouse.click_element(201, 328)
-
+                        time.sleep(3)
+                        # time.sleep(1)
+                        # self.mouse.click_element(461, 288)
                     elif i == 5:
                         print("无名侠女")
                         self.mouse.click_element(500, 240)
