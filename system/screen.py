@@ -106,7 +106,6 @@ class Screen:
             self.cut_screen()
             time.sleep(1)
             location = self.get_location_picture("E:\\dh2\\" + file_path + ".png", 0.8)
-            print(location)
             if location != 0:
                 if handle == 'keyboard':
                     self.keyboard.press_shortcut_key(k1, k2)
