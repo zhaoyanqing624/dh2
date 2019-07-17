@@ -179,15 +179,7 @@ class BangPai:
     def bangpai_start(self):
         self.common.get_focus()
         for i in range(5):
-            self.common.capation_eat_xiang()
+            # self.common.capation_eat_xiang()
             self.find_bangpai_task()
             self.common.change_teamer()
 
-# if __name__ == '__main__':
-#     while True:
-#         Screen().cut_screen()
-#         result1 = Screen().get_location_picture("E:\\dh2\\game\\bangpai\\9_1.png", num=0.8)
-#         result2 = Screen().get_location_picture("E:\\dh2\\game\\bangpai\\9_2.png", num=0.8)
-#         if result1 is not 0 or result2 is not 0:
-#             print(1)
-#             break
