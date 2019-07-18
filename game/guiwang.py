@@ -97,6 +97,12 @@ class GuiWang():
             self.mouse.click_element(178, 347)
 
 if __name__ == '__main__':
+    # for i in range(10000):
+    #     time.sleep(3)
+    #     GuiWang().mouse.click_element(315,240)
+    #     time.sleep(3)
+    #     GuiWang().mouse.click_element(243, 345)
+    #     time.sleep(10)
     for i in range(200):
         print("执行第"+str(i+1)+"次")
         GuiWang().task_start()
