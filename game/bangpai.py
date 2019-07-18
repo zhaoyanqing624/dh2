@@ -65,7 +65,7 @@ class BangPai:
                             # self.screen.find_ele_picture('game\\bangpai\\2_2', 'mouse', 193, 327)
                             # self.return_bangpai_npc()
                             time.sleep(1)
-                            self.mouse.click_element(455, 279)
+                            self.mouse.click_element(459, 284)
                             time.sleep(1)
                             self.mouse.click_element(268, 350)
                             time.sleep(1)
@@ -73,7 +73,7 @@ class BangPai:
                             time.sleep(2)
                             self.mouse.click_element(169, 348)
                             time.sleep(25)
-                            self.mouse.click_element(455, 279)
+                            self.mouse.click_element(459, 284)
                         elif i == 3:
                             print("订酒")
                             # self.mouse.click_element(448, 240)
@@ -82,7 +82,7 @@ class BangPai:
                             # self.mouse.click_element(182, 328)
                             # self.return_bangpai_npc()
                             time.sleep(1)
-                            self.mouse.click_element(455, 279)
+                            self.mouse.click_element(459, 284)
                             time.sleep(1)
                             self.mouse.click_element(268, 350)
                             time.sleep(1)
@@ -90,7 +90,7 @@ class BangPai:
                             time.sleep(2)
                             self.mouse.click_element(169, 348)
                             time.sleep(25)
-                            self.mouse.click_element(455, 279)
+                            self.mouse.click_element(459, 284)
 
                         elif i == 4:
                             print("药")
