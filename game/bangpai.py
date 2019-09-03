@@ -36,6 +36,7 @@ class BangPai:
                     self.mouse.click_element(461, 288)
                 # 领取任务
                 self.screen.find_ele_picture('game\\bangpai\\0', 'mouse', 223, 329)
+                time.sleep(2)
                 self.mouse.click_element(163, 350)
                 self.keyboard.press_shortcut_key('alt', 'q')
                 self.screen.cut_screen_location(267, 136, 373, 209)

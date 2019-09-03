@@ -235,6 +235,7 @@ def keyBoard(str, str2, time_=1):
     pyautogui.keyUp(str2)
     pyautogui.keyUp(str)
 def find_npc_home():
+    pyautogui.moveTo(200, 200, 2, pyautogui.easeInQuad)
     time.sleep(3)
     result = [0,0]
     list = [[543, 307], [481, 334], [422, 366],

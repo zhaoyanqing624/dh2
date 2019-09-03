@@ -56,7 +56,7 @@ def hz_start(i_):
     click(325, 406)
     time.sleep(1)
     click(547, 445)
-    time.sleep(10)
+    time.sleep(15)
     a = 0
     while True:
         a += 1
