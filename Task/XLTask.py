@@ -47,8 +47,8 @@ def doing_fighting(a):
                 pyautogui.keyDown('f7')
                 pyautogui.keyUp('f7')
                 click_fast(203, 334)
-                keyBoard('alt', 'a', 0.3)
-                # keyBoard('alt', 'd', 0.3)
+                # keyBoard('alt', 'a', 0.3)
+                keyBoard('alt', 'd', 0.3)
                 keyBoard('alt', '8', 0.3)
             elif i==4:
                 pyautogui.keyDown('f5')

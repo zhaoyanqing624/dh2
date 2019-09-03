@@ -5,12 +5,11 @@ from Task.HZTask import HZstartTask as hz_start
 from game.bangpai import BangPai
 import time
 if __name__ == '__main__':
-    try:
-        # jf_start(False)
-        time.sleep(3)
-        BangPai().bangpai_start()
-    except:
-        pass
+
+    jf_start(False)
+    time.sleep(3)
+    BangPai().bangpai_start()
+
     # time.sleep(039223)
     # bp_start()
     #
