@@ -49,21 +49,37 @@ class ShiMen():
         time.sleep(1)
         icon_ = self.screen.get_location_picture("E:\\dh2\\game\\shimen\\1.png")
         time.sleep(1)
-        print(icon_)
-        self.mouse.click_element(icon_[0], icon_[1] - self.offset)
+        self.mouse.click_element(icon_[0], icon_[1] - 40)
         time.sleep(1)
         self.mouse.click_element(x, y)
         time.sleep(1)
         self.screen.find_ele_picture('game\\shimen\\' + zu, 'mouse', 195, offset_)
         time.sleep(1)
         self.keyboard.press_shortcut_key('alt', 'q')
-    def classify(self,zu,index):
+        time.sleep(1)
+        self.keyboard.press_shortcut_key('alt', 'q')
+        time.sleep(2)
+        self.screen.cut_screen()
+        time.sleep(1)
+        icon_ = self.screen.get_location_picture("E:\\dh2\\game\\shimen\\1.png")
+        time.sleep(1)
+        print(icon_)
+        self.mouse.click_element(icon_[0], icon_[1] - 40)
+        time.sleep(1)
+        self.mouse.click_element(420, 240)
+        time.sleep(1)
+        self.screen.find_ele_picture('game\\shimen\\' + zu, 'mouse', 195, offset_)
+        time.sleep(1)
+        self.keyboard.press_shortcut_key('alt', 'q')
+        time.sleep(1)
+        self.keyboard.press_shortcut_key('alt', 'q')
+    def classify(self,zu,index,offset):
         if index is 0:
             begin = 361
         else:
             begin = 345
         self.screen.cut_screen_location(267, 136, 373, 209)
-        for i in range(2, 11):
+        for i in range(2, 12):
             print(i)
             if zu is 'ren' or zu is 'xian':
                 offset_ = 360
@@ -72,24 +88,31 @@ class ShiMen():
             else:
                 offset_ = 345
             file_name = "E:\\dh2\\game\\shimen\\" + str(i) + ".png"
-            result = self.screen.get_location_picture(file_name, 0.6, True)
+            result = self.screen.get_location_picture(file_name, 0.9, True)
+            print(offset_)
             if result != 0:
                 if i == 2:
                     print("风水混元丹")
                     x = 404
-                    y = 258
+                    y = 237
+                    if zu is 'gui':
+                        haha = 345
+                    else:
+                        haha = 363
                     self.mouse.click_element(386, 257)
                     time.sleep(1)
-                    self.mouse.click_element(195, 363)
+                    self.mouse.click_element(195, haha)
                     time.sleep(1)
-                    self.mouse.click_element(195, 363)
-                    time.sleep(0.5)
+                    self.mouse.click_element(195, haha)
+                    time.sleep(1)
+                    self.mouse.click_element(195, haha)
+                    time.sleep(1)
                     self.keyboard.press_shortcut_key('alt', 'q')
                     time.sleep(1)
                     self.keyboard.press_shortcut_key('alt', '1')
                     time.sleep(1)
                     self.keyboard.press_shortcut_key('alt', 'q')
-                    # self.later(zu, offset_, x, y)
+                    self.later(zu, offset_, x, y)
                     if index is 0:
                         self.yao = 'yao'
                     break
@@ -99,7 +122,6 @@ class ShiMen():
                     y = 239
                     self.mouse.click_element(434, 237)
                     time.sleep(1)
-                    self.keyboard.press_shortcut_key('alt', 'q')
                     self.screen.find_ele_picture('game\\shimen\\3_1', 'mouse', 184, 329)
                     time.sleep(1)
                     self.keyboard.press_shortcut_key('alt', 'q')
@@ -204,6 +226,30 @@ class ShiMen():
                     self.keyboard.press_shortcut_key('alt', 'q')
                     self.later(zu, offset_, x, y)
                     break
+                elif i==11:
+                    print("小香玉")
+                    x = 545
+                    y = 239
+                    self.mouse.click_element(434, 240)
+                    self.screen.find_ele_picture('game\\shimen\\11_1', 'mouse', 184, 329)
+                    time.sleep(1)
+                    self.keyboard.press_shortcut_key('alt', 'q')
+                    time.sleep(1)
+                    self.keyboard.press_shortcut_key('alt', 'q')
+                    self.later(zu, offset_, x, y)
+                    break
+                elif i==12:
+                    print("黄火牛")
+                    x = 545
+                    y = 239
+                    self.mouse.click_element(434, 240)
+                    self.screen.find_ele_picture('game\\shimen\\12_1', 'mouse', 184, 329)
+                    time.sleep(1)
+                    self.keyboard.press_shortcut_key('alt', 'q')
+                    time.sleep(1)
+                    self.keyboard.press_shortcut_key('alt', 'q')
+                    self.later(zu, offset_, x, y)
+                    break
 
 
     def task_start(self,list):
@@ -235,7 +281,7 @@ class ShiMen():
             time.sleep(2)
             self.screen.cut_screen()
             time.sleep(1)
-            icon = self.screen.get_location_picture("E:\\dh2\\game\\shimen\\1.png")
+            icon = self.screen.get_location_picture("E:\\dh2\\game\\shimen\\1_2.png")
             time.sleep(1)
             self.mouse.click_element(icon[0],icon[1]-self.offset)
             time.sleep(1)
@@ -247,21 +293,21 @@ class ShiMen():
                 #     # time.sleep(1)
                 #     self.mouse.click_element(405, 240)
                 #     time.sleep(1)
-                if j is not 0:
-                    if i is 'ren' or i is 'xian':
-                        offset_1 = 360
-                    elif i is 'mo':
-                        offset_1 = 365
-                    else:
-                        offset_1 = 345
-                    time.sleep(1)
-                    self.keyboard.press_shortcut_key('alt', 'q')
-                    self.later(i, offset_1, 412, 240)
-                self.classify(i,j)
+
+                if i is 'ren' or i is 'xian':
+                    offset_1 = 360
+                elif i is 'mo':
+                    offset_1 = 365
+                else:
+                    offset_1 = 345
+
+                self.classify(i,j,offset_1)
+        self.common.change_teamer()
 if __name__ == '__main__':
-    list = ['ren']
-    # list = ['ren','mo','mo','xian','gui']
+    # list = ['mo','mo','gui']
+    list = ['mo','mo','xian','gui']
 
     ShiMen().task_start(list)
-    # ShiMen().classify()
+    # for i in range(10):
+    #     ShiMen().classify('gui',0,365)
     # Screen().cut_screen_location(267, 136, 373, 209)

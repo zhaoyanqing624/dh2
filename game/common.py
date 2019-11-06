@@ -125,6 +125,7 @@ class Common:
 
     def task_box(self):
         pass
+
 # if __name__ == '__main__':
 #     common = Common()
 #     # common.get_focus()
