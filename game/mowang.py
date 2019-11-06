@@ -23,8 +23,8 @@ class MoWang:
             self.mouse.click_direct_element(328, 404)
             time.sleep(1)
 
-if __name__ == '__main__':
-    MoWang().start(99)
+# if __name__ == '__main__':
+#     MoWang().start(36)
 #     while True:
 #         Screen().cut_screen()
 #         result1 = Screen().get_location_picture("E:\\dh2\\game\\bangpai\\9_1.png", num=0.8)

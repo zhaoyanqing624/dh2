@@ -51,8 +51,8 @@ def doing_fighting(a):
                 keyBoard('alt', 'd', 0.3)
                 keyBoard('alt', '8', 0.3)
             elif i==4:
-                pyautogui.keyDown('f5')
-                pyautogui.keyUp('f5')
+                pyautogui.keyDown('f7')
+                pyautogui.keyUp('f7')
                 click_fast(203, 334)
                 keyBoard('alt', 'd', 0.3)
                 keyBoard('alt', '8', 0.3)
@@ -133,7 +133,7 @@ def click(x, y):
     time.sleep(1)
     pyautogui.moveTo(x, y, 1, pyautogui.easeInQuad)
     pyautogui.click()
-def XLstartTask(times):
+def XLstartTask(team,times):
     # 获取焦点
     pyautogui.moveTo(75 + random.randint(0, 5), 45 + random.randint(0, 5), 2, pyautogui.easeInQuad)
     pyautogui.click()
@@ -240,7 +240,7 @@ def XLstartTask(times):
         ice()
         time.sleep(3)
         # 是否需要巫医
-        if (i % 10) == 0:
+        if (i % 12) == 0:
             pyautogui.keyDown('alt')
             pyautogui.keyDown('1')
             pyautogui.keyUp('1')
@@ -284,8 +284,9 @@ def XLstartTask(times):
             pyautogui.keyUp('1')
             pyautogui.keyUp('alt')
         #  判断是否有人死了
+        print("是否死人")
         time.sleep(1)
-        _Tools.getFighting.death()
+        _Tools.getFighting.death(team)
 
 # XLstartTask(60)
 

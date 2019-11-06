@@ -13,7 +13,7 @@ class Screen:
     def __init__(self):
         self.keyboard = KeyBoard()
         self.mouse = Mouse()
-        pass
+
 
     def cut_screen(self):
         hwnd = 0
@@ -132,7 +132,13 @@ class Screen:
         return list
 
 # if __name__ == '__main__':
-#     # Screen().cut_screen()
+#     Screen().cut_screen()
+#     icon_ = Screen().get_location_picture("E:\\dh2\\game\\shimen\\1.png")
+#     time.sleep(1)
+#     print("------------")
+#     print(icon_)
+#     Screen().mouse.click_element(icon_[0], icon_[1]-40)
+
 #     # time.sleep(1)
 #     print(Screen().get_location_picture("E:\\dh2\\game\\shimen\\1.png",num=0.8))
 

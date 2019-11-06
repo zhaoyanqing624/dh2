@@ -185,4 +185,4 @@ def HZstartTask(times):
     time.sleep(40)
     keyBoard('alt', 'c')
 
-# HZstartTask(60)
+# HZstartTask(30)

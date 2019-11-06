@@ -16,7 +16,7 @@ class BangPai:
         self.walking = Walking()
     def find_bangpai_task(self):
         num = 0
-        for j in range(100):
+        for j in range(15):
             if num > 9:
                 break
             try:
@@ -40,7 +40,7 @@ class BangPai:
                 self.mouse.click_element(163, 350)
                 self.keyboard.press_shortcut_key('alt', 'q')
                 self.screen.cut_screen_location(267, 136, 373, 209)
-                for i in range(1, 10):
+                for i in range(1, 11):
                     file_name = "E:\\dh2\\game\\bangpai\\" + str(i) + ".png"
                     result = self.screen.get_location_picture(file_name, 0.6, True)
                     if result != 0:
@@ -96,7 +96,7 @@ class BangPai:
                         elif i == 4:
                             print("药")
                             self.keyboard.press_shortcut_key('alt', 'q')
-                            self.mouse.click_element(461, 288)
+                            self.mouse.click_element(461, 269)
                             self.mouse.click_element(201, 328)
                             time.sleep(3)
                             self.mouse.click_element(201, 328)
@@ -163,6 +163,9 @@ class BangPai:
                             # self.screen.find_ele_picture('game\\bangpai\\9_1', 'mouse', 182, 345)
                             self.return_bangpai_npc()
                             num += 1
+                        elif i==10:
+                            num += 1
+                            continue
                         else:
                             print("找不到")
             except:
@@ -181,6 +184,9 @@ class BangPai:
         self.common.get_focus()
         for i in range(5):
             # self.common.capation_eat_xiang()
-            self.find_bangpai_task()
+            endtime = time.time()+int(1000)
+            while time.time()<endtime:
+                self.find_bangpai_task()
+                break
             self.common.change_teamer()
 

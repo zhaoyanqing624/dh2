@@ -63,7 +63,7 @@ def model(x):
     pyautogui.keyUp('alt')
 
 # 判断是否有人阵亡
-def death():
+def death(team):
     time.sleep(1.5)
     _Tools.getCutPicture.window_capture()
     time.sleep(1.5)
@@ -71,7 +71,7 @@ def death():
     a = []
     for i in range(3, 7):
         time.sleep(0.5)
-        location = _Tools.getLocation.getPictureLocation("E:\\dh2\\system\\" + str(i) + "_.png", 0.95)
+        location = _Tools.getLocation.getPictureLocation("E:\\dh2\\system\\"+str(team)+"\\" + str(i) + "_.png", 0.98)
         if location != 0:
             print(i)
             a.append(i)
@@ -108,14 +108,16 @@ def death():
         time.sleep(1)
         _Tools.getCutPicture.window_capture()
         time.sleep(1.5)
-        location2 = _Tools.getLocation.getPictureLocation("E:\\dh2\\system\\3.png", 0.95)
+        location2 = _Tools.getLocation.getPictureLocation("E:\\dh2\\system\\"+str(team)+"\\3.png", 0.98)
         time.sleep(0.5)
-        location3 = _Tools.getLocation.getPictureLocation("E:\\dh2\\system\\4.png", 0.95)
+        location3 = _Tools.getLocation.getPictureLocation("E:\\dh2\\system\\"+str(team)+"\\4.png", 0.98)
         time.sleep(0.5)
-        location4 = _Tools.getLocation.getPictureLocation("E:\\dh2\\system\\5.png", 0.95)
+        location4 = _Tools.getLocation.getPictureLocation("E:\\dh2\\system\\"+str(team)+"\\5.png", 0.98)
         time.sleep(0.5)
-        location5 = _Tools.getLocation.getPictureLocation("E:\\dh2\\system\\6.png", 0.95)
-        time.sleep(0.5)
-        if location2 !=0 and location3 !=0 and location4 !=0 and location5!=0:
+        # location5 = _Tools.getLocation.getPictureLocation("E:\\dh2\\system\\"+str(team)+"\\6.png", 0.98)
+        # time.sleep(0.5)
+        if location2 !=0 and location3 !=0 and location4 !=0:
             break
 
+# if __name__ == '__main__':
+#     death(3)
