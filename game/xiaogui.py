@@ -56,7 +56,7 @@ class XiaoGui():
                 pass
             else:
                 Common().score_for_shifu()
-        Screen().find_ele_picture('game\\xiaogui\\2', 'mouse', myself=True)
+        Screen().find_ele_picture('game\\xiaogui\\2', 'mouse',780,537)
         time.sleep(1)
         Screen().cut_screen()
         box_result = Screen().get_location_picture('E:\\dh2\\game\\xiaogui\\3.png',0.8)

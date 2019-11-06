@@ -18,9 +18,11 @@ class GuiWang():
     def task_start(self):
         print("任务开始")
         self.common.get_focus()
-        for i in range(2):
+        for i in range(3):
             self.mouse.click_element(675, 366, 1, True)
             time.sleep(2.5)
+        self.keyboard.press_shortcut_key('alt', '5')
+        time.sleep(10)
         # 领取任务
         while True:
             print("领取任务")
@@ -106,6 +108,7 @@ if __name__ == '__main__':
     for i in range(200):
         print("执行第"+str(i+1)+"次")
         GuiWang().task_start()
+        time.sleep(13)
 
 
 

@@ -7,7 +7,7 @@ import _Tools.getWalking
 import _Tools.getFighting
 import _Tools.getLocation
 from PIL import Image
-pyautogui.FAILSAFE = False
+pyautogui.FAILSAFE=False
 q = 0
 pyautogui.FAILSAFE = False
 def cicle(x):
