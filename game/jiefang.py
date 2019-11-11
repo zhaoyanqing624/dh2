@@ -70,8 +70,8 @@ class JieFang:
                             time.sleep(5)
                             self.screen.cut_screen()
                             # a = sceen.find_color_ele(426, 328, 10, 10)
-                            result = self.screen.template_image("E:\\dh2\\game\\jiefang\\1.PNG")
-                            result_ = self.screen.template_image("E:\\dh2\\game\\jiefang\\1_1.PNG")
+                            result = self.screen.template_image("D:\\dh2\\game\\jiefang\\1.PNG")
+                            result_ = self.screen.template_image("D:\\dh2\\game\\jiefang\\1_1.PNG")
                             if len(result_)>0:
                                 list_ = []
                                 lists = []
@@ -95,7 +95,7 @@ class JieFang:
         # for i in range(10):
         #     self.mouse.click_element(356,224)
         self.screen.cut_screen_location(width=200, height=300, x=150, y=190)
-        result = self.screen.get_location_picture("E:\\dh2\\game\\system\\task\\0.png", 0.7, cut_zone=True)
+        result = self.screen.get_location_picture("D:\\dh2\\game\\system\\task\\0.png", 0.7, cut_zone=True)
         self.mouse.click_element(result[0]+150, result[1]+190)
 
 if __name__ == '__main__':

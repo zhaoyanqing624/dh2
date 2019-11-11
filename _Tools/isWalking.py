@@ -40,19 +40,19 @@ def grab_screen_1(left,top,right,bottom,addr):
     rect = (left, top, right, bottom)
     im = im.crop(rect)
     # im.show()
-    im.save("E:\\dh2\\system\\"+addr+".png")
+    im.save("D:\\dh2\\system\\"+addr+".png")
     # return im
 
 def catchScreen(x,y,w,h,addr):
     bbox = (x, y, w, h)
     im = ImageGrab.grab(bbox)
-    im.save("E:\\dh2\\system\\"+addr+".png")
+    im.save("D:\\dh2\\system\\"+addr+".png")
 
 
 # 计算图片的相似度
 def similarPicture(attr1,attr2):
-    img1 = cv2.imread("E:\\dh2\\system\\"+attr1+".png")
-    img2 = cv2.imread("E:\\dh2\\system\\"+attr2+".png")
+    img1 = cv2.imread("D:\\dh2\\system\\"+attr1+".png")
+    img2 = cv2.imread("D:\\dh2\\system\\"+attr2+".png")
     return classify_pHash(img1,img2)
 # 平均哈希算法计算
 def classify_pHash(image1,image2):

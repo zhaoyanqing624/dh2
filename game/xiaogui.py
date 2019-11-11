@@ -24,7 +24,7 @@ class XiaoGui():
         time.sleep(1.5)
         Screen().cut_screen()
         time.sleep(1.5)
-        zhongkui = Screen().get_location_picture('E:\\dh2\\game\\xiaogui\\0.png')
+        zhongkui = Screen().get_location_picture('D:\\dh2\\game\\xiaogui\\0.png')
         if zhongkui is not 0:
             Mouse().click_element(zhongkui[0] - 5, zhongkui[1] - 30)
         Mouse().click_element(237, 399)
@@ -59,7 +59,7 @@ class XiaoGui():
         Screen().find_ele_picture('game\\xiaogui\\2', 'mouse',780,537)
         time.sleep(1)
         Screen().cut_screen()
-        box_result = Screen().get_location_picture('E:\\dh2\\game\\xiaogui\\3.png',0.8)
+        box_result = Screen().get_location_picture('D:\\dh2\\game\\xiaogui\\3.png',0.8)
         if box_result is not 0:
             Mouse().click_element(327, 535)
         Common().score_for_shifu()

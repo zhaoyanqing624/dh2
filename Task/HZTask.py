@@ -63,7 +63,7 @@ def hz_start(i_):
         time.sleep(1)
         _Tools.getCutPicture.window_capture()
         time.sleep(1)
-        loca = _Tools.getLocation.getPictureLocation("E:\\dh2\\houzi\\1.png", 0.6)
+        loca = _Tools.getLocation.getPictureLocation("D:\\dh2\\houzi\\1.png", 0.6)
         if loca == 0:
             if a < 15:
                 pyautogui.moveTo(412, 132)
@@ -88,14 +88,14 @@ def hz_start(i_):
                     time.sleep(0.5)
                     _Tools.getCutPicture.window_capture()
                     time.sleep(0.5)
-                    loca22 = _Tools.getLocation.getPictureLocation("E:\\dh2\\houzi\\1.png", 0.6)
+                    loca22 = _Tools.getLocation.getPictureLocation("D:\\dh2\\houzi\\1.png", 0.6)
                     if loca22 != 0:
                         pyautogui.moveTo(loca22[0], loca22[1] - 40)
                         pyautogui.click()
                         time.sleep(0.5)
                         _Tools.getCutPicture.window_capture()
                         time.sleep(0.5)
-                        location = _Tools.getLocation.getPictureLocation("E:\\dh2\\houzi\\2.png", 0.6)
+                        location = _Tools.getLocation.getPictureLocation("D:\\dh2\\houzi\\2.png", 0.6)
                         if location != 0:
                             flag = True
                             break
@@ -142,7 +142,7 @@ def cicle(x):
         time.sleep(1)
         _Tools.getCutPicture.window_capture()
         time.sleep(1)
-        location = _Tools.getLocation.getPictureLocation("E:\\dh2\\houzi\\" + x + ".png", 0.9)
+        location = _Tools.getLocation.getPictureLocation("D:\\dh2\\houzi\\" + x + ".png", 0.9)
         if location != 0:
             break
 

@@ -61,7 +61,7 @@ class Common:
             self.mouse.click_element(90, 296)
 
         self.screen.cut_screen_location(width=200, height=50, x=200, y=350)
-        result = self.screen.get_location_picture("E:\\dh2\\game\\system\\0.png", 0.9, cut_zone=True)
+        result = self.screen.get_location_picture("D:\\dh2\\game\\system\\0.png", 0.9, cut_zone=True)
         if result == 0:
             self.mouse.click_element(320, 380)
         self.keyboard.press_shortcut_key('alt', 'o')
@@ -93,9 +93,9 @@ class Common:
 
 
     def iswalking(self):
-        self.screen.cut_screen_by_PIL(30, 65, 140, 85, "E:\\dh2\\system\\2.PNG")
+        self.screen.cut_screen_by_PIL(30, 65, 140, 85, "D:\\dh2\\system\\2.PNG")
         time.sleep(2)
-        self.screen.cut_screen_by_PIL(30, 65, 140, 85, "E:\\dh2\\system\\2_.PNG")
+        self.screen.cut_screen_by_PIL(30, 65, 140, 85, "D:\\dh2\\system\\2_.PNG")
         result = Walking().iswalking()
         if result < 10:
             return False
@@ -118,7 +118,7 @@ class Common:
 
     def score_for_shifu(self):
         Screen().cut_screen()
-        result = Screen().get_location_picture("E:\\dh2\\game\\system\\3.PNG")
+        result = Screen().get_location_picture("D:\\dh2\\game\\system\\3.PNG")
         if result is not 0:
             Mouse().click_element(222, 264)
             Mouse().click_element(409, 506)

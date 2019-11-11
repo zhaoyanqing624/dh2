@@ -33,7 +33,7 @@ def doing_fighting(a):
                 pyautogui.keyUp('f7')
                 click_fast(203, 334)
                 if i == 3:
-                    keyBoard('alt', 'a', 0.3)
+                    keyBoard('alt', 'd', 0.3)
                     click_fast(203, 334)
                     keyBoard('alt', '8', 0.3)
                 elif i == 2:
@@ -41,33 +41,33 @@ def doing_fighting(a):
                     click_fast(203, 334)
                     keyBoard('alt', '8', 0.3)
                 else:
-                    keyBoard('alt', 'a', 0.3)
+                    keyBoard('alt', 'd', 0.3)
                     keyBoard('alt', '8', 0.3)
             elif i==3:
                 pyautogui.keyDown('f7')
                 pyautogui.keyUp('f7')
                 click_fast(203, 334)
                 # keyBoard('alt', 'a', 0.3)
-                keyBoard('alt', 'a', 0.3)
+                keyBoard('alt', 'd', 0.3)
                 keyBoard('alt', '8', 0.3)
             elif i==4:
                 pyautogui.keyDown('f5')
                 pyautogui.keyUp('f5')
                 click_fast(203, 334)
-                keyBoard('alt', 'a', 0.3)
+                keyBoard('alt', 'd', 0.3)
                 keyBoard('alt', '8', 0.3)
             else:
                 pyautogui.keyDown('f7')
                 pyautogui.keyUp('f7')
                 click_fast(203, 334)
-                keyBoard('alt', 'a', 0.3)
+                keyBoard('alt', 'd', 0.3)
                 keyBoard('alt', '8', 0.3)
             keyBoard('ctrl', 'tab', 0.3)
 def ice():
     time.sleep(1)
     _Tools.getCutPicture.window_capture()
     time.sleep(1)
-    location = pyautogui.locateCenterOnScreen("E:\\dh2\\xiuluo\\5.PNG")
+    location = pyautogui.locateCenterOnScreen("D:\\dh2\\xiuluo\\5.PNG")
     if location != None:
         pyautogui.moveTo(460 + random.randint(0, 5), 180 + random.randint(0, 5), 1, pyautogui.easeInQuad)
         pyautogui.click()
@@ -76,7 +76,7 @@ def ice():
         time.sleep(1)
         _Tools.getCutPicture.window_capture()
         time.sleep(1)
-        tiger_location = pyautogui.locateCenterOnScreen("E:\\dh2\\xiuluo\\6.PNG")
+        tiger_location = pyautogui.locateCenterOnScreen("D:\\dh2\\xiuluo\\6.PNG")
         time.sleep(1)
         pyautogui.moveTo(tiger_location[0], tiger_location[1] - 60)
         pyautogui.click()
@@ -133,7 +133,7 @@ def click(x, y):
     time.sleep(1)
     pyautogui.moveTo(x, y, 1, pyautogui.easeInQuad)
     pyautogui.click()
-def XLstartTask(times):
+def XLstartTask(team,times):
     # 获取焦点
     pyautogui.moveTo(75 + random.randint(0, 5), 45 + random.randint(0, 5), 2, pyautogui.easeInQuad)
     pyautogui.click()
@@ -174,7 +174,7 @@ def XLstartTask(times):
         #     time.sleep(1.5)
         #     _Tools.getCutPicture.window_capture()
         #     time.sleep(1.5)
-        #     location_zhao = Screen().get_location_picture("E:\\dh2\\xiuluo\\0.png",num=0.9)
+        #     location_zhao = Screen().get_location_picture("D:\\dh2\\xiuluo\\0.png",num=0.9)
         #     print(location_zhao)
         #     if location_zhao != None and location_zhao !=0:
         #         pyautogui.moveTo(location_zhao[0],location_zhao[1]-50)
@@ -182,7 +182,7 @@ def XLstartTask(times):
         #         pyautogui.click()
         #         time.sleep(1)
         #         _Tools.getCutPicture.window_capture()
-        #         location_1 = pyautogui.locateCenterOnScreen("E:\\dh2\\xiuluo\\0_1.PNG")
+        #         location_1 = pyautogui.locateCenterOnScreen("D:\\dh2\\xiuluo\\0_1.PNG")
         #         if location_1 != None:
         #             break
 
@@ -210,7 +210,7 @@ def XLstartTask(times):
             time.sleep(1.5)
             _Tools.getCutPicture.window_capture()
             time.sleep(1.5)
-            xiuluo_location = _Tools.getLocation.getPictureLocation("E:\\dh2\\xiuluo\\2.PNG",0.99)
+            xiuluo_location = _Tools.getLocation.getPictureLocation("D:\\dh2\\xiuluo\\2.PNG",0.99)
             if(xiuluo_location!=0):
                 pyautogui.moveTo(169, 331, 1, pyautogui.easeInQuad)
                 time.sleep(1)
@@ -230,7 +230,7 @@ def XLstartTask(times):
             pyautogui.moveTo(739, 567, 1, pyautogui.easeInQuad)
             pyautogui.click()
             time.sleep(1)
-        return_location = pyautogui.locateCenterOnScreen("E:\\dh2\\xiuluo\\4.PNG")
+        return_location = pyautogui.locateCenterOnScreen("D:\\dh2\\xiuluo\\4.PNG")
         if (return_location != None):
             pyautogui.moveTo(return_location[0] + random.randint(0, 5), return_location[1] + random.randint(0, 2), 1,
                              pyautogui.easeInQuad)
@@ -265,7 +265,7 @@ def XLstartTask(times):
                         time.sleep(1)
                         _Tools.getCutPicture.window_capture()
                         time.sleep(1)
-                        wuyi_location = _Tools.getLocation.getPictureLocation("E:\\dh2\\xiuluo\\8.PNG", 0.9)
+                        wuyi_location = _Tools.getLocation.getPictureLocation("D:\\dh2\\xiuluo\\8.PNG", 0.9)
                         if wuyi_location!=0:
 
                             pyautogui.moveTo(332 + random.randint(0, 5), 364 + random.randint(0, 5), 1, pyautogui.easeInQuad)
@@ -285,7 +285,7 @@ def XLstartTask(times):
             pyautogui.keyUp('alt')
         #  判断是否有人死了
         time.sleep(1)
-        # _Tools.getFighting.death()
+        _Tools.getFighting.death(team)
 
 # XLstartTask(60)
 

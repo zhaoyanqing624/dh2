@@ -47,7 +47,7 @@ class ShiMen():
         time.sleep(2)
         self.screen.cut_screen()
         time.sleep(1)
-        icon_ = self.screen.get_location_picture("E:\\dh2\\game\\shimen\\1.png")
+        icon_ = self.screen.get_location_picture("D:\\dh2\\game\\shimen\\1.png")
         time.sleep(1)
         self.mouse.click_element(icon_[0], icon_[1] - 40)
         time.sleep(1)
@@ -61,7 +61,7 @@ class ShiMen():
         time.sleep(2)
         self.screen.cut_screen()
         time.sleep(1)
-        icon_ = self.screen.get_location_picture("E:\\dh2\\game\\shimen\\1.png")
+        icon_ = self.screen.get_location_picture("D:\\dh2\\game\\shimen\\1.png")
         time.sleep(1)
         print(icon_)
         self.mouse.click_element(icon_[0], icon_[1] - 40)
@@ -87,7 +87,7 @@ class ShiMen():
                 offset_ = 365
             else:
                 offset_ = 345
-            file_name = "E:\\dh2\\game\\shimen\\" + str(i) + ".png"
+            file_name = "D:\\dh2\\game\\shimen\\" + str(i) + ".png"
             result = self.screen.get_location_picture(file_name, 0.9, True)
             print(offset_)
             if result != 0:
@@ -139,7 +139,7 @@ class ShiMen():
                     while True:
                         time.sleep(5)
                         self.screen.cut_screen()
-                        location = self.screen.get_location_picture("E:\\dh2\\game\\system\\zidong.png", 0.8)
+                        location = self.screen.get_location_picture("D:\\dh2\\game\\system\\zidong.png", 0.8)
                         if location is 0:
                             break
                     self.keyboard.press_shortcut_key('alt', 'q')
@@ -218,7 +218,7 @@ class ShiMen():
                     while True:
                         time.sleep(5)
                         self.screen.cut_screen()
-                        location = self.screen.get_location_picture("E:\\dh2\\game\\system\\zidong.png", 0.8)
+                        location = self.screen.get_location_picture("D:\\dh2\\game\\system\\zidong.png", 0.8)
                         if location is 0:
                             break
                     self.keyboard.press_shortcut_key('alt', 'q')
@@ -281,7 +281,7 @@ class ShiMen():
             time.sleep(2)
             self.screen.cut_screen()
             time.sleep(1)
-            icon = self.screen.get_location_picture("E:\\dh2\\game\\shimen\\1_2.png")
+            icon = self.screen.get_location_picture("D:\\dh2\\game\\shimen\\1_2.png")
             time.sleep(1)
             self.mouse.click_element(icon[0],icon[1]-self.offset)
             time.sleep(1)

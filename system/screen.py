@@ -27,14 +27,14 @@ class Screen:
         saveBitMap.CreateCompatibleBitmap(mfcDC, w, h)
         saveDC.SelectObject(saveBitMap)
         saveDC.BitBlt((0, 0), (820, 650), mfcDC, (0, 0), win32con.SRCCOPY)
-        saveBitMap.SaveBitmapFile(saveDC, "E:\\dh2\\system\\0.PNG")
+        saveBitMap.SaveBitmapFile(saveDC, "D:\\dh2\\system\\0.PNG")
 
     def cut_screen_by_PIL(self, x, y, w, h, file_path):
         bbox = (x, y, w, h)
         im = ImageGrab.grab(bbox)
         im.save(file_path)
 
-    def cut_screen_location(self, width, height, x, y, file_path="E:\\dh2\\system\\1.PNG"):
+    def cut_screen_location(self, width, height, x, y, file_path="D:\\dh2\\system\\1.PNG"):
         try:
             hwnd = 0
             hwndDC = win32gui.GetWindowDC(hwnd)
@@ -53,9 +53,9 @@ class Screen:
 
     def find_color_ele(self, x, y, x_offset, y_offset, r1, r2, g1, g2, b1, b2, cut_zone=None):
         if cut_zone == None:
-            im = Image.open("E:\\dh2\\system\\0.PNG")
+            im = Image.open("D:\\dh2\\system\\0.PNG")
         else:
-            im = Image.open("E:\\dh2\\system\\1.PNG")
+            im = Image.open("D:\\dh2\\system\\1.PNG")
         img_array = im.load()
         result = None
         for i in range(x - x_offset, x + x_offset):
@@ -66,9 +66,9 @@ class Screen:
 
     def get_location_picture(self, filename, num=0.5, cut_zone=None):
         if cut_zone == None:
-            imsrc = ac.imread('E:\\dh2\\system\\0.png')
+            imsrc = ac.imread('D:\\dh2\\system\\0.png')
         else:
-            imsrc = ac.imread('E:\\dh2\\system\\1.png')
+            imsrc = ac.imread('D:\\dh2\\system\\1.png')
         imobj = ac.imread(filename)
         # find the match position
         pos = ac.find_template(imsrc, imobj, num)
@@ -79,9 +79,9 @@ class Screen:
 
     def get_locations_picture(self, filename, num=0.5, cut_zone=None):
         if cut_zone == None:
-            imsrc = ac.imread('E:\\dh2\\system\\0.png')
+            imsrc = ac.imread('D:\\dh2\\system\\0.png')
         else:
-            imsrc = ac.imread('E:\\dh2\\system\\1.png')
+            imsrc = ac.imread('D:\\dh2\\system\\1.png')
         imobj = ac.imread(filename)
         # find the match position
         pos = ac.find_all_template(imsrc, imobj, num)
@@ -105,7 +105,7 @@ class Screen:
             time.sleep(1)
             self.cut_screen()
             time.sleep(1)
-            location = self.get_location_picture("E:\\dh2\\" + file_path + ".png", 0.8)
+            location = self.get_location_picture("D:\\dh2\\" + file_path + ".png", 0.8)
             if location != 0:
                 if handle == 'keyboard':
                     self.keyboard.press_shortcut_key(k1, k2)
@@ -113,7 +113,7 @@ class Screen:
                     self.mouse.click_element(k1, k2)
                 break
 
-    def template_image(self, file_path, dir_path="E:\\dh2\\system\\0.PNG"):
+    def template_image(self, file_path, dir_path="D:\\dh2\\system\\0.PNG"):
         list = []
         target = cv.imread(dir_path)
         tpl = cv.imread(file_path)
@@ -133,12 +133,12 @@ class Screen:
 
 # if __name__ == '__main__':
 #     Screen().cut_screen()
-#     icon_ = Screen().get_location_picture("E:\\dh2\\game\\shimen\\1.png")
+#     icon_ = Screen().get_location_picture("D:\\dh2\\game\\shimen\\1.png")
 #     time.sleep(1)
 #     print("------------")
 #     print(icon_)
 #     Screen().mouse.click_element(icon_[0], icon_[1]-40)
 
 #     # time.sleep(1)
-#     print(Screen().get_location_picture("E:\\dh2\\game\\shimen\\1.png",num=0.8))
+#     print(Screen().get_location_picture("D:\\dh2\\game\\shimen\\1.png",num=0.8))
 

@@ -29,7 +29,7 @@ class GuiWang():
             self.mouse.click_element(392, 350)
             time.sleep(1)
             self.screen.cut_screen()
-            result = self.screen.get_locations_picture("E:\\dh2\\game\\guiwang\\0.png",0.9)
+            result = self.screen.get_locations_picture("D:\\dh2\\game\\guiwang\\0.png",0.9)
             if result is not 0:
                 self.mouse.click_element(225, 383)
                 time.sleep(0.5)
@@ -41,7 +41,7 @@ class GuiWang():
                     self.mouse.click_element(392, 350)
                     time.sleep(1)
                     self.screen.cut_screen()
-                    result = self.screen.get_locations_picture("E:\\dh2\\game\\guiwang\\0.png", 0.9)
+                    result = self.screen.get_locations_picture("D:\\dh2\\game\\guiwang\\0.png", 0.9)
                     if result is not 0:
                         self.mouse.click_element(268, 330)
                         time.sleep(1)
@@ -54,7 +54,7 @@ class GuiWang():
             self.mouse.click_element(392, 350)
             time.sleep(1)
             self.screen.cut_screen()
-            result = self.screen.get_locations_picture("E:\\dh2\\game\\guiwang\\0.png",0.75)
+            result = self.screen.get_locations_picture("D:\\dh2\\game\\guiwang\\0.png",0.75)
             if result is not 0:
                 self.mouse.click_element(268, 365)
                 time.sleep(2)
@@ -80,7 +80,7 @@ class GuiWang():
         self.return_home()
 
     def is_ghostKing(self):
-        self.screen.cut_screen_by_PIL(20,265,50,300,"E:\\dh2\\system\\1.PNG")
+        self.screen.cut_screen_by_PIL(20,265,50,300,"D:\\dh2\\system\\1.PNG")
         result = self.screen.find_color_ele(10,10,8,8,255,255,0,0,0,0,True)
         if result is not None:
             return True
@@ -89,7 +89,7 @@ class GuiWang():
     def return_home(self):
         time.sleep(1)
         self.screen.cut_screen()
-        result = self.screen.get_locations_picture("E:\\dh2\\game\\guiwang\\3.png", 0.7)
+        result = self.screen.get_locations_picture("D:\\dh2\\game\\guiwang\\3.png", 0.7)
         print(result)
         if len(result) is not 0:
             self.mouse.click_element(757, 455, 1, True)
