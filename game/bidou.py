@@ -14,7 +14,7 @@ class BiDou():
         self.mouse = Mouse()
     def operate(self,type):
         if type is 0:
-            self.mouse.click_element(289, 383)
+            self.keyboard.press_shortcut_key('alt', 'a')
         elif type is 1:
             self.keyboard.press_shortcut_key('alt', 'w')
             time.sleep(0.5)
@@ -31,11 +31,13 @@ class BiDou():
                     self.keyboard.press_shortcut_key('alt', 'o')
                     self.mouse.click_element(248, 385)
                 else:
+                    self.mouse.click_element(417,588,right=True)
+                    time.sleep(3)
                     self.screen.find_ele_picture('game\\bidou\\begin')
                 time.sleep(1)
                 self.mouse.click_element(547, 420)
                 time.sleep(1)
-                self.screen.find_ele_picture('game\\system\\zidong')
+                self.screen.find_ele_picture('game\\system\\zidong',location_=[547, 420])
                 if j is 0:
                     self.operate(i[0])
                     self.operate(i[1])

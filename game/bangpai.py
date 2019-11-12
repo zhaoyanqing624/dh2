@@ -15,7 +15,7 @@ class BangPai:
         self.mouse = Mouse()
         self.walking = Walking()
     def bangpai_task(self):
-        endtime = time.time() + int(500)
+        endtime = time.time() + int(800)
         while time.time() < endtime:
             for i in range(1, 11):
                 file_name = "D:\\dh2\\game\\bangpai\\" + str(i) + ".png"

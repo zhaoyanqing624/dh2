@@ -99,11 +99,13 @@ class Screen:
         else:
             return pos
 
-    def find_ele_picture(self, file_path, handle=None, k1=None, k2=None):
+    def find_ele_picture(self, file_path, handle=None, k1=None, k2=None,location_=None):
         while True:
             pyautogui.moveTo(412 + random.randint(0, 5), 590 + random.randint(0, 5), 1, pyautogui.easeInQuad)
             time.sleep(1)
             self.cut_screen()
+            if location_ is not None:
+                self.mouse.click_element(location_[0], location_[1])
             time.sleep(1)
             location = self.get_location_picture("D:\\dh2\\" + file_path + ".png", 0.8)
             if location != 0:
