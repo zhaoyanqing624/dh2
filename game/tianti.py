@@ -29,6 +29,8 @@ class TianTi():
         # 切换宝宝
         for i in range(5):
             self.common.change_dog(2)
+            time.sleep(1)
+            self.common.change_teamer()
         time.sleep(1)
         self.mouse.click_element(757, 553)
         time.sleep(1)
