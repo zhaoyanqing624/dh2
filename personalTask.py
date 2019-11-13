@@ -6,9 +6,9 @@ from game.bangpai import BangPai
 import time
 if __name__ == '__main__':
 
-    # jf_start(False)
-    # time.sleep(3)
-    # BangPai().bangpai_start()
+    jf_start(False)
+    time.sleep(3)
+    BangPai().bangpai_start()
 
     # time.sleep(039223)
     # bp_start()

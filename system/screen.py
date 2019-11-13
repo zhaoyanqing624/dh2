@@ -102,7 +102,7 @@ class Screen:
     def find_ele_picture(self, file_path, handle=None, k1=None, k2=None,location_=None):
         while True:
             pyautogui.moveTo(412 + random.randint(0, 5), 590 + random.randint(0, 5), 1, pyautogui.easeInQuad)
-            time.sleep(1)
+            time.sleep(2)
             self.cut_screen()
             if location_ is not None:
                 self.mouse.click_element(location_[0], location_[1])
@@ -133,8 +133,8 @@ class Screen:
             cv.rectangle(target, tl, br, [0, 0, 0])
         return list
 
-# if __name__ == '__main__':
-#     Screen().cut_screen()
+if __name__ == '__main__':
+    Screen().cut_screen()
 #     icon_ = Screen().get_location_picture("D:\\dh2\\game\\shimen\\1.png")
 #     time.sleep(1)
 #     print("------------")
