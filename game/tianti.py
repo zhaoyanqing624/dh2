@@ -42,7 +42,11 @@ class TianTi():
         for i in range(10):
             if i is not 0:
                 time.sleep(30)
-            self.screen.find_ele_picture('game\\tianti\\begin')
+            self.mouse.click_element(470, 444)
+            for z in range(5):
+                self.mouse.click_element(312, 490)
+                time.sleep(1)
+                self.common.change_teamer()
             endtime = time.time() + int(500)
             while time.time() < endtime:
                 pos_caozuo = self.screen.get_location_picture("D:\\dh2\\game\\system\\caozuo.png")
