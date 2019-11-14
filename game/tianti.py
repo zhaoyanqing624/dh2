@@ -56,7 +56,7 @@ class TianTi():
                         time.sleep(1)
                         self.keyboard.press_key('f7')
                         self.mouse.click_element(289, 383)
-                        self.operate(0)
+                        self.chong_operate(0)
                         self.keyboard.press_shortcut_key('alt', '8')
                         time.sleep(1)
                         self.common.change_teamer()

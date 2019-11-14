@@ -16,7 +16,7 @@ if __name__ == '__main__':
 
     # hz_start(60)
     # time.sleep(3)
-    try:
-        xl_start(3,120)
-    except:
-        pass
+    # try:
+    #     xl_start(3,120)
+    # except:
+    #     pass
