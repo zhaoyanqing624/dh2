@@ -102,11 +102,11 @@ class Screen:
     def find_ele_picture(self, file_path, handle=None, k1=None, k2=None,location_=None):
         while True:
             pyautogui.moveTo(412 + random.randint(0, 5), 590 + random.randint(0, 5), 1, pyautogui.easeInQuad)
-            time.sleep(2)
+            time.sleep(1.5)
             self.cut_screen()
             if location_ is not None:
                 self.mouse.click_element(location_[0], location_[1])
-            time.sleep(1)
+            time.sleep(0.5)
             location = self.get_location_picture("D:\\dh2\\" + file_path + ".png", 0.8)
             if location != 0:
                 if handle == 'keyboard':

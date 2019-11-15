@@ -18,9 +18,9 @@ class BiDou():
         elif type is 1:
             self.keyboard.press_shortcut_key('alt', 'w')
             time.sleep(0.5)
-            self.mouse.click_element(317, 178)
+            self.mouse.click_element(317, 178,times=0.5)
             time.sleep(0.5)
-            self.mouse.click_element(289, 383)
+            self.mouse.click_element(289, 383,times=0.5)
     def task_start(self,team):
         print("任务开始")
         self.common.get_focus()
@@ -30,14 +30,13 @@ class BiDou():
                     time.sleep(1)
                     self.keyboard.press_shortcut_key('alt', 'o')
                     self.mouse.click_element(248, 385)
+                    time.sleep(1)
+                    self.mouse.click_element(578, 420)
                 else:
-                    self.mouse.click_element(417,588,right=True)
-                    time.sleep(3)
+                    # self.mouse.click_element(417,588,right=True)
+                    time.sleep(2)
                     self.screen.find_ele_picture('game\\bidou\\begin')
-                time.sleep(1)
-                self.mouse.click_element(547, 420)
-                time.sleep(1)
-                self.screen.find_ele_picture('game\\system\\zidong',location_=[547, 420])
+                self.screen.find_ele_picture('game\\system\\zidong',location_=[578, 420])
                 if j is 0:
                     self.operate(i[0])
                     self.operate(i[1])
