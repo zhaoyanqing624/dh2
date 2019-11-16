@@ -112,10 +112,12 @@ class BangPai:
                         self.mouse.click_element(410, 240)
                         self.keyboard.press_shortcut_key('alt', 'q')
                         time.sleep(10)
-                        while True:
+                        endtime2 = time.time() + int(90)
+                        while time.time() < endtime2:
                             if self.walking.iswalking() is 0:
                                 self.mouse.click_element(784, 540)
                                 break
+                        self.mouse.click_element(784, 540)
                         self.return_bangpai_npc()
                         return 'success'
                     elif i == 8:
@@ -130,15 +132,25 @@ class BangPai:
                         print("收银票")
                         self.mouse.click_element(455, 240)
                         self.keyboard.press_shortcut_key('alt', 'q')
-                        while True:
-                            self.screen.cut_screen()
-                            result1 = self.screen.get_location_picture("D:\\dh2\\game\\bangpai\\9_1.png", num=0.8)
-                            result2 = self.screen.get_location_picture("D:\\dh2\\game\\bangpai\\9_2.png", num=0.8)
-                            if result1 is not 0 or result2 is not 0:
-                                break
-                        # self.screen.find_ele_picture('game\\bangpai\\9_1', 'mouse', 182, 345)
-                        self.return_bangpai_npc()
-                        return 'success'
+                        # while True:
+                        #     self.screen.cut_screen()
+                        #     result1 = self.screen.get_location_picture("D:\\dh2\\game\\bangpai\\9_1.png", num=0.8)
+                        #     result2 = self.screen.get_location_picture("D:\\dh2\\game\\bangpai\\9_2.png", num=0.8)
+                        #     if result1 is not 0 or result2 is not 0:
+                        #         break
+                        # # self.screen.find_ele_picture('game\\bangpai\\9_1', 'mouse', 182, 345)
+                        # self.return_bangpai_npc()
+                        # return 'success'
+                        time.sleep(1)
+                        self.mouse.click_element(459, 284)
+                        time.sleep(1)
+                        self.mouse.click_element(268, 350)
+                        time.sleep(1)
+                        self.mouse.click_element(169, 348)
+                        time.sleep(2)
+                        self.mouse.click_element(169, 348)
+                        time.sleep(25)
+                        self.mouse.click_element(459, 284)
                     elif i == 10:
                         return 'success'
                     else:
