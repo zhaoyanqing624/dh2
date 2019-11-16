@@ -41,6 +41,8 @@ def window_capture():
         saveBitMap.SaveBitmapFile(saveDC, "D:\\dh2\\system\\0.PNG")
     except:
         pass
+# if __name__ == '__main__':
+#     window_capture()
 
 
 

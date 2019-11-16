@@ -133,11 +133,11 @@ class Screen:
             cv.rectangle(target, tl, br, [0, 0, 0])
         return list
 
-if __name__ == '__main__':
-    Screen().cut_screen()
-#     icon_ = Screen().get_location_picture("D:\\dh2\\game\\shimen\\1.png")
-#     time.sleep(1)
-#     print("------------")
+# if __name__ == '__main__':
+#     Screen().cut_screen()
+#     icon_ = Screen().get_location_picture("D:\\dh2\\game\\tianti\\begin.png")
+# #     time.sleep(1)
+# #     print("------------")
 #     print(icon_)
 #     Screen().mouse.click_element(icon_[0], icon_[1]-40)
 

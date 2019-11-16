@@ -51,8 +51,8 @@ def doing_fighting(a):
                 keyBoard('alt', 'd', 0.3)
                 keyBoard('alt', '8', 0.3)
             elif i==4:
-                pyautogui.keyDown('f5')
-                pyautogui.keyUp('f5')
+                pyautogui.keyDown('f7')
+                pyautogui.keyUp('f7')
                 click_fast(203, 334)
                 keyBoard('alt', 'd', 0.3)
                 keyBoard('alt', '8', 0.3)
@@ -129,11 +129,19 @@ def findNPC(flag=1):
         time.sleep(2)
         pyautogui.moveTo(33, 257 + random.randint(0, 2), 1, pyautogui.easeInQuad)
         pyautogui.click()
+def is_xiuluoKing():
+    Screen().cut_screen_by_PIL(20,265,50,350,"D:\\dh2\\system\\1.PNG")
+    result = Screen().find_color_ele(10,10,8,8,255,255,0,0,0,0,True)
+    if result is not None:
+        return True
+    else:
+        return False
+
 def click(x, y):
     time.sleep(1)
     pyautogui.moveTo(x, y, 1, pyautogui.easeInQuad)
     pyautogui.click()
-def XLstartTask(team,times):
+def XLstartTask(team,times,flag=False):
     # 获取焦点
     pyautogui.moveTo(75 + random.randint(0, 5), 45 + random.randint(0, 5), 2, pyautogui.easeInQuad)
     pyautogui.click()
@@ -141,68 +149,55 @@ def XLstartTask(team,times):
     for i in range(1, times):
         print("------第"+str(i)+"次修罗------")
         print(time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time())))
-        # 打开点图
-        pyautogui.keyDown('alt')
-        pyautogui.keyDown('1')
-        pyautogui.keyUp('1')
-        pyautogui.keyUp('alt')
-        # # 移动到任务人
-        # pyautogui.moveTo(417, 303, 1, pyautogui.easeInQuad)
-        # pyautogui.click()
-        # time.sleep(1)
-        # _Tools.isWalking.isWalking()
-        # pyautogui.moveTo(377, 301, 1, pyautogui.easeInQuad)
-        # pyautogui.click()
-        # _Tools.isWalking.isWalking()
-        # # 关闭地图
-        # pyautogui.keyDown('alt')
-        # pyautogui.keyDown('1')
-        # pyautogui.keyUp('1')
-        # pyautogui.keyUp('alt')
-        # time.sleep(1)
-        # # 屏蔽周围的人
-        # pyautogui.keyDown('alt')
-        # pyautogui.keyDown('5')
-        # pyautogui.keyUp('5')
-        # pyautogui.keyUp('alt')
-        time.sleep(3)
-        pyautogui.moveTo(368, 316, 1, pyautogui.easeInQuad)
-        pyautogui.click()
-        time.sleep(15)
-        # 点击任务
-        # while True:
-        #     time.sleep(1.5)
-        #     _Tools.getCutPicture.window_capture()
-        #     time.sleep(1.5)
-        #     location_zhao = Screen().get_location_picture("D:\\dh2\\xiuluo\\0.png",num=0.9)
-        #     print(location_zhao)
-        #     if location_zhao != None and location_zhao !=0:
-        #         pyautogui.moveTo(location_zhao[0],location_zhao[1]-50)
-        #         # pyautogui.moveTo(340, 463)
-        #         pyautogui.click()
-        #         time.sleep(1)
-        #         _Tools.getCutPicture.window_capture()
-        #         location_1 = pyautogui.locateCenterOnScreen("D:\\dh2\\xiuluo\\0_1.PNG")
-        #         if location_1 != None:
-        #             break
-
-        # 点击帮忙
-        time.sleep(1)
-        pyautogui.moveTo(227 + random.randint(0, 5), 364 + random.randint(0, 5), 1, pyautogui.easeInQuad)
-        pyautogui.click()
-        time.sleep(2)
-        pyautogui.click()
-        time.sleep(1)
-        pyautogui.keyDown('alt')
-        pyautogui.keyDown('1')
-        pyautogui.keyUp('1')
-        pyautogui.keyUp('alt')
-        # 飞起来
-        time.sleep(1)
-        # pyautogui.keyDown('alt')
-        # pyautogui.keyDown('c')
-        # pyautogui.keyUp('c')
-        # pyautogui.keyUp('alt')
+        while True:
+            # 打开点图
+            pyautogui.keyDown('alt')
+            pyautogui.keyDown('1')
+            pyautogui.keyUp('1')
+            pyautogui.keyUp('alt')
+            time.sleep(3)
+            pyautogui.moveTo(368, 316, 1, pyautogui.easeInQuad)
+            pyautogui.click()
+            time.sleep(15)
+            # 点击帮忙
+            time.sleep(1)
+            pyautogui.moveTo(227 + random.randint(0, 5), 364 + random.randint(0, 5), 1, pyautogui.easeInQuad)
+            pyautogui.click()
+            time.sleep(2)
+            pyautogui.click()
+            time.sleep(1)
+            pyautogui.keyDown('alt')
+            pyautogui.keyDown('1')
+            pyautogui.keyUp('1')
+            pyautogui.keyUp('alt')
+            if flag is True:
+                # 是否修罗王
+                xiuluowang = is_xiuluoKing()
+                if xiuluowang is True:
+                    pyautogui.keyDown('alt')
+                    pyautogui.keyDown('1')
+                    pyautogui.keyUp('1')
+                    pyautogui.keyUp('alt')
+                    time.sleep(3)
+                    pyautogui.moveTo(368, 316, 1, pyautogui.easeInQuad)
+                    pyautogui.click()
+                    time.sleep(3)
+                    # 点击取消
+                    time.sleep(1)
+                    pyautogui.moveTo(200 + random.randint(0, 5), 397 + random.randint(0, 5), 1, pyautogui.easeInQuad)
+                    pyautogui.click()
+                    time.sleep(2)
+                    pyautogui.moveTo(164 + random.randint(0, 5), 329 + random.randint(0, 5), 1, pyautogui.easeInQuad)
+                    pyautogui.click()
+                    time.sleep(1)
+                    pyautogui.click()
+                    time.sleep(1)
+                    pyautogui.keyDown('alt')
+                    pyautogui.keyDown('1')
+                    pyautogui.keyUp('1')
+                    pyautogui.keyUp('alt')
+                else:
+                    break
         findNPC()
         time.sleep(40)
         # 判断是否找到NPC
@@ -288,6 +283,7 @@ def XLstartTask(team,times):
         _Tools.getFighting.death(team)
 
 # XLstartTask(60)
+# print(is_xiuluoKing())
 
 
 
