@@ -15,8 +15,11 @@ class Common:
         self.screen = Screen()
         self.transform = TransForm()
 
-    def get_focus(self):
-        self.mouse.click_direct_element(self.transform.trans_location(75, 0), self.transform.trans_location(45, 1))
+    def get_focus(self,index=True):
+        if index is True:
+            self.mouse.click_direct_element(self.transform.trans_location(75, 0), self.transform.trans_location(45, 1))
+        else:
+            self.mouse.click_direct_element(self.transform.trans_location(700, 0), self.transform.trans_location(45, 1))
 
     def create_team(self):
         # 创建队伍
@@ -42,8 +45,8 @@ class Common:
             self.mouse.click_element(347, 410)
         self.keyboard.press_shortcut_key('ctrl', 'tab', 1)
 
-    def change_teamer(self):
-        self.keyboard.press_shortcut_key('ctrl', 'tab', 1)
+    def change_teamer(self,times = 1):
+        self.keyboard.press_shortcut_key('ctrl', 'tab', times)
 
     def change_dog(self, num):
         self.keyboard.press_shortcut_key('alt', 'o')
