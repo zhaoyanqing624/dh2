@@ -6,9 +6,9 @@ from game.bangpai import BangPai
 import time
 if __name__ == '__main__':
 
-    # jf_start(False)
-    # time.sleep(3)
-    # BangPai().bangpai_start()
+    jf_start(False)
+    time.sleep(3)
+    BangPai().bangpai_start()
 
     # time.sleep(039223)
     # bp_start()
@@ -16,7 +16,7 @@ if __name__ == '__main__':
 
     # hz_start(60)
     # time.sleep(3)
-    try:
-        xl_start(2,120,flag=True)
-    except:
-        pass
+    # try:
+    #     xl_start(2,120,flag=True)
+    # except:
+    #     pass

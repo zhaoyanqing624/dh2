@@ -31,13 +31,14 @@ class DianXing():
             endtime = time.time() + int(500)
             while time.time() < endtime:
                 time.sleep(1)
-                self.mouse.click_element(432, 516)
-                for j in range(5):
-                    self.mouse.click_element(309, 489, times=0.5)
-                    self.common.change_teamer(0.5)
-                time.sleep(1)
                 self.screen.cut_screen()
-                loc_begin = self.screen.get_location_picture("D:\\dh2\\game\\dianxing\\begin.png")
+                loc_begin = self.screen.get_location_picture("D:\\dh2\\game\\dianxing\\begin2.png")
+                if loc_begin is not 0:
+                    self.mouse.click_element(432, 516)
+                    for j in range(5):
+                        self.mouse.click_element(309, 489, times=0.5)
+                        self.common.change_teamer(0.5)
+                    time.sleep(1)
                 pos_caozuo = self.screen.get_location_picture("D:\\dh2\\game\\system\\caozuo.png")
                 pos_zidong = self.screen.get_location_picture("D:\\dh2\\game\\system\\zidong.png")
                 if pos_caozuo is not 0 and pos_zidong is not 0 and loc_begin is 0:
