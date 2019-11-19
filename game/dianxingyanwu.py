@@ -23,6 +23,7 @@ class DianXing():
             time.sleep(0.5)
             self.mouse.click_element(289, 383)
     def task_start(self):
+        jiangxing = 0
         print("任务开始")
         self.common.get_focus()
         time.sleep(1)
@@ -43,28 +44,39 @@ class DianXing():
                 pos_zidong = self.screen.get_location_picture("D:\\dh2\\game\\system\\zidong.png")
                 if pos_zidong is not 0:
                     # 人物
-                    time.sleep(0.5)
-                    for z in range(5):
-                        self.keyboard.press_key('f7')
-                        self.mouse.click_element(198, 338, times=0.3)
-                        if z is 2:
-                            self.keyboard.press_shortcut_key('alt', 's')
-                            self.mouse.click_element(198, 338, times=0.3)
-                        else:
-                            self.keyboard.press_shortcut_key('alt', 'd')
-                        self.keyboard.press_shortcut_key('alt', '8')
-                        self.common.change_teamer(0.3)
+                    flag = 0
+                    while True:
+                        time.sleep(1)
+                        self.screen.cut_screen()
+                        loc_begin2 = self.screen.get_location_picture("D:\\dh2\\game\\dianxing\\begin.png")
+                        time.sleep(0.5)
+                        if flag is 0:
+                            time.sleep(3)
+                            for z in range(5):
+                                self.keyboard.press_key('f7')
+                                self.mouse.click_element(198, 338, times=0.3)
+                                if z is 2:
+                                    self.keyboard.press_shortcut_key('alt', 'w')
+                                    self.mouse.click_element(314, 179, times=0.3)
+                                    self.mouse.click_element(198, 338, times=0.3)
+                                else:
+                                    self.keyboard.press_shortcut_key('alt', 'd')
+                                self.keyboard.press_shortcut_key('alt', '8')
+                                self.common.change_teamer(0.3)
+                            flag+=1
+                        if loc_begin2 is not 0:
+                            break
+
                 else:
                     if pos_caozuo is not 0:
                         # 星将
-                        flag = 0
                         while True:
                             time.sleep(1)
                             self.screen.cut_screen()
                             pos_caozuo2= self.screen.get_location_picture("D:\\dh2\\game\\system\\caozuo.png")
                             loc_begin2 = self.screen.get_location_picture("D:\\dh2\\game\\dianxing\\begin.png")
                             if pos_caozuo2 is not 0:
-                                if flag is 0:
+                                if jiangxing is 0:
                                     for z in range(5):
                                         self.keyboard.press_shortcut_key('alt', 'a')
                                         self.keyboard.press_shortcut_key('alt', 'w')
@@ -72,7 +84,7 @@ class DianXing():
                                         self.keyboard.press_shortcut_key('alt', 's')
                                         self.mouse.click_element(198, 344, times=0.3)
                                         self.common.change_teamer(0.3)
-                                        flag+=1
+                                        jiangxing+=1
                                 else:
                                     for z in range(5):
                                         self.keyboard.press_shortcut_key('alt', 'a')
