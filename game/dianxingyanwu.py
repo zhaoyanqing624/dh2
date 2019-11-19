@@ -30,46 +30,46 @@ class DianXing():
         for i in range(8):
             endtime = time.time() + int(500)
             while time.time() < endtime:
-                time.sleep(1)
+                time.sleep(1.5)
                 self.screen.cut_screen()
-                loc_begin = self.screen.get_location_picture("D:\\dh2\\game\\dianxing\\begin2.png")
+                loc_begin = self.screen.get_location_picture("D:\\dh2\\game\\dianxing\\begin2.png",num=0.9)
                 if loc_begin is not 0:
                     self.mouse.click_element(432, 516)
                     for j in range(5):
                         self.mouse.click_element(309, 489, times=0.5)
                         self.common.change_teamer(0.5)
-                    time.sleep(1)
                 pos_caozuo = self.screen.get_location_picture("D:\\dh2\\game\\system\\caozuo.png")
                 pos_zidong = self.screen.get_location_picture("D:\\dh2\\game\\system\\zidong.png")
-                if pos_caozuo is not 0 and pos_zidong is not 0 and loc_begin is 0:
+                if pos_zidong is not 0:
                     # 人物
                     time.sleep(0.5)
                     for z in range(5):
                         self.keyboard.press_key('f7')
-                        self.mouse.click_element(198, 338, times=0.5)
+                        self.mouse.click_element(198, 338, times=0.3)
                         if z is 2:
                             self.keyboard.press_shortcut_key('alt', 's')
-                            self.mouse.click_element(198, 338, times=0.5)
+                            self.mouse.click_element(198, 338, times=0.3)
                         else:
                             self.keyboard.press_shortcut_key('alt', 'd')
-                    self.keyboard.press_shortcut_key('alt', '8')
-
-                if pos_caozuo is not 0 and pos_zidong is not 0 and loc_begin is 0:
-                    # 星将
-                    while True:
-                        time.sleep(1)
-                        self.screen.cut_screen()
-                        pos_caozuo2= self.screen.get_location_picture("D:\\dh2\\game\\system\\caozuo.png")
-                        loc_begin2 = self.screen.get_location_picture("D:\\dh2\\game\\dianxing\\begin.png")
-                        if pos_caozuo2 is not 0:
-                            for z in range(5):
-                                self.keyboard.press_shortcut_key('alt', 'a')
-                                self.keyboard.press_shortcut_key('alt', 'w')
-                                self.mouse.click_element(314, 179, times=0.5)
-                                self.mouse.click_element(198, 338, times=0.5)
-                                self.common.change_teamer(0.5)
-                        if loc_begin2 is not 0:
-                            break
+                        self.keyboard.press_shortcut_key('alt', '8')
+                        self.common.change_teamer(0.3)
+                else:
+                    if pos_caozuo is not 0:
+                        # 星将
+                        while True:
+                            time.sleep(1)
+                            self.screen.cut_screen()
+                            pos_caozuo2= self.screen.get_location_picture("D:\\dh2\\game\\system\\caozuo.png")
+                            loc_begin2 = self.screen.get_location_picture("D:\\dh2\\game\\dianxing\\begin.png")
+                            if pos_caozuo2 is not 0:
+                                for z in range(5):
+                                    self.keyboard.press_shortcut_key('alt', 'a')
+                                    self.keyboard.press_shortcut_key('alt', 'w')
+                                    self.mouse.click_element(314, 179, times=0.3)
+                                    self.mouse.click_element(198, 344, times=0.3)
+                                    self.common.change_teamer(0.3)
+                            if loc_begin2 is not 0:
+                                break
 
 if __name__ == '__main__':
     # 匹配对手 436,520
