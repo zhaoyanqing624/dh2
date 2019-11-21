@@ -35,6 +35,7 @@ class BiDou():
                     time.sleep(2)
                     self.screen.find_ele_picture('game\\bidou\\begin')
                 self.screen.find_ele_picture('game\\system\\zidong',location_=[578, 420])
+                time.sleep(1.5)
                 if j is 0:
                     self.operate(i[0])
                     self.operate(i[1])
