@@ -156,7 +156,7 @@ def XLstartTask(team,times,flag=False):
             pyautogui.keyUp('1')
             pyautogui.keyUp('alt')
             time.sleep(3)
-            pyautogui.moveTo(368, 316, 1, pyautogui.easeInQuad)
+            pyautogui.moveTo(358, 316, 1, pyautogui.easeInQuad)
             pyautogui.click()
             time.sleep(15)
             # 点击帮忙
@@ -170,6 +170,8 @@ def XLstartTask(team,times,flag=False):
             pyautogui.keyDown('1')
             pyautogui.keyUp('1')
             pyautogui.keyUp('alt')
+            if flag is False:
+                break
             if flag is True:
                 # 是否修罗王
                 xiuluowang = is_xiuluoKing()
