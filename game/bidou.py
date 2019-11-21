@@ -17,9 +17,7 @@ class BiDou():
             self.keyboard.press_shortcut_key('alt', 'a')
         elif type is 1:
             self.keyboard.press_shortcut_key('alt', 'w')
-            time.sleep(0.5)
             self.mouse.click_element(317, 178,times=0.5)
-            time.sleep(0.5)
             self.mouse.click_element(289, 383,times=0.5)
     def task_start(self,team):
         print("任务开始")
