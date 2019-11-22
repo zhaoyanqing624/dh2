@@ -41,19 +41,26 @@ class TianTi():
         self.mouse.click_element(770, 193)
         time.sleep(1)
         for i in range(10):
+            for z in range(5):
+                self.mouse.click_element(413, 142,right=True)
+                time.sleep(1)
+                self.common.change_teamer()
             if i is not 0:
                 time.sleep(3)
             self.mouse.click_element(470, 444)
             for z in range(5):
-                self.mouse.click_element(312, 490)
+                if z is 0:
+                    self.mouse.click_element(312, 490)
+                else:
+                    pyautogui.click()
                 time.sleep(1)
                 self.common.change_teamer()
             flag = 0
-            endtime = time.time() + int(500)
+            endtime = time.time() + int(1000)
             while time.time() < endtime:
                 time.sleep(2)
                 self.screen.cut_screen()
-                loc_begin = self.screen.get_location_picture("D:\\dh2\\game\\tianti\\begin.png")
+                loc_begin = self.screen.get_location_picture("D:\\dh2\\game\\tianti\\begin.png",num=0.9)
                 if loc_begin is not 0:
                     break
                 time.sleep(1)
@@ -65,11 +72,11 @@ class TianTi():
                         if j is 0:
                             time.sleep(1)
                             self.keyboard.press_key('f7')
-                            self.mouse.click_element(196, 332)
+                            self.mouse.click_element(196, 332,times=0.5)
                         else:
                             self.keyboard.press_key('f7')
                             pyautogui.click()
-                        self.chong_operate(0)
+                        pyautogui.click()
                         self.keyboard.press_shortcut_key('alt', '8')
                         self.common.change_teamer()
 
