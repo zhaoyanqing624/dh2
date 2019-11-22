@@ -61,7 +61,7 @@ class Screen:
         for i in range(x - x_offset, x + x_offset):
             for j in range(y - y_offset, y + y_offset):
                 if r1 <= img_array[i, j][0] <= r2 and g1 <= img_array[i, j][1] <= g2 and b1 <= img_array[i, j][2] <= b2:
-                    result = x, y
+                    result = i, j
         return result
 
     def get_location_picture(self, filename, num=0.5, cut_zone=None):
@@ -134,7 +134,15 @@ class Screen:
         return list
 
 # if __name__ == '__main__':
-#     Screen().cut_screen()
+#     # Screen().cut_screen()
+#     #def find_color_ele(self, x, y, x_offset, y_offset, r1, r2, g1, g2, b1, b2, cut_zone=None):
+#     while True:
+#         Screen().cut_screen_location(820,650,0,0)
+#         time.sleep(1)
+#         result = Screen().find_color_ele(400,400,350,250,r1=250,r2=260,g1=250,g2=260,b1=0,b2=10,cut_zone=True)
+#         if result is not None:
+#             print(result)
+#             pyautogui.moveTo(result[0], result[1], 1, pyautogui.easeInQuad)
 #     icon_ = Screen().get_location_picture("D:\\dh2\\game\\tianti\\begin.png")
 # #     time.sleep(1)
 # #     print("------------")

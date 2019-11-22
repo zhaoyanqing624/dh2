@@ -12,7 +12,14 @@ class HouZi:
         self.keyboard = KeyBoard()
         self.screen = Screen()
         self.mouse = Mouse()
-    def houzi_task(self):
-        pass
-if __name__ == '__main__':
-    print(1)
+    def houzi_task(self,place):
+        while True:
+            self.screen.cut_screen()
+            time.sleep(1)
+            loc = self.screen.get_location_picture("D:\\dh2\\houzi\\1.png", num=0.7)
+            if loc is not 0:
+                print(loc)
+# if __name__ == '__main__':
+#     # 万寿
+#     list_wangshou = [[530,432],[520,252],[470,300],[409,349],[382,461],[280,461],[270,339],[270,247]]
+#     HouZi().houzi_task(list_wangshou)
