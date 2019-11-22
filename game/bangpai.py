@@ -52,6 +52,7 @@ class BangPai:
                         self.mouse.click_element(169, 348)
                         time.sleep(25)
                         self.mouse.click_element(459, 284)
+                        return 'failed'
                     elif i == 3:
                         print("订酒")
                         # self.mouse.click_element(448, 240)
@@ -69,7 +70,7 @@ class BangPai:
                         self.mouse.click_element(169, 348)
                         time.sleep(25)
                         self.mouse.click_element(459, 284)
-
+                        return 'failed'
                     elif i == 4:
                         print("药")
                         self.keyboard.press_shortcut_key('alt', 'q')
