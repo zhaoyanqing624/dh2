@@ -49,7 +49,7 @@ class ShiMen():
         time.sleep(1)
         icon_ = self.screen.get_location_picture("D:\\dh2\\game\\shimen\\1.png")
         time.sleep(1)
-        self.mouse.click_element(icon_[0], icon_[1] - 40)
+        self.mouse.click_element(icon_[0], icon_[1] - 20)
         time.sleep(1)
         self.mouse.click_element(x, y)
         time.sleep(1)
@@ -63,8 +63,7 @@ class ShiMen():
         time.sleep(1)
         icon_ = self.screen.get_location_picture("D:\\dh2\\game\\shimen\\1.png")
         time.sleep(1)
-        print(icon_)
-        self.mouse.click_element(icon_[0], icon_[1] - 40)
+        self.mouse.click_element(icon_[0], icon_[1] - 20)
         time.sleep(1)
         self.mouse.click_element(420, 240)
         time.sleep(1)
@@ -78,9 +77,10 @@ class ShiMen():
             begin = 361
         else:
             begin = 345
-        self.screen.cut_screen_location(267, 136, 373, 209)
-        for i in range(2, 12):
-            print(i)
+        self.screen.cut_screen()
+        time.sleep(1.5)
+        # self.screen.cut_screen_location(267, 136, 373, 209)
+        for i in range(2, 11):
             if zu is 'ren' or zu is 'xian':
                 offset_ = 360
             elif zu is 'mo':
@@ -88,8 +88,7 @@ class ShiMen():
             else:
                 offset_ = 345
             file_name = "D:\\dh2\\game\\shimen\\" + str(i) + ".png"
-            result = self.screen.get_location_picture(file_name, 0.9, True)
-            print(offset_)
+            result = self.screen.get_location_picture(file_name, 0.7)
             if result != 0:
                 if i == 2:
                     print("风水混元丹")
@@ -99,6 +98,7 @@ class ShiMen():
                         haha = 345
                     else:
                         haha = 363
+                    time.sleep(1)
                     self.mouse.click_element(386, 257)
                     time.sleep(1)
                     self.mouse.click_element(195, haha)
@@ -112,7 +112,20 @@ class ShiMen():
                     self.keyboard.press_shortcut_key('alt', '1')
                     time.sleep(1)
                     self.keyboard.press_shortcut_key('alt', 'q')
-                    self.later(zu, offset_, x, y)
+                    time.sleep(2)
+                    self.screen.cut_screen()
+                    time.sleep(1)
+                    icon_ = self.screen.get_location_picture("D:\\dh2\\game\\shimen\\1.png")
+                    time.sleep(1)
+                    self.mouse.click_element(icon_[0], icon_[1] - 20)
+                    time.sleep(1)
+                    self.mouse.click_element(x, y)
+                    time.sleep(1)
+                    self.screen.find_ele_picture('game\\shimen\\' + zu, 'mouse', 195, offset_)
+                    time.sleep(1)
+                    self.keyboard.press_shortcut_key('alt', 'q')
+                    time.sleep(1)
+                    self.keyboard.press_shortcut_key('alt', 'q')
                     if index is 0:
                         self.yao = 'yao'
                     break
@@ -281,7 +294,7 @@ class ShiMen():
             time.sleep(2)
             self.screen.cut_screen()
             time.sleep(1)
-            icon = self.screen.get_location_picture("D:\\dh2\\game\\shimen\\1_2.png")
+            icon = self.screen.get_location_picture("D:\\dh2\\game\\shimen\\1.png")
             time.sleep(1)
             self.mouse.click_element(icon[0],icon[1]-self.offset)
             time.sleep(1)
@@ -305,9 +318,9 @@ class ShiMen():
         self.common.change_teamer()
 if __name__ == '__main__':
     # list = ['mo','mo','gui']
-    list = ['mo','mo','xian','gui']
+    list = ['gui']
 
     ShiMen().task_start(list)
     # for i in range(10):
-    #     ShiMen().classify('gui',0,365)
+    #     ShiMen().classify('xian',0,365)
     # Screen().cut_screen_location(267, 136, 373, 209)
