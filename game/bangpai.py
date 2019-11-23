@@ -87,7 +87,9 @@ class BangPai:
                         self.mouse.click_element(500, 240)
                         self.keyboard.press_shortcut_key('alt', 'q')
                         time.sleep(5)
-                        self.screen.find_ele_picture('game\\bangpai\\5_1', 'keyboard', 'alt', '8')
+                        self.screen.find_ele_picture('game\\bangpai\\5_1', 'keyboard', 'alt', 'a')
+                        self.keyboard.press_shortcut_key('alt', 'a',times=0.5)
+                        self.keyboard.press_shortcut_key('alt', '8',times=0.5)
                         self.screen.find_ele_picture('game\\bangpai\\5_2', 'mouse', 182, 345)
                         self.return_bangpai_npc()
                         return 'success'
@@ -125,7 +127,9 @@ class BangPai:
                         print("作乱妖怪")
                         self.mouse.click_element(440, 240)
                         self.keyboard.press_shortcut_key('alt', 'q')
-                        self.screen.find_ele_picture('game\\system\\zidong', 'keyboard', 'alt', '8')
+                        self.screen.find_ele_picture('game\\system\\zidong', 'keyboard', 'alt', 'a')
+                        self.keyboard.press_shortcut_key('alt', 'a',times=0.5)
+                        self.keyboard.press_shortcut_key('alt', '8',times=0.5)
                         self.screen.find_ele_picture('game\\bangpai\\8_1', 'mouse', 182, 345)
                         self.return_bangpai_npc()
                         return 'success'
@@ -152,6 +156,7 @@ class BangPai:
                         self.mouse.click_element(169, 348)
                         time.sleep(25)
                         self.mouse.click_element(459, 284)
+                        return 'failed'
                     elif i == 10:
                         return 'success'
                     else:
