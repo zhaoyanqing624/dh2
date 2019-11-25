@@ -284,14 +284,25 @@ class ShiMen():
             time.sleep(2)
             positon2_ = self.npc_position(i)
             self.mouse.click_element(positon2_[0], positon2_[1],right=True)
-            time.sleep(2)
+            time.sleep(2.5)
             self.mouse.click_element(positon2_[2], positon2_[3])
             time.sleep(1)
-
+            self.screen.find_ele_picture('game\\shimen\\'+i, 'mouse', 193, aaa)
+            time.sleep(1)
+            # 取消任务
+            self.mouse.click_element(positon2_[2], positon2_[3])
+            time.sleep(1)
+            self.screen.find_ele_picture('game\\shimen\\'+i, 'mouse', 200, aaa+20)
+            time.sleep(1)
+            self.mouse.click_element(170, 332)
+            # 再次领取
+            self.mouse.click_element(positon2_[2], positon2_[3])
+            time.sleep(1)
             self.screen.find_ele_picture('game\\shimen\\'+i, 'mouse', 193, aaa)
             time.sleep(1)
             self.keyboard.press_shortcut_key('alt', 'q')
             time.sleep(2)
+
             self.screen.cut_screen()
             time.sleep(1)
             icon = self.screen.get_location_picture("D:\\dh2\\game\\shimen\\1.png")
