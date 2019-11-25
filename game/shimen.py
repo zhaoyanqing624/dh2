@@ -326,7 +326,7 @@ class ShiMen():
                     offset_1 = 345
 
                 self.classify(i,j,offset_1)
-        self.common.change_teamer()
+            self.common.change_teamer()
 # if __name__ == '__main__':
 #     # list = ['mo','mo','gui']
 #     list = ['gui']
