@@ -49,7 +49,7 @@ class ShiMen():
         time.sleep(1)
         icon_ = self.screen.get_location_picture("D:\\dh2\\game\\shimen\\1.png")
         time.sleep(1)
-        self.mouse.click_element(icon_[0], icon_[1] - 20)
+        self.mouse.click_element(icon_[0], icon_[1] - self.offset)
         time.sleep(1)
         self.mouse.click_element(x, y)
         time.sleep(1)
@@ -63,7 +63,7 @@ class ShiMen():
         time.sleep(1)
         icon_ = self.screen.get_location_picture("D:\\dh2\\game\\shimen\\1.png")
         time.sleep(1)
-        self.mouse.click_element(icon_[0], icon_[1] - 20)
+        self.mouse.click_element(icon_[0], icon_[1] - self.offset)
         time.sleep(1)
         self.mouse.click_element(420, 240)
         time.sleep(1)
@@ -316,11 +316,11 @@ class ShiMen():
 
                 self.classify(i,j,offset_1)
         self.common.change_teamer()
-if __name__ == '__main__':
-    # list = ['mo','mo','gui']
-    list = ['gui']
-
-    ShiMen().task_start(list)
+# if __name__ == '__main__':
+#     # list = ['mo','mo','gui']
+#     list = ['gui']
+#
+#     ShiMen().task_start(list)
     # for i in range(10):
     #     ShiMen().classify('xian',0,365)
     # Screen().cut_screen_location(267, 136, 373, 209)

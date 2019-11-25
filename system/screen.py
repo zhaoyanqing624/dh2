@@ -134,6 +134,9 @@ class Screen:
         return list
 
 # if __name__ == '__main__':
+#     loca = Screen().get_location_picture("D:\\dh2\\game\\shimen\\10.png")
+#     print(loca)
+#     Screen().mouse.click_element(loca[0], loca[1] - 20)
 #     # Screen().cut_screen()
 #     #def find_color_ele(self, x, y, x_offset, y_offset, r1, r2, g1, g2, b1, b2, cut_zone=None):
 #     while True:
