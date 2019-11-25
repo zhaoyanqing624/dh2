@@ -296,7 +296,8 @@ class ShiMen():
             time.sleep(1)
             self.screen.find_ele_picture('game\\shimen\\'+i, 'mouse', 200, aaa+20)
             time.sleep(1)
-            self.mouse.click_element(170, 332)
+            self.mouse.click_element(168, 332)
+            time.sleep(25)
             # 再次领取
             self.mouse.click_element(positon2_[2], positon2_[3])
             time.sleep(1)
