@@ -106,7 +106,7 @@ class Screen:
             self.cut_screen()
             if location_ is not None:
                 self.mouse.click_element(location_[0], location_[1])
-            time.sleep(0.5)
+            time.sleep(1)
             location = self.get_location_picture("D:\\dh2\\" + file_path + ".png", 0.8)
             if location != 0:
                 if handle == 'keyboard':

@@ -30,6 +30,9 @@ class DianXing():
         self.mouse.click_element(768, 195)
         time.sleep(1)
         for i in range(8):
+            for x in range(5):
+                self.mouse.click_element(412, 137, times=1, right=True)
+                self.common.change_teamer(0.5)
             endtime = time.time() + int(500)
             while time.time() < endtime:
                 time.sleep(1.5)
@@ -54,11 +57,11 @@ class DianXing():
                             time.sleep(3)
                             for z in range(5):
                                 self.keyboard.press_key('f7')
-                                self.mouse.click_element(198, 338, times=0.3)
+                                self.mouse.click_element(198, 344, times=0.3)
                                 if z is 2:
                                     self.keyboard.press_shortcut_key('alt', 'w')
                                     self.mouse.click_element(314, 179, times=0.3)
-                                    self.mouse.click_element(198, 338, times=0.3)
+                                    self.mouse.click_element(198, 344, times=0.3)
                                 else:
                                     self.keyboard.press_shortcut_key('alt', 'd')
                                 self.keyboard.press_shortcut_key('alt', '8')
