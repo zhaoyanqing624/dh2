@@ -62,8 +62,9 @@ class Common:
             self.mouse.click_element(90, 274)
         elif num == 6:
             self.mouse.click_element(90, 296)
-
+        time.sleep(1.5)
         self.screen.cut_screen_location(width=200, height=50, x=200, y=350)
+        time.sleep(1)
         result = self.screen.get_location_picture("D:\\dh2\\game\\system\\0.png", 0.9, cut_zone=True)
         if result == 0:
             self.mouse.click_element(320, 380)
