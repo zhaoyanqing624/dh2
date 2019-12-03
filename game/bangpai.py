@@ -164,7 +164,7 @@ class BangPai:
     def find_bangpai_task(self):
         num = 0
         for j in range(15):
-            if num > 9:
+            if num >= 9:
                 break
             try:
                 if j == 0:
