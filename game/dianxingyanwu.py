@@ -97,5 +97,4 @@ class DianXing():
 if __name__ == '__main__':
     # 匹配对手 436,520
     # 同意311,492
-
     DianXing().task_start()
