@@ -191,7 +191,7 @@ class BangPai:
                 if result is 'success':
                     num+=1
             except:
-                num+=1
+                pass
     def return_bangpai_npc(self):
         self.keyboard.press_shortcut_key('alt', 'q')
         self.mouse.click_element(517, 239)

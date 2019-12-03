@@ -39,12 +39,20 @@ class KuaFuBiDou():
                     self.common.change_teamer(0.5)
                 for z in range(5):
                     if z is 0 or z is 2 or z is 4:
-                        self.screen.find_ele_picture('game\\system\\zidong')
-                    self.keyboard.press_shortcut_key('alt', 'a')
-                    self.keyboard.press_shortcut_key('alt', 'a')
-                    self.keyboard.press_shortcut_key('alt', '8')
-                    self.common.change_teamer(0.5)
-                time.sleep(30)
+                        result_ = self.screen.find_ele_picture_time('game\\system\\zidong')
+                        if result_ is True:
+                            self.keyboard.press_shortcut_key('alt', 'a')
+                            self.keyboard.press_shortcut_key('alt', 'a')
+                            self.keyboard.press_shortcut_key('alt', '8')
+                            self.common.change_teamer(0.5)
+                            self.keyboard.press_shortcut_key('alt', 'a')
+                            self.keyboard.press_shortcut_key('alt', 'a')
+                            self.keyboard.press_shortcut_key('alt', '8')
+                            self.common.change_teamer(0.5)
+                        else:
+                            self.common.change_teamer(0.5)
+                            self.common.change_teamer(0.5)
+                time.sleep(15)
         else:
             for j in range(15):
                 for index,z in enumerate(team):
@@ -66,11 +74,19 @@ class KuaFuBiDou():
                     self.common.change_teamer(0.5)
                 for z in range(5):
                     if z is 1 or z is 3 or z is 0:
-                        self.screen.find_ele_picture('game\\system\\zidong')
-                    self.keyboard.press_shortcut_key('alt', 'a')
-                    self.keyboard.press_shortcut_key('alt', 'a')
-                    self.keyboard.press_shortcut_key('alt', '8')
-                    self.common.change_teamer(0.5)
+                        result_ = self.screen.find_ele_picture_time('game\\system\\zidong')
+                        if result_ is True:
+                            self.keyboard.press_shortcut_key('alt', 'a')
+                            self.keyboard.press_shortcut_key('alt', 'a')
+                            self.keyboard.press_shortcut_key('alt', '8')
+                            self.common.change_teamer(0.5)
+                            self.keyboard.press_shortcut_key('alt', 'a')
+                            self.keyboard.press_shortcut_key('alt', 'a')
+                            self.keyboard.press_shortcut_key('alt', '8')
+                            self.common.change_teamer(0.5)
+                        else:
+                            self.common.change_teamer(0.5)
+                            self.common.change_teamer(0.5)
                 time.sleep(30)
 
 

@@ -16,11 +16,11 @@ class ShuiLu():
 
     def task_start(self):
         self.screen.find_ele_picture('game\\system\\zidong')
-        time.sleep(3)
+        time.sleep(5)
         for i in range(5):
             self.keyboard.press_key('f7')
             if i is 0:
-                self.mouse.click_element(198, 338, times=0.3)
+                self.mouse.click_element(198, 338, times=1)
             else:
                 pyautogui.click()
             self.keyboard.press_shortcut_key('alt', 'a')

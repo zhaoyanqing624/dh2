@@ -30,6 +30,9 @@ class DianXing():
         self.mouse.click_element(768, 195)
         time.sleep(1)
         for i in range(8):
+            # for x in range(5):
+            #     self.mouse.click_element(412, 137, times=1, right=True)
+            #     self.common.change_teamer(0.5)
             endtime = time.time() + int(500)
             while time.time() < endtime:
                 time.sleep(1.5)
@@ -38,14 +41,16 @@ class DianXing():
                 if loc_begin is not 0:
                     self.mouse.click_element(432, 516)
                     for j in range(5):
+                        self.mouse.click_element(309, 489, times=1, right=True)
                         self.mouse.click_element(309, 489, times=0.5)
                         self.common.change_teamer(0.5)
-                pos_caozuo = self.screen.get_location_picture("D:\\dh2\\game\\system\\caozuo.png")
-                pos_zidong = self.screen.get_location_picture("D:\\dh2\\game\\system\\zidong.png")
+                pos_caozuo = self.screen.get_location_picture("D:\\dh2\\game\\system\\caozuo.png",num=0.8)
+                pos_zidong = self.screen.get_location_picture("D:\\dh2\\game\\system\\zidong.png",num=0.8)
                 if pos_zidong is not 0:
                     # 人物
                     flag = 0
                     while True:
+                        self.mouse.click_element(412, 137, times=1, right=True)
                         time.sleep(1)
                         self.screen.cut_screen()
                         loc_begin2 = self.screen.get_location_picture("D:\\dh2\\game\\dianxing\\begin.png")
@@ -54,11 +59,11 @@ class DianXing():
                             time.sleep(3)
                             for z in range(5):
                                 self.keyboard.press_key('f7')
-                                self.mouse.click_element(198, 338, times=0.3)
+                                self.mouse.click_element(198, 344, times=0.3)
                                 if z is 2:
                                     self.keyboard.press_shortcut_key('alt', 'w')
                                     self.mouse.click_element(314, 179, times=0.3)
-                                    self.mouse.click_element(198, 338, times=0.3)
+                                    self.mouse.click_element(198, 344, times=0.3)
                                 else:
                                     self.keyboard.press_shortcut_key('alt', 'd')
                                 self.keyboard.press_shortcut_key('alt', '8')
@@ -71,6 +76,7 @@ class DianXing():
                     if pos_caozuo is not 0:
                         # 星将
                         while True:
+                            self.mouse.click_element(412, 137, times=1, right=True)
                             time.sleep(1)
                             self.screen.cut_screen()
                             pos_caozuo2= self.screen.get_location_picture("D:\\dh2\\game\\system\\caozuo.png")

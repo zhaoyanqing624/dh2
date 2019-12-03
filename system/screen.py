@@ -106,7 +106,7 @@ class Screen:
             self.cut_screen()
             if location_ is not None:
                 self.mouse.click_element(location_[0], location_[1])
-            time.sleep(0.5)
+            time.sleep(1)
             location = self.get_location_picture("D:\\dh2\\" + file_path + ".png", 0.8)
             if location != 0:
                 if handle == 'keyboard':
@@ -114,7 +114,23 @@ class Screen:
                 elif handle == 'mouse':
                     self.mouse.click_element(k1, k2)
                 break
-
+    def find_ele_picture_time(self, file_path, handle=None, k1=None, k2=None,location_=None):
+        endtime = time.time() + int(30)
+        while time.time() < endtime:
+            pyautogui.moveTo(412 + random.randint(0, 5), 590 + random.randint(0, 5), 1, pyautogui.easeInQuad)
+            time.sleep(1.5)
+            self.cut_screen()
+            if location_ is not None:
+                self.mouse.click_element(location_[0], location_[1])
+            time.sleep(0.5)
+            location = self.get_location_picture("D:\\dh2\\" + file_path + ".png", 0.8)
+            if location != 0:
+                if handle == 'keyboard':
+                    self.keyboard.press_shortcut_key(k1, k2)
+                elif handle == 'mouse':
+                    self.mouse.click_element(k1, k2)
+                return True
+        return False
     def template_image(self, file_path, dir_path="D:\\dh2\\system\\0.PNG"):
         list = []
         target = cv.imread(dir_path)
