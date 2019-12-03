@@ -88,7 +88,7 @@ class DianXing():
                                         self.keyboard.press_shortcut_key('alt', 'w')
                                         self.mouse.click_element(314, 179, times=0.3,right=True)
                                         self.keyboard.press_shortcut_key('alt', 's')
-                                        self.mouse.click_element(198, 340, times=0.3)
+                                        self.mouse.click_element(290, 370, times=0.3)
                                         self.common.change_teamer(0.3)
                                         jiangxing+=1
                                 else:
@@ -96,7 +96,7 @@ class DianXing():
                                         self.keyboard.press_shortcut_key('alt', 'a')
                                         self.keyboard.press_shortcut_key('alt', 's')
                                         if z is 0:
-                                            self.mouse.click_element(198, 340, times=0.3)
+                                            self.mouse.click_element(290, 370, times=0.3)
                                         else:
                                             pyautogui.click()
                                         self.common.change_teamer(0.3)
