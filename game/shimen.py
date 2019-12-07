@@ -45,6 +45,7 @@ class ShiMen():
         time.sleep(1)
         self.keyboard.press_shortcut_key('alt', 'q')
     def later(self,zu,offset_,x,y):
+        pyautogui.moveTo(420, 527, 1, pyautogui.easeInQuad)
         time.sleep(2)
         self.screen.cut_screen()
         time.sleep(1)
@@ -59,6 +60,7 @@ class ShiMen():
         self.keyboard.press_shortcut_key('alt', 'q')
         time.sleep(1)
         self.keyboard.press_shortcut_key('alt', 'q')
+        pyautogui.moveTo(420, 527, 1, pyautogui.easeInQuad)
         time.sleep(2)
         self.screen.cut_screen()
         time.sleep(1)
@@ -73,6 +75,7 @@ class ShiMen():
         self.keyboard.press_shortcut_key('alt', 'q')
         time.sleep(1)
         self.keyboard.press_shortcut_key('alt', 'q')
+
     def classify(self,zu,index,offset):
         if index is 0:
             begin = 361
@@ -113,6 +116,7 @@ class ShiMen():
                     self.keyboard.press_shortcut_key('alt', '1')
                     time.sleep(1)
                     self.keyboard.press_shortcut_key('alt', 'q')
+                    pyautogui.moveTo(420, 527, 1, pyautogui.easeInQuad)
                     time.sleep(2)
                     self.screen.cut_screen()
                     time.sleep(1)
@@ -289,7 +293,7 @@ class ShiMen():
             self.mouse.click_element(positon2_[2], positon2_[3])
             time.sleep(1)
             self.screen.find_ele_picture('game\\shimen\\'+i, 'mouse', 193, aaa)
-            time.sleep(1)
+            time.sleep(1.5)
             pyautogui.click()
             # 取消任务
             self.mouse.click_element(positon2_[2], positon2_[3])
@@ -304,6 +308,7 @@ class ShiMen():
             self.screen.find_ele_picture('game\\shimen\\'+i, 'mouse', 193, aaa)
             time.sleep(1)
             self.keyboard.press_shortcut_key('alt', 'q')
+            pyautogui.moveTo(420, 527, 1, pyautogui.easeInQuad)
             time.sleep(2)
             self.screen.cut_screen()
             time.sleep(1)
