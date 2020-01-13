@@ -18,7 +18,7 @@ class GuiWang():
     def task_start(self):
         print("任务开始")
         self.common.get_focus()
-        for i in range(3):
+        for j in range(3):
             self.mouse.click_element(675, 366, 1, True)
             time.sleep(2.5)
         self.keyboard.press_shortcut_key('alt', '5')
@@ -72,9 +72,10 @@ class GuiWang():
             self.common.change_teamer()
             self.mouse.click_element(412, 429)
         time.sleep(10)
-        self.screen.find_ele_picture('game\\guiwang\\2', 'mouse', 172, 340)
+        self.screen.find_ele_picture('game\\guiwang\\2_', 'mouse', 172, 340)
         time.sleep(1)
-        self.mouse.click_element(784, 539)
+        ress = self.screen.get_locations_picture("D:\\dh2\\game\\guiwang\\2_.png", 0.7)
+        self.mouse.click_element(ress[0]['result'][0], ress[0]['result'][1])
         time.sleep(1)
         print("回家 判断")
         self.return_home()
@@ -109,6 +110,7 @@ if __name__ == '__main__':
         print("执行第"+str(i+1)+"次")
         GuiWang().task_start()
         time.sleep(13)
+
 
 
 
