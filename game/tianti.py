@@ -63,22 +63,19 @@ class TianTi():
                 loc_begin = self.screen.get_location_picture("D:\\dh2\\game\\tianti\\begin.png",num=0.9)
                 if loc_begin is not 0:
                     break
-                time.sleep(1)
-                pos_caozuo = self.screen.get_location_picture("D:\\dh2\\game\\system\\caozuo.png")
-                pos_zidong = self.screen.get_location_picture("D:\\dh2\\game\\system\\zidong.png")
-                if pos_caozuo is not 0 and pos_zidong is not 0 and flag == 0:
-                    flag =1
-                    for j in range(5):
-                        if j is 0:
-                            time.sleep(1)
-                            self.keyboard.press_key('f7')
-                            self.mouse.click_element(196, 332,times=0.5)
-                        else:
-                            self.keyboard.press_key('f7')
-                            pyautogui.click()
-                        pyautogui.click()
-                        self.keyboard.press_shortcut_key('alt', '8')
-                        self.common.change_teamer()
+            time.sleep(1)
+            self.screen.find_ele_picture('system\\zidong')
+            self.common.find_attack('f7')
+            pyautogui.click()
+            self.keyboard.press_shortcut_key('alt', '8',times=0.3)
+            self.common.change_teamer(times=0.5)
+            for i in range(4):
+                self.keyboard.press_key('f7')
+                pyautogui.click()
+                pyautogui.click()
+                self.keyboard.press_shortcut_key('alt', '8',times=0.3)
+                self.common.change_teamer(times=0.5)
+            self.common.get_focus()
 
 if __name__ == '__main__':
     # 匹配对手 436,520

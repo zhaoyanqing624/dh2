@@ -329,8 +329,9 @@ class ShiMen():
                     offset_1 = 365
                 else:
                     offset_1 = 345
-
                 self.classify(i,j,offset_1)
+                if j is 9:
+                    self.keyboard.press_shortcut_key('alt', 'q')
             self.common.change_teamer()
 # if __name__ == '__main__':
 #     # list = ['mo','mo','gui']

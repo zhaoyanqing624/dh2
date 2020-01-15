@@ -130,9 +130,33 @@ class Common:
     def task_box(self):
         pass
 
+    # 寻找共计目标
+    def find_attack(self,type,str='zidong'):
+        list = [[198,280],[198,320],[198,360]]
+        endtime = time.time() + int(1000)
+        while time.time() < endtime:
+            time.sleep(1.5)
+            self.screen.cut_screen()
+            pos_zidong = self.screen.get_location_picture("D:\\dh2\\game\\system\\"+str+".png")
+            if pos_zidong is not 0:
+                if type is 'f5' or type is 'f6' or type is 'f7':
+                    self.keyboard.press_key(type)
+                    for i in list:
+                        self.mouse.click_element(i[0], i[1], times=0.5)
+                        time.sleep(1)
+                        self.screen.cut_screen()
+                        pos_zidong = self.screen.get_location_picture("D:\\dh2\\game\\system\\"+str+".png")
+                        if pos_zidong is not 0:
+                            return i
+        return 'failed'
+    # 点击确认任务情况
+
+
+
 # if __name__ == '__main__':
 #     common = Common()
-#     # common.get_focus()
+#     common.get_focus()
+#     common.find_attack('f7')
 #     # time.sleep(1)
 #     # common.change_dog(4)
 #     # common.clear_task()

@@ -66,7 +66,7 @@ class GuiWang():
         print("找NPC")
         time.sleep(10)
         self.screen.find_ele_picture('game\\guiwang\\1', 'mouse', 210, 340)
-        for i in range(5):
+        for index in range(5):
             time.sleep(2)
             self.keyboard.press_shortcut_key('alt', '8')
             self.common.change_teamer()
@@ -74,12 +74,20 @@ class GuiWang():
         time.sleep(10)
         self.screen.find_ele_picture('game\\guiwang\\2_', 'mouse', 172, 340)
         time.sleep(1)
+        self.screen.cut_screen()
+        time.sleep(1)
         ress = self.screen.get_locations_picture("D:\\dh2\\game\\guiwang\\2_.png", 0.7)
         self.mouse.click_element(ress[0]['result'][0], ress[0]['result'][1])
         time.sleep(1)
+        self.mouse.click_element(784, 539)
+        time.sleep(1)
         print("回家 判断")
         self.return_home()
-
+        time.sleep(1)
+        Screen().cut_screen()
+        box_result = Screen().get_location_picture('D:\\dh2\\game\\xiaogui\\3.png',0.8)
+        if box_result is not 0:
+            Mouse().click_element(327, 535)
     def is_ghostKing(self):
         self.screen.cut_screen_by_PIL(20,265,50,300,"D:\\dh2\\system\\1.PNG")
         result = self.screen.find_color_ele(10,10,8,8,255,255,0,0,0,0,True)

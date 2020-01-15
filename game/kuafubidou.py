@@ -5,7 +5,7 @@ from system.keyboard import KeyBoard
 from system.screen import Screen
 from system.mouse import Mouse
 
-import pymysql
+
 class KuaFuBiDou():
     def __init__(self):
         self.transform = TransForm()
@@ -34,24 +34,33 @@ class KuaFuBiDou():
                     if index is 0 or index is 2 or index is 4:
                         self.mouse.click_element(377, 477, times=0.5)
                         self.screen.find_ele_picture('game\\bidou\\begin2')
-                        self.mouse.click_element(488, 488, times=0.5)
+                        self.mouse.click_element(488, 504, times=0.5)
                     self.mouse.click_element(309, 489, times=0.5)
                     self.common.change_teamer(0.5)
                 for z in range(5):
                     if z is 0 or z is 2 or z is 4:
                         result_ = self.screen.find_ele_picture_time('game\\system\\zidong')
                         if result_ is True:
-                            self.keyboard.press_shortcut_key('alt', 'a')
-                            self.keyboard.press_shortcut_key('alt', 'a')
-                            self.keyboard.press_shortcut_key('alt', '8')
-                            self.common.change_teamer(0.5)
-                            self.keyboard.press_shortcut_key('alt', 'a')
-                            self.keyboard.press_shortcut_key('alt', 'a')
-                            self.keyboard.press_shortcut_key('alt', '8')
-                            self.common.change_teamer(0.5)
+                            if z is 4:
+                                self.keyboard.press_shortcut_key('alt', 'a')
+                                self.keyboard.press_shortcut_key('alt', 'a')
+                                self.keyboard.press_shortcut_key('alt', '8')
+                                self.common.change_teamer(0.5)
+                            else:
+                                self.keyboard.press_shortcut_key('alt', 'a')
+                                self.keyboard.press_shortcut_key('alt', 'a')
+                                self.keyboard.press_shortcut_key('alt', '8')
+                                self.common.change_teamer(0.5)
+                                self.keyboard.press_shortcut_key('alt', 'a')
+                                self.keyboard.press_shortcut_key('alt', 'a')
+                                self.keyboard.press_shortcut_key('alt', '8')
+                                self.common.change_teamer(0.5)
                         else:
-                            self.common.change_teamer(0.5)
-                            self.common.change_teamer(0.5)
+                            if z is 4:
+                                self.common.change_teamer(0.5)
+                            else:
+                                self.common.change_teamer(0.5)
+                                self.common.change_teamer(0.5)
                 time.sleep(15)
         else:
             for j in range(15):
@@ -62,12 +71,12 @@ class KuaFuBiDou():
                     elif index is 1:
                         self.mouse.click_element(377, 477, times=0.5)
                         self.screen.find_ele_picture('game\\bidou\\begin2')
-                        self.mouse.click_element(488, 488, times=0.5)
+                        self.mouse.click_element(488, 504, times=0.5)
                         self.mouse.click_element(309, 489, times=0.5)
                     elif index is 3:
                         self.mouse.click_element(377, 477, times=0.5)
                         self.screen.find_ele_picture('game\\bidou\\begin2')
-                        self.mouse.click_element(488, 488, times=0.5)
+                        self.mouse.click_element(488, 504, times=0.5)
                         self.mouse.click_element(309, 489, times=0.5)
                     else:
                         self.mouse.click_element(309, 489, times=0.5)
@@ -86,7 +95,7 @@ class KuaFuBiDou():
                             self.common.change_teamer(0.5)
                         else:
                             self.common.change_teamer(0.5)
-                            self.common.change_teamer(0.5)
+                            # self.common.change_teamer(0.5)
                 time.sleep(30)
 
 
