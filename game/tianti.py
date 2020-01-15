@@ -28,10 +28,10 @@ class TianTi():
         self.common.get_focus()
         time.sleep(1)
         # 切换宝宝
-        for i in range(5):
-            self.common.change_dog(2)
-            time.sleep(1)
-            self.common.change_teamer()
+        # for i in range(5):
+        #     self.common.change_dog(2)
+        #     time.sleep(1)
+        #     self.common.change_teamer()
         time.sleep(1)
         self.mouse.click_element(757, 553)
         time.sleep(1)
@@ -47,6 +47,7 @@ class TianTi():
                 self.common.change_teamer()
             if i is not 0:
                 time.sleep(3)
+            self.screen.find_ele_picture('game\\begin')
             self.mouse.click_element(470, 444)
             for z in range(5):
                 if z is 0:
@@ -55,15 +56,7 @@ class TianTi():
                     pyautogui.click()
                 time.sleep(1)
                 self.common.change_teamer()
-            flag = 0
-            endtime = time.time() + int(1000)
-            while time.time() < endtime:
-                time.sleep(2)
-                self.screen.cut_screen()
-                loc_begin = self.screen.get_location_picture("D:\\dh2\\game\\tianti\\begin.png",num=0.9)
-                if loc_begin is not 0:
-                    break
-            time.sleep(1)
+            # flag = 0
             self.screen.find_ele_picture('system\\zidong')
             self.common.find_attack('f7')
             pyautogui.click()
