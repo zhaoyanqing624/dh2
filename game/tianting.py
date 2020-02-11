@@ -5,7 +5,7 @@ from system.keyboard import KeyBoard
 from system.screen import Screen
 from system.mouse import Mouse
 import _Tools.getFighting
-
+import pyautogui
 class TianTing():
     def __init__(self):
         pass
@@ -24,16 +24,16 @@ class TianTing():
             Mouse().click_element(j[0], j[1])
             time.sleep(5)
             Screen().find_ele_picture('game\\tianting\\1', 'mouse', 197, 355)
+            time.sleep(2)
             for i in range(5):
-                time.sleep(2)
-                KeyBoard().press_shortcut_key('alt', '8')
-                Common().change_teamer()
-                Mouse().click_element(412, 429)
-                if i is 4:
-                    pass
+                if i is 0:
+                    Mouse().click_element(370, 385)
+                    pyautogui.click()
                 else:
-                    Common().score_for_shifu()
-            time.sleep(5)
+                    pyautogui.click()
+                    pyautogui.click()
+                Common().change_teamer(times=0.5)
+            time.sleep(1)
             while True:
                 Screen().cut_screen()
                 time.sleep(2)
