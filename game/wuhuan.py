@@ -22,6 +22,9 @@ class WuHuan():
         jieshou2 = self.screen.get_location_picture("D:\\dh2\\game\\wuhuan\\3.png",num=0.8)
         if jieshou2 is not 0:
             return 'jieshou2',jieshou2
+        guidui = self.screen.get_location_picture("D:\\dh2\\game\\wuhuan\\5.png",num=0.8)
+        if guidui is not 0:
+            return 'guidui',[177, 345]
         return 'wu,0'
 
 
@@ -58,6 +61,10 @@ class WuHuan():
                                 self.mouse.click_element(177, 345)
                         self.mouse.click_element(374, 384,times=1)
                         pyautogui.click()
+                    elif result[0] is 'guidui':
+                        self.mouse.click_element(177, 345)
+                        self.mouse.click_element(374, 384, times=1)
+                        pyautogui.click()
                 else:
                     result = self.classify()
                     if result[0] is 'jieshou':
@@ -78,6 +85,10 @@ class WuHuan():
                         if guidui2 is not 0:
                             self.mouse.click_element(177, 345)
                         self.mouse.click_element(374, 384,times=1)
+                        pyautogui.click()
+                    elif result[0] is 'guidui':
+                        self.mouse.click_element(177, 345)
+                        self.mouse.click_element(374, 384, times=1)
                         pyautogui.click()
             except:
                 pass
