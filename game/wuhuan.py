@@ -39,6 +39,8 @@ class WuHuan():
                     if result[0] is 'jieshou':
                         self.mouse.click_element(result[1][0], result[1][1])
                         pyautogui.moveTo(166, 366, 1, pyautogui.easeInQuad)
+                        self.mouse.click_element(374, 384,times=1)
+                        pyautogui.click()
                     elif result[0] is 'jieshou2':
                         self.mouse.click_element(result[1][0], result[1][1])
                         pyautogui.moveTo(166, 366, 1, pyautogui.easeInQuad)
@@ -54,15 +56,15 @@ class WuHuan():
                             guidui2 = self.screenget_location_picture("D:\\dh2\\game\\wuhuan\\5.png", num=0.9)
                             if guidui2 is not 0:
                                 self.mouse.click_element(177, 345)
-                        self.mouse.click_element(374, 384)
-                        pyautogui.click()
-                        pyautogui.click()
+                        self.mouse.click_element(374, 384,times=1)
                         pyautogui.click()
                 else:
                     result = self.classify()
                     if result[0] is 'jieshou':
                         self.mouse.click_element(result[1][0], result[1][1])
                         pyautogui.moveTo(166, 366, 1, pyautogui.easeInQuad)
+                        self.mouse.click_element(374, 384,times=1)
+                        pyautogui.click()
                     elif result[0] is 'jieshou2':
                         self.mouse.click_element(result[1][0], result[1][1])
                         pyautogui.moveTo(166, 366, 1, pyautogui.easeInQuad)
@@ -75,9 +77,7 @@ class WuHuan():
                         guidui2 = self.screenget_location_picture("D:\\dh2\\game\\wuhuan\\5.png", num=0.8)
                         if guidui2 is not 0:
                             self.mouse.click_element(177, 345)
-                        self.mouse.click_element(374, 384)
-                        pyautogui.click()
-                        pyautogui.click()
+                        self.mouse.click_element(374, 384,times=1)
                         pyautogui.click()
             except:
                 pass
