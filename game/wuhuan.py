@@ -13,13 +13,77 @@ class WuHuan():
         self.keyboard = KeyBoard()
         self.screen = Screen()
         self.mouse = Mouse()
+    def classify(self):
+        self.screen.cut_screen()
+        time.sleep(1)
+        jieshou = self.screen.get_location_picture("D:\\dh2\\game\\wuhuan\\2.png",num=0.8)
+        if jieshou is not 0:
+            return 'jieshou',jieshou
+        jieshou2 = self.screen.get_location_picture("D:\\dh2\\game\\wuhuan\\3.png",num=0.8)
+        if jieshou2 is not 0:
+            return 'jieshou2',jieshou2
+        return 'wu,0'
 
-    def task_start(self,type):
-        # 0简单 1困难 2卓越
+
+    def task_start(self):
         self.common.get_focus()
-        self.keyboard.press_shortcut_key('alt', '2', times=0.5)
-        self.mouse.click_element(540, 388, times=1)
-        self.mouse.click_element(616, 463, times=1)
+        while True:
+            try:
+                self.screen.cut_screen()
+                time.sleep(1.5)
+                location = self.screen.get_location_picture("D:\\dh2\\game\\wuhuan\\1.png",num=0.996)
+                print(location)
+                if location is not 0:
+                    self.mouse.click_element(location[0],location[1])
+                    result = self.classify()
+                    if result[0] is 'jieshou':
+                        self.mouse.click_element(result[1][0], result[1][1])
+                        pyautogui.moveTo(166, 366, 1, pyautogui.easeInQuad)
+                    elif result[0] is 'jieshou2':
+                        self.mouse.click_element(result[1][0], result[1][1])
+                        pyautogui.moveTo(166, 366, 1, pyautogui.easeInQuad)
+                        # 判断归队
+                        self.screen.cut_screen()
+                        time.sleep(1)
+                        guidui = self.screen.get_location_picture("D:\\dh2\\game\\wuhuan\\4.png",num=0.7)
+                        if guidui is not 0:
+                            self.mouse.click_element(guidui[0], guidui[1])
+                            time.sleep(1)
+                            self.screen.cut_screen()
+                            time.sleep(1)
+                            guidui2 = self.screenget_location_picture("D:\\dh2\\game\\wuhuan\\5.png", num=0.9)
+                            if guidui2 is not 0:
+                                self.mouse.click_element(177, 345)
+                        self.mouse.click_element(374, 384)
+                        pyautogui.click()
+                        pyautogui.click()
+                        pyautogui.click()
+                else:
+                    result = self.classify()
+                    if result[0] is 'jieshou':
+                        self.mouse.click_element(result[1][0], result[1][1])
+                        pyautogui.moveTo(166, 366, 1, pyautogui.easeInQuad)
+                    elif result[0] is 'jieshou2':
+                        self.mouse.click_element(result[1][0], result[1][1])
+                        pyautogui.moveTo(166, 366, 1, pyautogui.easeInQuad)
+                        # 判断归队
+                        self.screen.cut_screen()
+                        time.sleep(1)
+                        guidui = self.screen.get_location_picture("D:\\dh2\\game\\wuhuan\\4.png",num=0.7)
+                        if guidui is not 0:
+                            self.mouse.click_element(guidui[0], guidui[1])
+                        guidui2 = self.screenget_location_picture("D:\\dh2\\game\\wuhuan\\5.png", num=0.8)
+                        if guidui2 is not 0:
+                            self.mouse.click_element(177, 345)
+                        self.mouse.click_element(374, 384)
+                        pyautogui.click()
+                        pyautogui.click()
+                        pyautogui.click()
+            except:
+                pass
+
+
+
 
 
 if __name__ == '__main__':
