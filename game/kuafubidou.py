@@ -28,6 +28,7 @@ class KuaFuBiDou():
         for i in range(6):
             self.mouse.click_element(772, 194, times=0.5)
             self.common.change_teamer(0.5)
+
         for j in range(15):
             for index,z in enumerate(team):
                 if index is 0 or index is 2 or index is 4:
@@ -37,13 +38,26 @@ class KuaFuBiDou():
                 self.mouse.click_element(309, 489, times=0.5)
                 self.common.change_teamer(0.5)
             for z in range(6):
-                self.keyboard.press_shortcut_key('alt', 'a')
-                self.keyboard.press_shortcut_key('alt', 'a')
-                self.keyboard.press_shortcut_key('alt', '8')
-                self.common.change_teamer(0.5)
-            time.sleep(5)
+                if z is 0 or z is 2 or z is 4:
+                    result_ = self.screen.find_ele_picture_time('game\\system\\zidong')
+                    if result_ is True:
+                        self.keyboard.press_shortcut_key('alt', 'a')
+                        self.keyboard.press_shortcut_key('alt', 'a')
+                        self.keyboard.press_shortcut_key('alt', '8')
+                        self.common.change_teamer(0.5)
+                        self.keyboard.press_shortcut_key('alt', 'a')
+                        self.keyboard.press_shortcut_key('alt', 'a')
+                        self.keyboard.press_shortcut_key('alt', '8')
+                        self.common.change_teamer(0.5)
+                    else:
+                        self.common.change_teamer(0.5)
+                        self.common.change_teamer(0.5)
+            time.sleep(10)
+
+
+
 
 if __name__ == '__main__':
 #     # 0攻击 1法术
     list = [[0,0],[0,0],[0,0],[0,0],[0,0],[0,0]]
-    KuaFuBiDou().task_start(list)
+    KuaFuBiDou().task_start(list,True)
