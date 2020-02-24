@@ -22,85 +22,28 @@ class KuaFuBiDou():
             self.mouse.click_element(317, 178,times=0.5)
             time.sleep(0.5)
             self.mouse.click_element(289, 383,times=0.5)
-    def task_start(self,team,computer):
+    def task_start(self,team):
         print("任务开始")
-        self.common.get_focus(computer)
-        for i in range(5):
+        self.common.get_focus()
+        for i in range(6):
             self.mouse.click_element(772, 194, times=0.5)
             self.common.change_teamer(0.5)
-        if computer is True:
-            for j in range(15):
-                for index,z in enumerate(team):
-                    if index is 0 or index is 2 or index is 4:
-                        self.mouse.click_element(377, 477, times=0.5)
-                        self.screen.find_ele_picture('game\\bidou\\begin2')
-                        self.mouse.click_element(488, 504, times=0.5)
-                    self.mouse.click_element(309, 489, times=0.5)
-                    self.common.change_teamer(0.5)
-                for z in range(5):
-                    if z is 0 or z is 2 or z is 4:
-                        result_ = self.screen.find_ele_picture_time('game\\system\\zidong')
-                        if result_ is True:
-                            if z is 4:
-                                self.keyboard.press_shortcut_key('alt', 'a')
-                                self.keyboard.press_shortcut_key('alt', 'a')
-                                self.keyboard.press_shortcut_key('alt', '8')
-                                self.common.change_teamer(0.5)
-                            else:
-                                self.keyboard.press_shortcut_key('alt', 'a')
-                                self.keyboard.press_shortcut_key('alt', 'a')
-                                self.keyboard.press_shortcut_key('alt', '8')
-                                self.common.change_teamer(0.5)
-                                self.keyboard.press_shortcut_key('alt', 'a')
-                                self.keyboard.press_shortcut_key('alt', 'a')
-                                self.keyboard.press_shortcut_key('alt', '8')
-                                self.common.change_teamer(0.5)
-                        else:
-                            if z is 4:
-                                self.common.change_teamer(0.5)
-                            else:
-                                self.common.change_teamer(0.5)
-                                self.common.change_teamer(0.5)
-                time.sleep(15)
-        else:
-            for j in range(15):
-                for index,z in enumerate(team):
-                    if index is 0:
-                        self.screen.find_ele_picture('game\\bidou\\tongyi')
-                        self.mouse.click_element(309, 489, times=0.5)
-                    elif index is 1:
-                        self.mouse.click_element(377, 477, times=0.5)
-                        self.screen.find_ele_picture('game\\bidou\\begin2')
-                        self.mouse.click_element(488, 504, times=0.5)
-                        self.mouse.click_element(309, 489, times=0.5)
-                    elif index is 3:
-                        self.mouse.click_element(377, 477, times=0.5)
-                        self.screen.find_ele_picture('game\\bidou\\begin2')
-                        self.mouse.click_element(488, 504, times=0.5)
-                        self.mouse.click_element(309, 489, times=0.5)
-                    else:
-                        self.mouse.click_element(309, 489, times=0.5)
-                    self.common.change_teamer(0.5)
-                for z in range(5):
-                    if z is 1 or z is 3 or z is 0:
-                        result_ = self.screen.find_ele_picture_time('game\\system\\zidong')
-                        if result_ is True:
-                            self.keyboard.press_shortcut_key('alt', 'a')
-                            self.keyboard.press_shortcut_key('alt', 'a')
-                            self.keyboard.press_shortcut_key('alt', '8')
-                            self.common.change_teamer(0.5)
-                            self.keyboard.press_shortcut_key('alt', 'a')
-                            self.keyboard.press_shortcut_key('alt', 'a')
-                            self.keyboard.press_shortcut_key('alt', '8')
-                            self.common.change_teamer(0.5)
-                        else:
-                            self.common.change_teamer(0.5)
-                            # self.common.change_teamer(0.5)
-                time.sleep(30)
-
-
+        for j in range(15):
+            for index,z in enumerate(team):
+                if index is 0 or index is 2 or index is 4:
+                    self.mouse.click_element(377, 477, times=0.5)
+                    self.screen.find_ele_picture('game\\bidou\\begin2')
+                    self.mouse.click_element(488, 504, times=0.5)
+                self.mouse.click_element(309, 489, times=0.5)
+                self.common.change_teamer(0.5)
+            for z in range(6):
+                self.keyboard.press_shortcut_key('alt', 'a')
+                self.keyboard.press_shortcut_key('alt', 'a')
+                self.keyboard.press_shortcut_key('alt', '8')
+                self.common.change_teamer(0.5)
+            time.sleep(5)
 
 if __name__ == '__main__':
 #     # 0攻击 1法术
-    list = [[0,0],[0,0],[0,0],[0,0],[0,0]]
-    KuaFuBiDou().task_start(list,True)
+    list = [[0,0],[0,0],[0,0],[0,0],[0,0],[0,0]]
+    KuaFuBiDou().task_start(list)
