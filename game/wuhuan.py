@@ -30,10 +30,11 @@ class WuHuan():
 
     def task_start(self):
         self.common.get_focus()
+        index = 0
         while True:
             try:
                 self.screen.cut_screen()
-                time.sleep(1.5)
+                time.sleep(1.7)
                 location = self.screen.get_location_picture("D:\\dh2\\game\\wuhuan\\1.png",num=0.996)
                 print(location)
                 if location is not 0:
@@ -43,6 +44,7 @@ class WuHuan():
                         self.mouse.click_element(result[1][0], result[1][1])
                         pyautogui.moveTo(166, 366, 1, pyautogui.easeInQuad)
                         self.mouse.click_element(374, 384,times=1)
+                        pyautogui.click()
                         pyautogui.click()
                     elif result[0] is 'jieshou2':
                         self.mouse.click_element(result[1][0], result[1][1])
@@ -61,9 +63,11 @@ class WuHuan():
                                 self.mouse.click_element(177, 345)
                         self.mouse.click_element(374, 384,times=1)
                         pyautogui.click()
+                        pyautogui.click()
                     elif result[0] is 'guidui':
                         self.mouse.click_element(177, 345)
                         self.mouse.click_element(374, 384, times=1)
+                        pyautogui.click()
                         pyautogui.click()
                 else:
                     result = self.classify()
@@ -71,6 +75,7 @@ class WuHuan():
                         self.mouse.click_element(result[1][0], result[1][1])
                         pyautogui.moveTo(166, 366, 1, pyautogui.easeInQuad)
                         self.mouse.click_element(374, 384,times=1)
+                        pyautogui.click()
                         pyautogui.click()
                     elif result[0] is 'jieshou2':
                         self.mouse.click_element(result[1][0], result[1][1])
@@ -86,10 +91,18 @@ class WuHuan():
                             self.mouse.click_element(177, 345)
                         self.mouse.click_element(374, 384,times=1)
                         pyautogui.click()
+                        pyautogui.click()
                     elif result[0] is 'guidui':
                         self.mouse.click_element(177, 345)
                         self.mouse.click_element(374, 384, times=1)
                         pyautogui.click()
+                        pyautogui.click()
+                    else:
+                        index+=1
+                    if index >100:
+                        index = 0
+                    if not index % 15:
+                        self.common.change_teamer()
             except:
                 pass
 

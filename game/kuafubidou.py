@@ -60,4 +60,4 @@ class KuaFuBiDou():
 if __name__ == '__main__':
 #     # 0攻击 1法术
     list = [[0,0],[0,0],[0,0],[0,0],[0,0],[0,0]]
-    KuaFuBiDou().task_start(list,True)
+    KuaFuBiDou().task_start(list)

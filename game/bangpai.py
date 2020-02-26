@@ -5,7 +5,7 @@ from system.keyboard import KeyBoard
 from system.screen import Screen
 from system.mouse import Mouse
 from game.walking import Walking
-
+import pyautogui
 class BangPai:
     def __init__(self):
         self.transform = TransForm()
@@ -15,6 +15,8 @@ class BangPai:
         self.mouse = Mouse()
         self.walking = Walking()
     def bangpai_task(self):
+        self.screen.cut_screen()
+        time.sleep(1)
         endtime = time.time() + int(1000)
         while time.time() < endtime:
             for i in range(1, 11):
@@ -24,6 +26,7 @@ class BangPai:
                     if i == 1:
                         print("除草")
                         self.keyboard.press_shortcut_key('alt', 'q')
+                        self.mouse.click_element_right(180, 370)
                         for j in range(5):
                             self.mouse.click_element_right(10, 582)
                             time.sleep(1)
@@ -34,42 +37,44 @@ class BangPai:
                         print("武官")
                         # self.mouse.click_element(464, 240)
                         self.keyboard.press_shortcut_key('alt', 'q')
-                        # time.sleep(25)
-                        # self.screen.find_ele_picture('game\\bangpai\\2_1', 'mouse', 193, 327)
-                        # self.keyboard.press_shortcut_key('alt', 'q')
-                        # self.mouse.click_element(506, 241)
-                        # self.keyboard.press_shortcut_key('alt', 'q')
-                        # time.sleep(20)
-                        # self.screen.find_ele_picture('game\\bangpai\\2_2', 'mouse', 193, 327)
-                        # self.return_bangpai_npc()
                         time.sleep(1)
-                        self.mouse.click_element(459, 284)
+                        self.mouse.click_element(459, 266)
                         time.sleep(1)
-                        self.mouse.click_element(268, 350)
+                        self.mouse.click_element(181, 347)
                         time.sleep(1)
-                        self.mouse.click_element(169, 348)
+                        self.mouse.click_element(164, 344)
                         time.sleep(2)
-                        self.mouse.click_element(169, 348)
+                        pyautogui.click()
                         time.sleep(25)
-                        self.mouse.click_element(459, 284)
+                        pyautogui.moveTo(393,557,1,pyautogui.easeInQuad)
+                        self.keyboard.press_shortcut_key('alt', 'q')
+                        self.screen.cut_screen()
+                        loca = self.screen.get_location_picture("D:\\dh2\\game\\bangpai\\0_2.png", 0.8)
+                        self.mouse.click_element(loca[0], loca[1])
+                        self.mouse.click_element(420, 239)
+                        self.keyboard.press_shortcut_key('alt', '1')
+                        self.keyboard.press_shortcut_key('alt', 'q')
                         return 'failed'
                     elif i == 3:
                         print("订酒")
-                        # self.mouse.click_element(448, 240)
                         self.keyboard.press_shortcut_key('alt', 'q')
-                        # self.screen.find_ele_picture('game\\bangpai\\3_1', 'mouse', 182, 345)
-                        # self.mouse.click_element(182, 328)
-                        # self.return_bangpai_npc()
                         time.sleep(1)
-                        self.mouse.click_element(459, 284)
+                        self.mouse.click_element(459, 266)
                         time.sleep(1)
-                        self.mouse.click_element(268, 350)
+                        self.mouse.click_element(181, 347)
                         time.sleep(1)
-                        self.mouse.click_element(169, 348)
+                        self.mouse.click_element(164, 344)
                         time.sleep(2)
-                        self.mouse.click_element(169, 348)
+                        pyautogui.click()
                         time.sleep(25)
-                        self.mouse.click_element(459, 284)
+                        pyautogui.moveTo(393,557,1,pyautogui.easeInQuad)
+                        self.keyboard.press_shortcut_key('alt', 'q')
+                        self.screen.cut_screen()
+                        loca = self.screen.get_location_picture("D:\\dh2\\game\\bangpai\\0_2.png", 0.8)
+                        self.mouse.click_element(loca[0], loca[1])
+                        self.mouse.click_element(420, 239)
+                        self.keyboard.press_shortcut_key('alt', '1')
+                        self.keyboard.press_shortcut_key('alt', 'q')
                         return 'failed'
                     elif i == 4:
                         print("药")
@@ -77,8 +82,16 @@ class BangPai:
                         self.mouse.click_element(461, 269)
                         self.mouse.click_element(201, 328)
                         time.sleep(3)
-                        self.mouse.click_element(201, 328)
-                        time.sleep(3)
+                        pyautogui.click()
+                        self.keyboard.press_shortcut_key('alt', 'q')
+                        pyautogui.moveTo(393, 557, 1, pyautogui.easeInQuad)
+                        time.sleep(1)
+                        self.screen.cut_screen()
+                        loca = self.screen.get_location_picture("D:\\dh2\\game\\bangpai\\0_2.png", 0.8)
+                        self.mouse.click_element(loca[0], loca[1])
+                        self.mouse.click_element(420, 239)
+                        self.keyboard.press_shortcut_key('alt', '1')
+                        self.keyboard.press_shortcut_key('alt', 'q')
                         return 'success'
                         # time.sleep(1)
                         # self.mouse.click_element(461, 288)
@@ -87,10 +100,8 @@ class BangPai:
                         self.mouse.click_element(500, 240)
                         self.keyboard.press_shortcut_key('alt', 'q')
                         time.sleep(5)
-                        self.screen.find_ele_picture('game\\bangpai\\5_1')
-                        # self.keyboard.press_shortcut_key('alt', 'a',times=0.5)
-                        self.keyboard.press_shortcut_key('alt', '8',times=0.5)
-                        self.screen.find_ele_picture('game\\bangpai\\5_2', 'mouse', 182, 345)
+                        self.screen.find_ele_picture('game\\system\\zidong', 'keyboard', 'alt', '8')
+                        self.screen.find_ele_picture('game\\bangpai\\5_1', 'mouse', 182, 335)
                         self.return_bangpai_npc()
                         return 'success'
                     elif i == 6:
@@ -105,10 +116,7 @@ class BangPai:
                             result_answer = self.screen.get_location_picture("D:\\dh2\\game\\bangpai\\6_1.png", 0.8)
                             if result_answer == 0:
                                 break
-                        self.mouse.click_element(461, 288)
-                        self.mouse.click_element(201, 328)
-                        time.sleep(3)
-                        self.mouse.click_element(201, 328)
+                        self.return_bangpai_npc()
                         return 'success'
                     elif i == 7:
                         print("帮派宣传")
@@ -127,35 +135,30 @@ class BangPai:
                         print("作乱妖怪")
                         self.mouse.click_element(440, 240)
                         self.keyboard.press_shortcut_key('alt', 'q')
-                        self.screen.find_ele_picture('game\\system\\zidong')
-                        # self.keyboard.press_shortcut_key('alt', 'a',times=0.5)
-                        self.keyboard.press_shortcut_key('alt', '8',times=0.5)
+                        self.screen.find_ele_picture('game\\system\\zidong','keyboard','alt','8')
                         self.screen.find_ele_picture('game\\bangpai\\8_1', 'mouse', 182, 345)
                         self.return_bangpai_npc()
                         return 'success'
                     elif i == 9:
                         print("收银票")
-                        # self.mouse.click_element(455, 240)
                         self.keyboard.press_shortcut_key('alt', 'q')
-                        # while True:
-                        #     self.screen.cut_screen()
-                        #     result1 = self.screen.get_location_picture("D:\\dh2\\game\\bangpai\\9_1.png", num=0.8)
-                        #     result2 = self.screen.get_location_picture("D:\\dh2\\game\\bangpai\\9_2.png", num=0.8)
-                        #     if result1 is not 0 or result2 is not 0:
-                        #         break
-                        # # self.screen.find_ele_picture('game\\bangpai\\9_1', 'mouse', 182, 345)
-                        # self.return_bangpai_npc()
-                        # return 'success'
                         time.sleep(1)
-                        self.mouse.click_element(459, 284)
+                        self.mouse.click_element(459, 266)
                         time.sleep(1)
-                        self.mouse.click_element(268, 350)
+                        self.mouse.click_element(181, 347)
                         time.sleep(1)
-                        self.mouse.click_element(169, 348)
+                        self.mouse.click_element(164, 344)
                         time.sleep(2)
-                        self.mouse.click_element(169, 348)
+                        pyautogui.click()
                         time.sleep(25)
-                        self.mouse.click_element(459, 284)
+                        pyautogui.moveTo(393, 557, 1, pyautogui.easeInQuad)
+                        self.keyboard.press_shortcut_key('alt', 'q')
+                        self.screen.cut_screen()
+                        loca = self.screen.get_location_picture("D:\\dh2\\game\\bangpai\\0_2.png", 0.8)
+                        self.mouse.click_element(loca[0], loca[1])
+                        self.mouse.click_element(420, 239)
+                        self.keyboard.press_shortcut_key('alt', '1')
+                        self.keyboard.press_shortcut_key('alt', 'q')
                         return 'failed'
                     elif i == 10:
                         return 'success'
@@ -179,14 +182,12 @@ class BangPai:
                     time.sleep(1)
                     self.mouse.click_element(500, 313)
                     self.mouse.click_element(500, 313)
-                else:
-                    self.mouse.click_element(461, 288)
+
                 # 领取任务
                 self.screen.find_ele_picture('game\\bangpai\\0', 'mouse', 223, 329)
                 time.sleep(2)
-                self.mouse.click_element(163, 350)
+                pyautogui.click()
                 self.keyboard.press_shortcut_key('alt', 'q')
-                self.screen.cut_screen_location(267, 136, 373, 209)
                 result = self.bangpai_task()
                 if result is 'success':
                     num+=1
@@ -198,9 +199,18 @@ class BangPai:
         self.keyboard.press_shortcut_key('alt', 'q')
         time.sleep(5)
         self.screen.find_ele_picture('game\\bangpai\\0_1', 'mouse', 193, 327)
-        self.mouse.click_element(193, 327)
+        time.sleep(1)
+        pyautogui.click()
         time.sleep(3)
-        self.mouse.click_element(469, 272)
+        pyautogui.moveTo(392, 239, 1, pyautogui.easeInQuad)
+        self.keyboard.press_shortcut_key('alt', 'q')
+        self.screen.cut_screen()
+        loca = self.screen.get_location_picture("D:\\dh2\\game\\bangpai\\0_2.png",0.8)
+        print(loca)
+        self.mouse.click_element(loca[0],loca[1])
+        self.mouse.click_element(420, 239)
+        self.keyboard.press_shortcut_key('alt', '1')
+        self.keyboard.press_shortcut_key('alt', 'q')
 
     def bangpai_start(self):
         self.common.get_focus()

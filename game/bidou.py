@@ -42,9 +42,10 @@ class BiDou():
                     self.operate(i[2])
                 self.keyboard.press_shortcut_key('alt', '8')
                 time.sleep(1)
-                self.common.change_teamer()
+                self.common.change_teamer(times=0.5)
             # time.sleep(1)
 if __name__ == '__main__':
     # 0攻击 1法术
-    list = [[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0]]
+    list = [[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0]]
+
     BiDou().task_start(list)

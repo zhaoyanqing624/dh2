@@ -14,7 +14,7 @@ class ShiMen():
         self.screen = Screen()
         self.mouse = Mouse()
         self.yao = ''
-        self.offset = 17
+        self.offset = 17+15
     def position(self,type):
         if type is 'ren':
             return 596, 508,168,345
@@ -288,8 +288,11 @@ class ShiMen():
             self.screen.find_ele_picture('game\\shimen\\0', 'mouse', positon_[2], positon_[3])
             time.sleep(2)
             positon2_ = self.npc_position(i)
+            self.keyboard.press_shortcut_key('alt','5')
             self.mouse.click_element(positon2_[0], positon2_[1],right=True)
             time.sleep(2.5)
+            self.keyboard.press_shortcut_key('alt', '5')
+            time.sleep(5)
             self.mouse.click_element(positon2_[2], positon2_[3])
             time.sleep(1)
             self.screen.find_ele_picture('game\\shimen\\'+i, 'mouse', 193, aaa)

@@ -101,19 +101,22 @@ class Screen:
 
     def find_ele_picture(self, file_path, handle=None, k1=None, k2=None,location_=None):
         while True:
-            pyautogui.moveTo(412 + random.randint(0, 5), 590 + random.randint(0, 5), 1, pyautogui.easeInQuad)
-            time.sleep(1.5)
-            self.cut_screen()
-            if location_ is not None:
-                self.mouse.click_element(location_[0], location_[1])
-            time.sleep(1)
-            location = self.get_location_picture("D:\\dh2\\" + file_path + ".png", 0.8)
-            if location != 0:
-                if handle == 'keyboard':
-                    self.keyboard.press_shortcut_key(k1, k2)
-                elif handle == 'mouse':
-                    self.mouse.click_element(k1, k2)
-                break
+            try:
+                pyautogui.moveTo(412 + random.randint(0, 5), 590 + random.randint(0, 5), 1, pyautogui.easeInQuad)
+                time.sleep(1)
+                self.cut_screen()
+                if location_ is not None:
+                    self.mouse.click_element(location_[0], location_[1])
+                time.sleep(1)
+                location = self.get_location_picture("D:\\dh2\\" + file_path + ".png", 0.8)
+                if location != 0:
+                    if handle == 'keyboard':
+                        self.keyboard.press_shortcut_key(k1, k2)
+                    elif handle == 'mouse':
+                        self.mouse.click_element(k1, k2)
+                    break
+            except:
+                pass
     def find_ele_picture_time(self, file_path, handle=None, k1=None, k2=None,location_=None):
         endtime = time.time() + int(30)
         while time.time() < endtime:
@@ -149,25 +152,5 @@ class Screen:
             cv.rectangle(target, tl, br, [0, 0, 0])
         return list
 
-# if __name__ == '__main__':
-#     loca = Screen().get_location_picture("D:\\dh2\\game\\shimen\\10.png")
-#     print(loca)
-#     Screen().mouse.click_element(loca[0], loca[1] - 20)
-#     # Screen().cut_screen()
-#     #def find_color_ele(self, x, y, x_offset, y_offset, r1, r2, g1, g2, b1, b2, cut_zone=None):
-#     while True:
-#         Screen().cut_screen_location(820,650,0,0)
-#         time.sleep(1)
-#         result = Screen().find_color_ele(400,400,350,250,r1=250,r2=260,g1=250,g2=260,b1=0,b2=10,cut_zone=True)
-#         if result is not None:
-#             print(result)
-#             pyautogui.moveTo(result[0], result[1], 1, pyautogui.easeInQuad)
-#     icon_ = Screen().get_location_picture("D:\\dh2\\game\\tianti\\begin.png")
-# #     time.sleep(1)
-# #     print("------------")
-#     print(icon_)
-#     Screen().mouse.click_element(icon_[0], icon_[1]-40)
 
-#     # time.sleep(1)
-#     print(Screen().get_location_picture("D:\\dh2\\game\\shimen\\1.png",num=0.8))
 
