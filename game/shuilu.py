@@ -23,7 +23,7 @@ class ShuiLu():
                 self.mouse.click_element(198, 338, times=1)
             else:
                 pyautogui.click()
-            self.keyboard.press_shortcut_key('alt', 'a')
+            pyautogui.click()
             self.keyboard.press_shortcut_key('alt', '8')
             self.common.change_teamer(0.3)
 if __name__ == '__main__':

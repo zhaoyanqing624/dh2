@@ -31,7 +31,7 @@ class DianXing():
         time.sleep(1)
         for i in range(8):
             # for x in range(5):
-            #     self.mouse.click_element(412, 137, times=1, right=True)
+            #     self.mouse.click_element(421, 208, times=1, right=True)
             #     self.common.change_teamer(0.5)
             endtime = time.time() + int(500)
             while time.time() < endtime:
@@ -41,20 +41,16 @@ class DianXing():
                 if loc_begin is not 0:
                     self.mouse.click_element(432, 516)
                     for j in range(5):
-                        self.mouse.click_element(309, 489, times=1, right=True)
-                        self.mouse.click_element(309, 489, times=0.5)
-                        self.common.change_teamer(0.5)
-                pos_zidong = self.screen.get_location_picture("D:\\dh2\\game\\system\\zidong.png",num=0.8)
-                pos_caozuo = self.screen.get_location_picture("D:\\dh2\\game\\system\\caozuo.png",num=0.8)
-                if pos_zidong is not 0 and pos_caozuo is not 0:
+                        self.mouse.click_element(309, 489, times=0.2, right=True)
+                        self.mouse.click_element(309, 489, times=0.2)
+                        self.common.change_teamer(0.2)
+                pos_zidong = self.screen.get_location_picture("D:\\dh2\\game\\dianxing\\1.png",num=0.99)
+                pos_caozuo = self.screen.get_location_picture("D:\\dh2\\game\\dianxing\\2.png",num=0.99)
+                if pos_zidong is not 0 and pos_caozuo is 0:
                     # 人物
                     flag = 0
                     while True:
-                        self.mouse.click_element(412, 137, times=1, right=True)
-                        self.screen.cut_screen()
-                        time.sleep(1)
-                        loc_begin2 = self.screen.get_location_picture("D:\\dh2\\game\\dianxing\\begin.png")
-                        time.sleep(0.5)
+                        # self.mouse.click_element(412, 137, times=1, right=True
                         if flag is 0:
                             result = self.common.find_attack(type='f7')
                             self.mouse.click_element(result[0], result[1], times=0.5)
@@ -70,25 +66,29 @@ class DianXing():
                                 self.keyboard.press_shortcut_key('alt', '8')
                                 self.common.change_teamer(0.3)
                             flag+=1
+                        self.screen.cut_screen()
+                        time.sleep(1)
+                        loc_begin2 = self.screen.get_location_picture("D:\\dh2\\game\\dianxing\\begin.png")
+                        time.sleep(0.5)
                         if loc_begin2 is not 0:
                             break
 
                 if pos_caozuo is not 0 and pos_zidong is 0:
                     # 星将
                     while True:
-                        self.mouse.click_element(412, 137, times=1, right=True)
+                        # self.mouse.click_element(412, 137, times=1, right=True)
                         self.screen.cut_screen()
                         time.sleep(1)
-                        pos_caozuo2= self.screen.get_location_picture("D:\\dh2\\game\\system\\caozuo.png")
-                        loc_begin2 = self.screen.get_location_picture("D:\\dh2\\game\\dianxing\\begin.png")
+                        pos_caozuo2= self.screen.get_location_picture("D:\\dh2\\game\\dianxing\\2.png")
                         if pos_caozuo2 is not 0:
                             if jiangxing is 0:
                                 for z in range(5):
                                     self.keyboard.press_shortcut_key('alt', 'a')
                                     self.keyboard.press_shortcut_key('alt', 'w')
-                                    self.mouse.click_element(314, 179, times=0.3,right=True)
+                                    self.mouse.click_element(314, 179, times=0.2,right=True)
                                     self.keyboard.press_shortcut_key('alt', 's')
-                                    self.mouse.click_element(198, 320, times=0.3)
+                                    result = self.common.find_attack(type=None)
+                                    self.mouse.click_element(result[0], result[1], times=0.2)
                                     self.common.change_teamer(0.3)
                                     jiangxing+=1
                             else:
@@ -96,7 +96,8 @@ class DianXing():
                                     self.keyboard.press_shortcut_key('alt', 'a')
                                     self.keyboard.press_shortcut_key('alt', 's')
                                     if z is 0:
-                                        self.mouse.click_element(198, 320, times=0.3)
+                                        result = self.common.find_attack(type=None)
+                                        self.mouse.click_element(result[0], result[1], times=0.2)
                                     else:
                                         pyautogui.click()
                                     self.common.change_teamer(0.3)

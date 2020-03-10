@@ -152,5 +152,10 @@ class Screen:
             cv.rectangle(target, tl, br, [0, 0, 0])
         return list
 
-
+# if __name__ == '__main__':
+# #     Screen().cut_screen()
+#     pos_zidong = Screen().get_location_picture("D:\\dh2\\game\\dianxing\\1.png", num=0.99)
+#     pos_caozuo =Screen().get_location_picture("D:\\dh2\\game\\dianxing\\2.png", num=0.99)
+#     print(pos_zidong)
+#     print(pos_caozuo)
 

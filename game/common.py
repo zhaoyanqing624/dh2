@@ -148,6 +148,14 @@ class Common:
                         pos_zidong = self.screen.get_location_picture("D:\\dh2\\game\\system\\"+str+".png")
                         if pos_zidong is not 0:
                             return i
+                elif type is None:
+                    for i in list:
+                        self.mouse.click_element(i[0], i[1], times=0.5)
+                        time.sleep(1)
+                        self.screen.cut_screen()
+                        pos_zidong = self.screen.get_location_picture("D:\\dh2\\game\\system\\"+str+".png")
+                        if pos_zidong is not 0:
+                            return i
         return 'failed'
     # 点击确认任务情况
 
