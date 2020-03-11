@@ -157,7 +157,17 @@ class Common:
                         if pos_zidong is not 0:
                             return i
         return 'failed'
-    # 点击确认任务情况
+
+    def game_over(self):
+        endtime = time.time() + int(300)
+        while time.time() < endtime:
+            time.sleep(1)
+            self.screen.cut_screen()
+            time.sleep(1)
+            result = self.screen.get_location_picture("D:\\dh2\\game\\system\\zidong.png", num=0.8)
+            if result is 0:
+                return True
+        return False
 
 
 

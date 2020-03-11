@@ -42,7 +42,7 @@ class TianTi():
         time.sleep(1)
         for i in range(10):
             for z in range(5):
-                self.mouse.click_element(413, 142,right=True)
+                self.mouse.click_element(422, 144,right=True)
                 time.sleep(1)
                 self.common.change_teamer(times=0.3)
             if i is not 0:
@@ -65,10 +65,12 @@ class TianTi():
             for i in range(4):
                 self.keyboard.press_key('f7')
                 pyautogui.click()
+                pyautogui.rightClick()
                 pyautogui.click()
                 self.keyboard.press_shortcut_key('alt', '8',times=0.3)
                 self.common.change_teamer(times=0.3)
             self.common.get_focus()
+            self.common.game_over()
 
 if __name__ == '__main__':
     # 匹配对手 436,520
