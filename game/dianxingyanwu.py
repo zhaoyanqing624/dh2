@@ -85,10 +85,13 @@ class DianXing():
                                 for z in range(5):
                                     self.keyboard.press_shortcut_key('alt', 'a')
                                     self.keyboard.press_shortcut_key('alt', 'w')
-                                    self.mouse.click_element(314, 179, times=0.2,right=True)
+                                    self.mouse.click_element(314, 179, times=0.2, right=True)
                                     self.keyboard.press_shortcut_key('alt', 's')
-                                    result = self.common.find_attack(type=None,str='caozuo')
-                                    self.mouse.click_element(result[0], result[1], times=0.2)
+                                    if z is 0:
+                                        result = self.common.find_attack(type='other',str='caozuo2')
+                                        self.mouse.click_element(result[0], result[1], times=0.2)
+                                    else:
+                                        self.mouse.click_element(result[0], result[1], times=0.2)
                                     self.common.change_teamer(0.3)
                                     jiangxing+=1
                             else:
@@ -96,7 +99,7 @@ class DianXing():
                                     self.keyboard.press_shortcut_key('alt', 'a')
                                     self.keyboard.press_shortcut_key('alt', 's')
                                     if z is 0:
-                                        result = self.common.find_attack(type=None,str='caozuo')
+                                        result = self.common.find_attack(type='other',str='caozuo2')
                                         self.mouse.click_element(result[0], result[1], times=0.2)
                                     else:
                                         pyautogui.click()
