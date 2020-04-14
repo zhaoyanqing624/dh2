@@ -86,7 +86,7 @@ class DianXing():
                                     self.keyboard.press_shortcut_key('alt', 'a')
                                     self.keyboard.press_shortcut_key('alt', 'w')
                                     self.mouse.click_element(314, 179, times=0.2, right=True)
-                                    self.keyboard.press_shortcut_key('alt', 's')
+
                                     if z is 0:
                                         result = self.common.find_attack(type='other',str='caozuo2')
                                         self.mouse.click_element(result[0], result[1], times=0.2)
@@ -97,13 +97,16 @@ class DianXing():
                             else:
                                 for z in range(5):
                                     self.keyboard.press_shortcut_key('alt', 'a')
-                                    self.keyboard.press_shortcut_key('alt', 's')
                                     if z is 0:
                                         result = self.common.find_attack(type='other',str='caozuo2')
                                         self.mouse.click_element(result[0], result[1], times=0.2)
                                     else:
                                         pyautogui.click()
                                     self.common.change_teamer(0.3)
+                        self.screen.cut_screen()
+                        time.sleep(1)
+                        loc_begin2 = self.screen.get_location_picture("D:\\dh2\\game\\dianxing\\begin.png")
+                        time.sleep(0.5)
                         if loc_begin2 is not 0:
                             break
 
