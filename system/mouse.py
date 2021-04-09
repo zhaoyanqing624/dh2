@@ -18,10 +18,13 @@ class Mouse:
         time.sleep(0.5)
         pyautogui.rightClick()
 
-    def click_direct_element(self, x, y):
+    def click_direct_element(self, x, y, right=None):
         time.sleep(0.5)
         pyautogui.moveTo(x, y)
-        pyautogui.click()
+        if right is not None:
+            pyautogui.rightClick()
+        else:
+            pyautogui.click()
 
     def mouse_scroll(self, x):
         time.sleep(0.5)

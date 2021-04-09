@@ -30,7 +30,7 @@ class GuZhu():
             time.sleep(1)
             self.screen.cut_screen()
             time.sleep(1)
-            result_ = self.screen.get_location_picture("D:\\dh2\\game\\system\\zidong.png",num=0.8)
+            result_ = self.screen.get_location_picture("C:\\dh2\\game\\system\\zidong.png",num=0.8)
             if result_ is 0:
                 return True
         return False

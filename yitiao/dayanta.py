@@ -30,7 +30,7 @@ class DaYanTa():
             time.sleep(1)
             self.screen.cut_screen()
             time.sleep(1)
-            result_ = self.screen.get_location_picture("D:\\dh2\\game\\system\\zidong.png",num=0.8)
+            result_ = self.screen.get_location_picture("C:\\dh2\\game\\system\\zidong.png",num=0.8)
             if result_ is 0:
                 return True
         return False
@@ -71,7 +71,10 @@ class DaYanTa():
         pyautogui.click()
         self.mouse.click_element(78, 240, times=0.5)
         time.sleep(60)
-        res = self.screen.get_locations_picture("D:\\dh2\\yitiao\\dayanta\\2_1.png", 0.7)
+        self.screen.cut_screen()
+        time.sleep(1)
+        res = self.screen.get_locations_picture("C:\\dh2\\yitiao\\dayanta\\2_1.png", 0.7)
+        print(res)
         self.mouse.click_element(res[0]['result'][0], res[0]['result'][1])
         time.sleep(1)
         self.mouse.click_element(91,241, times=0.5)
@@ -102,7 +105,7 @@ class DaYanTa():
             time.sleep(1)
             self.screen.cut_screen()
             time.sleep(1)
-            location = self.screen.get_locations_picture("D:\\dh2\\yitiao\\dayanta\\4_1.png", 0.9)
+            location = self.screen.get_locations_picture("C:\\dh2\\yitiao\\dayanta\\4_1.png", 0.9)
             if len(location) is not 0:
                 self.mouse.click_element(178, 365, times=0.5)
                 break
@@ -115,7 +118,7 @@ class DaYanTa():
             time.sleep(1)
             self.screen.cut_screen()
             time.sleep(1)
-            location = self.screen.get_locations_picture("D:\\dh2\\yitiao\\dayanta\\4_2.png", 0.7)
+            location = self.screen.get_locations_picture("C:\\dh2\\yitiao\\dayanta\\4_2.png", 0.7)
             if len(location) is not 0:
                 self.mouse.click_element(183, 343, times=0.5)
                 break
@@ -131,7 +134,7 @@ class DaYanTa():
             time.sleep(1)
             self.screen.cut_screen()
             time.sleep(1)
-            location = self.screen.get_locations_picture("D:\\dh2\\yitiao\\dayanta\\5_1.png", 0.7)
+            location = self.screen.get_locations_picture("C:\\dh2\\yitiao\\dayanta\\5_1.png", 0.7)
             if len(location) is not 0:
                 self.mouse.click_element(178, 365, times=0.5)
                 break
@@ -144,7 +147,7 @@ class DaYanTa():
             time.sleep(1)
             self.screen.cut_screen()
             time.sleep(1)
-            location = self.screen.get_locations_picture("D:\\dh2\\yitiao\\dayanta\\5_2.png", 0.7)
+            location = self.screen.get_locations_picture("C:\\dh2\\yitiao\\dayanta\\5_2.png", 0.7)
             if len(location) is not 0:
                 self.mouse.click_element(190, 365, times=0.5)
                 break

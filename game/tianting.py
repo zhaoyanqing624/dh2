@@ -13,7 +13,7 @@ class TianTing():
     def task_start(self,i):
         Screen().cut_screen()
         time.sleep(1.5)
-        lijing = Screen().get_location_picture('D:\\dh2\\game\\tianting\\0.png')
+        lijing = Screen().get_location_picture('C:\\dh2\\game\\tianting\\0.png')
         if lijing is not 0:
             Mouse().click_element(184, 396)
         time.sleep(1)
@@ -37,7 +37,7 @@ class TianTing():
             while True:
                 Screen().cut_screen()
                 time.sleep(2)
-                zidong = Screen().get_location_picture('D:\\dh2\\game\\tianting\\2.png')
+                zidong = Screen().get_location_picture('C:\\dh2\\game\\tianting\\2.png')
                 if zidong is 0 or zidong[0]<100:
                     break
 
@@ -48,7 +48,7 @@ class TianTing():
         while True:
             Screen().cut_screen()
             time.sleep(2)
-            lijing = Screen().get_location_picture('D:\\dh2\\game\\tianting\\0.png',0.9)
+            lijing = Screen().get_location_picture('C:\\dh2\\game\\tianting\\0.png',0.9)
             if lijing is not 0:
                 # Mouse().click_element(184, 396)
                 break

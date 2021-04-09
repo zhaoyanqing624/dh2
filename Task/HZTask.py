@@ -49,6 +49,8 @@ def keyBoard(str, str2, time_=1):
     pyautogui.keyUp(str)
 
 # 400 333
+# def find_monkey():
+
 def hz_start(i_):
     time.sleep(1)
     keyBoard('alt', '2')
@@ -63,7 +65,7 @@ def hz_start(i_):
         time.sleep(1)
         _Tools.getCutPicture.window_capture()
         time.sleep(1)
-        loca = _Tools.getLocation.getPictureLocation("D:\\dh2\\houzi\\1.png", 0.6)
+        loca = _Tools.getLocation.getPictureLocation("C:\\dh2\\houzi\\1.png", 0.6)
         if loca == 0:
             if a < 15:
                 pyautogui.moveTo(412, 132)
@@ -84,36 +86,44 @@ def hz_start(i_):
                 pyautogui.rightClick()
                 time.sleep(2)
                 flag = False
+                locationx = 0
+                locationy = 0
                 for i in range(0, 50):
                     time.sleep(0.5)
                     _Tools.getCutPicture.window_capture()
                     time.sleep(0.5)
-                    loca22 = _Tools.getLocation.getPictureLocation("D:\\dh2\\houzi\\1.png", 0.6)
+                    loca22 = _Tools.getLocation.getPictureLocation("C:\\dh2\\houzi\\1.png", 0.7)
                     if loca22 != 0:
+                        locationx = loca22[0]
+                        locationy = loca22[1]
                         pyautogui.moveTo(loca22[0], loca22[1] - 40)
                         pyautogui.click()
                         time.sleep(0.5)
                         _Tools.getCutPicture.window_capture()
                         time.sleep(0.5)
-                        location = _Tools.getLocation.getPictureLocation("D:\\dh2\\houzi\\2.png", 0.6)
+                        location = _Tools.getLocation.getPictureLocation("C:\\dh2\\houzi\\2.png", 0.6)
                         if location != 0:
                             flag = True
                             break
+                    else:
+                        pyautogui.moveTo(locationx+random.randint(10,20), locationy+random.randint(10,20))
+                        pyautogui.click()
 
                 if flag == True:
                     click(307, 348)
                     if i_ == 0:
                         time.sleep(2)
-                        doing_fighting()
+                        # doing_fighting()
                     time.sleep(8)
                     _Tools.getFighting.isFight(i_)
 
-                    keyBoard('alt', 'q')
+                    # 返回长安
+                    keyBoard('alt', '2')
                     time.sleep(1)
-                    keyBoard('alt', 'c')
-                    click(482, 236)
+                    click(502, 421)
                     time.sleep(1)
-                    keyBoard('alt', 'q')
+                    click(466, 209)
+                    time.sleep(1)
                     time.sleep(10)
                     cicle('3')
                     click(202, 395)
@@ -142,7 +152,7 @@ def cicle(x):
         time.sleep(1)
         _Tools.getCutPicture.window_capture()
         time.sleep(1)
-        location = _Tools.getLocation.getPictureLocation("D:\\dh2\\houzi\\" + x + ".png", 0.9)
+        location = _Tools.getLocation.getPictureLocation("C:\\dh2\\houzi\\" + x + ".png", 0.9)
         if location != 0:
             break
 
@@ -184,5 +194,6 @@ def HZstartTask(times):
     click(400, 330)
     time.sleep(40)
     keyBoard('alt', 'c')
-
+# if __name__ == '__main__':
+#     HZstartTask(30)
 # HZstartTask(30)

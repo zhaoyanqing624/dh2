@@ -3,7 +3,7 @@ import time
 import _Tools.getCutPicture
 def isWalking_JF(filename):
     while(True):
-        location = pyautogui.locateCenterOnScreen("D:\\dh2\\jiefang\\"+filename+".PNG", grayscale=True)
+        location = pyautogui.locateCenterOnScreen("C:\\dh2\\jiefang\\"+filename+".PNG", grayscale=True)
         if(location!=None):
             break
 
@@ -12,7 +12,7 @@ def isWalking_BP(filename):
     _Tools.getCutPicture.window_capture()
     time.sleep(1)
     while(True):
-        location = pyautogui.locateCenterOnScreen("D:\\dh2\\bangpai\\"+filename+".PNG")
+        location = pyautogui.locateCenterOnScreen("C:\\dh2\\bangpai\\"+filename+".PNG")
         if(location!=None):
             break
 if __name__ == '__main__':

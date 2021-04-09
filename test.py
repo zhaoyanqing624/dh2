@@ -3,8 +3,8 @@ import numpy as np
 
 
 def template_image():
-    target = cv.imread("D:\\dh2\\system\\0.PNG")
-    tpl = cv.imread("D:\\dh2\\game\\jiefang\\1.PNG")
+    target = cv.imread("C:\\dh2\\system\\0.PNG")
+    tpl = cv.imread("C:\\dh2\\game\\jiefang\\1.PNG")
     methods = [cv.TM_SQDIFF_NORMED, cv.TM_CCORR_NORMED, cv.TM_CCOEFF_NORMED]
     th, tw = tpl.shape[:2]
     for md in methods:
