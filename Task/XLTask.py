@@ -63,11 +63,17 @@ def doing_fighting(a):
                 keyBoard('alt', 'd', 0.3)
                 keyBoard('alt', '8', 0.3)
             keyBoard('ctrl', 'tab', 0.3)
+    else:
+        time.sleep(3)
+        for i in range(5):
+            keyBoard('alt', '8', 0.3)
+            keyBoard('ctrl', 'tab', 0.3)
+
 def ice():
     time.sleep(1)
     _Tools.getCutPicture.window_capture()
     time.sleep(1)
-    location = pyautogui.locateCenterOnScreen("D:\\dh2\\xiuluo\\5.PNG")
+    location = pyautogui.locateCenterOnScreen("C:\\dh2\\xiuluo\\5.PNG")
     if location != None:
         pyautogui.moveTo(460 + random.randint(0, 5), 180 + random.randint(0, 5), 1, pyautogui.easeInQuad)
         pyautogui.click()
@@ -76,7 +82,7 @@ def ice():
         time.sleep(1)
         _Tools.getCutPicture.window_capture()
         time.sleep(1)
-        tiger_location = pyautogui.locateCenterOnScreen("D:\\dh2\\xiuluo\\6.PNG")
+        tiger_location = pyautogui.locateCenterOnScreen("C:\\dh2\\xiuluo\\6.PNG")
         time.sleep(1)
         pyautogui.moveTo(tiger_location[0], tiger_location[1] - 60)
         pyautogui.click()
@@ -90,7 +96,7 @@ def findNPC(flag=1):
     pyautogui.moveTo(142, 340, 1, pyautogui.easeInQuad)
     pyautogui.click()
     time.sleep(1)
-    pyautogui.moveTo(38 + random.randint(0, 2), 253 + random.randint(0, 2), 1, pyautogui.easeInQuad)
+    pyautogui.moveTo(38 + random.randint(0, 2), 250 + random.randint(0, 2), 1, pyautogui.easeInQuad)
     pyautogui.click()
     if flag ==1:
         # 打开物品
@@ -127,10 +133,10 @@ def findNPC(flag=1):
         pyautogui.moveTo(182, 242 + random.randint(0, 2), 1, pyautogui.easeInQuad)
         pyautogui.click()
         time.sleep(2)
-        pyautogui.moveTo(33, 257 + random.randint(0, 2), 1, pyautogui.easeInQuad)
+        pyautogui.moveTo(33, 250+ random.randint(0, 2), 1, pyautogui.easeInQuad)
         pyautogui.click()
 def is_xiuluoKing():
-    Screen().cut_screen_by_PIL(20,265,50,350,"D:\\dh2\\system\\1.PNG")
+    Screen().cut_screen_by_PIL(20,265,50,350,"system\\1.PNG")
     result = Screen().find_color_ele(10,10,8,8,255,255,0,0,0,0,True)
     if result is not None:
         return True
@@ -200,6 +206,7 @@ def XLstartTask(team,times,flag=False):
                     pyautogui.keyUp('alt')
                 else:
                     break
+
         findNPC()
         time.sleep(40)
         # 判断是否找到NPC
@@ -207,7 +214,7 @@ def XLstartTask(team,times,flag=False):
             time.sleep(1.5)
             _Tools.getCutPicture.window_capture()
             time.sleep(1.5)
-            xiuluo_location = _Tools.getLocation.getPictureLocation("D:\\dh2\\xiuluo\\2.PNG",0.99)
+            xiuluo_location = _Tools.getLocation.getPictureLocation("C:\\dh2\\xiuluo\\2.PNG",0.99)
             if(xiuluo_location!=0):
                 pyautogui.moveTo(169, 331, 1, pyautogui.easeInQuad)
                 time.sleep(1)
@@ -227,7 +234,9 @@ def XLstartTask(team,times,flag=False):
             pyautogui.moveTo(739, 567, 1, pyautogui.easeInQuad)
             pyautogui.click()
             time.sleep(1)
-        return_location = pyautogui.locateCenterOnScreen("D:\\dh2\\xiuluo\\4.PNG")
+        _Tools.getCutPicture.window_capture()
+        time.sleep(1)
+        return_location = _Tools.getLocation.getPictureLocation("C:\\dh2\\xiuluo\\4.PNG")
         if (return_location != None):
             pyautogui.moveTo(return_location[0] + random.randint(0, 5), return_location[1] + random.randint(0, 2), 1,
                              pyautogui.easeInQuad)
@@ -243,13 +252,7 @@ def XLstartTask(team,times,flag=False):
             pyautogui.keyUp('1')
             pyautogui.keyUp('alt')
             time.sleep(1)
-            pyautogui.moveTo(287, 199, 1,pyautogui.easeInQuad)
-            pyautogui.click()
-            time.sleep(1)
-            pyautogui.moveTo(199, 311, 1, pyautogui.easeInQuad)
-            pyautogui.click()
-            time.sleep(1)
-            pyautogui.moveTo(384, 342, 1, pyautogui.easeInQuad)
+            pyautogui.moveTo(400, 352, 1, pyautogui.easeInQuad)
             pyautogui.click()
             time.sleep(1)
             list = [75, 250, 400, 545, 700]
@@ -262,7 +265,7 @@ def XLstartTask(team,times,flag=False):
                         time.sleep(1)
                         _Tools.getCutPicture.window_capture()
                         time.sleep(1)
-                        wuyi_location = _Tools.getLocation.getPictureLocation("D:\\dh2\\xiuluo\\8.PNG", 0.9)
+                        wuyi_location = _Tools.getLocation.getPictureLocation("C:\\dh2\\xiuluo\\8.PNG", 0.9)
                         if wuyi_location!=0:
 
                             pyautogui.moveTo(332 + random.randint(0, 5), 364 + random.randint(0, 5), 1, pyautogui.easeInQuad)
@@ -281,13 +284,12 @@ def XLstartTask(team,times,flag=False):
             pyautogui.keyUp('1')
             pyautogui.keyUp('alt')
         #  判断是否有人死了
+        print("siren")
         time.sleep(1)
-        _Tools.getFighting.death(team)
+        # _Tools.getFighting.death(team)
 
 # XLstartTask(60)
 # print(is_xiuluoKing())
-
-
 
 
 

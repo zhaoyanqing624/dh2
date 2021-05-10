@@ -33,7 +33,7 @@ def cicle(x):
         time.sleep(1)
         _Tools.getCutPicture.window_capture()
         time.sleep(1)
-        location = _Tools.getLocation.getPictureLocation("D:\\dh2\\bangpai\\"+x+".png", 0.9)
+        location = _Tools.getLocation.getPictureLocation("C:\\dh2\\bangpai\\"+x+".png", 0.9)
         if location != 0:
             break
 def start(y):
@@ -104,7 +104,7 @@ def taskClassify(y):
     for x in y:
         time.sleep(0.5)
         _Tools.getCutPicture.window_capture()
-        location = _Tools.getLocation.getPictureLocation("D:\\dh2\\bangpai\\"+x+".PNG", 0.9)
+        location = _Tools.getLocation.getPictureLocation("C:\\dh2\\bangpai\\"+x+".PNG", 0.9)
         if location != 0:
             if x == "2_1":
                 print("无名侠女")
@@ -155,7 +155,7 @@ def taskClassify(y):
                 for x2 in y2:
                     time.sleep(1)
                     _Tools.getCutPicture.window_capture()
-                    location_q = _Tools.getLocation.getPictureLocation("D:\\dh2\\bangpai\\" + x2 + ".PNG", 0.9)
+                    location_q = _Tools.getLocation.getPictureLocation("C:\\dh2\\bangpai\\" + x2 + ".PNG", 0.9)
                     if location_q != 0:
                         time.sleep(0.5)
                         pyautogui.moveTo(location_q[0], location_q[1], 1, pyautogui.easeInQuad)
@@ -271,7 +271,7 @@ def step_02():
     time.sleep(1)
     _Tools.getCutPicture.window_capture()
     time.sleep(1)
-    location_0 = _Tools.getLocation.getPictureLocation("D:\\dh2\\bangpai\\0.png", 0.7)
+    location_0 = _Tools.getLocation.getPictureLocation("C:\\dh2\\bangpai\\0.png", 0.7)
     time.sleep(0.5)
     pyautogui.moveTo(location_0[0] + random.randint(0, 5), location_0[1] - 50 + random.randint(0, 5), 1,
                      pyautogui.easeInQuad)
@@ -302,7 +302,7 @@ def step_03(i):
         time.sleep(1)
         _Tools.getCutPicture.window_capture()
         time.sleep(1)
-        location_1 = _Tools.getLocation.getPictureLocation("D:\\dh2\\bangpai\\1.png", 0.7)
+        location_1 = _Tools.getLocation.getPictureLocation("C:\\dh2\\bangpai\\1.png", 0.7)
         time.sleep(0.5)
         pyautogui.moveTo(location_1[0] + random.randint(0, 5), location_1[1] + random.randint(0, 5), 1,
                          pyautogui.easeInQuad)
@@ -319,7 +319,7 @@ def step_04():
     time.sleep(1)
     _Tools.getCutPicture.window_capture()
     time.sleep(1)
-    location = _Tools.getLocation.getPictureLocation("D:\\dh2\\bangpai\\1_1.png", 0.8)
+    location = _Tools.getLocation.getPictureLocation("C:\\dh2\\bangpai\\1_1.png", 0.8)
     if location == 0:
         time.sleep(1)
         pyautogui.click()
@@ -343,7 +343,7 @@ def step_05():
     for i in y:
         time.sleep(1)
         _Tools.getCutPicture.window_capture()
-        location = _Tools.getLocation.getPictureLocation("D:\\dh2\\bangpai\\"+i+".PNG", 0.9)
+        location = _Tools.getLocation.getPictureLocation("C:\\dh2\\bangpai\\"+i+".PNG", 0.9)
         if location!=0:
             if i=="2_1":
                 # 无名侠女
@@ -379,7 +379,7 @@ def step_05():
                     time.sleep(1)
                     _Tools.getCutPicture.window_capture()
                     time.sleep(2)
-                    location_11 = _Tools.getLocation.getPictureLocation("D:\\dh2\\bangpai\\2_3_1.png",0.4)
+                    location_11 = _Tools.getLocation.getPictureLocation("C:\\dh2\\bangpai\\2_3_1.png",0.4)
                     if location_11!=0:
                         click(164,329)
                         time.sleep(3)

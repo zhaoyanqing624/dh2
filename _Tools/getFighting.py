@@ -10,7 +10,7 @@ def isFighting_JF():
         time.sleep(1)
         _Tools.getCutPicture.window_capture()
         time.sleep(1)
-        location = _Tools.getLocation.getPictureLocation("D:\\dh2\\jiefang\\0.PNG", 0.7)
+        location = _Tools.getLocation.getPictureLocation("C:\\dh2\\jiefang\\0.PNG", 0.7)
         if(location==0 or location[0]<100):
             break
         # else:
@@ -49,7 +49,7 @@ def isFight(i):
         time.sleep(1)
         _Tools.getCutPicture.window_capture()
         time.sleep(3)
-        location = pyautogui.locateCenterOnScreen("D:\\dh2\\xiuluo\\3.PNG")
+        location = pyautogui.locateCenterOnScreen("C:\\dh2\\xiuluo\\3.PNG")
         if (location==None):
             break
 def model(x):
@@ -71,7 +71,7 @@ def death(team):
     a = []
     for i in range(3, 7):
         time.sleep(0.5)
-        location = _Tools.getLocation.getPictureLocation("D:\\dh2\\system\\"+str(team)+"\\" + str(i) + "_.png", 0.98)
+        location = _Tools.getLocation.getPictureLocation("C:\\dh2\\system\\"+str(team)+"\\" + str(i) + "_.png", 0.98)
         if location != 0:
             print(i)
             a.append(i)
@@ -108,16 +108,16 @@ def death(team):
         time.sleep(1)
         _Tools.getCutPicture.window_capture()
         time.sleep(1.5)
-        location2 = _Tools.getLocation.getPictureLocation("D:\\dh2\\system\\"+str(team)+"\\3.png", 0.98)
+        location2 = _Tools.getLocation.getPictureLocation("C:\\dh2\\system\\"+str(team)+"\\3.png", 0.98)
         time.sleep(0.5)
-        location3 = _Tools.getLocation.getPictureLocation("D:\\dh2\\system\\"+str(team)+"\\4.png", 0.98)
+        location3 = _Tools.getLocation.getPictureLocation("C:\\dh2\\system\\"+str(team)+"\\4.png", 0.98)
         time.sleep(0.5)
-        location4 = _Tools.getLocation.getPictureLocation("D:\\dh2\\system\\"+str(team)+"\\5.png", 0.98)
+        location4 = _Tools.getLocation.getPictureLocation("C:\\dh2\\system\\"+str(team)+"\\5.png", 0.98)
         time.sleep(0.5)
-        # location5 = _Tools.getLocation.getPictureLocation("D:\\dh2\\system\\"+str(team)+"\\6.png", 0.98)
+        # location5 = _Tools.getLocation.getPictureLocation("C:\\dh2\\system\\"+str(team)+"\\6.png", 0.98)
         # time.sleep(0.5)
         if location2 !=0 and location3 !=0 and location4 !=0:
             break
 
 # if __name__ == '__main__':
-#     death(3)
+#     death(2)

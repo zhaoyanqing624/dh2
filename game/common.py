@@ -65,7 +65,7 @@ class Common:
         time.sleep(1.5)
         self.screen.cut_screen_location(width=200, height=50, x=200, y=350)
         time.sleep(1)
-        result = self.screen.get_location_picture("D:\\dh2\\game\\system\\0.png", 0.9, cut_zone=True)
+        result = self.screen.get_location_picture("C:\\dh2\\game\\system\\0.png", 0.9, cut_zone=True)
         if result == 0:
             self.mouse.click_element(320, 380)
         self.keyboard.press_shortcut_key('alt', 'o')
@@ -94,25 +94,15 @@ class Common:
         time.sleep(1)
         self.mouse.click_element(500, 313)
 
-
-
     def iswalking(self):
-        self.screen.cut_screen_by_PIL(30, 65, 140, 85, "D:\\dh2\\system\\2.PNG")
+        self.screen.cut_screen_by_PIL(30, 65, 140, 85, "C:\\dh2\\system\\2.PNG")
         time.sleep(2)
-        self.screen.cut_screen_by_PIL(30, 65, 140, 85, "D:\\dh2\\system\\2_.PNG")
+        self.screen.cut_screen_by_PIL(30, 65, 140, 85, "C:\\dh2\\system\\2_.PNG")
         result = Walking().iswalking()
         if result < 10:
             return False
         else:
             return True
-
-    def click_until_find(self, file_name, x, y):
-        Mouse().click_element(x, y)
-        Screen().cut_screen()
-        result = Screen().get_location_picture(file_name)
-        if result is not 0:
-            return True
-        return False
 
     def capation_eat_xiang(self):
         KeyBoard().press_shortcut_key('alt', 'e')
@@ -122,60 +112,197 @@ class Common:
 
     def score_for_shifu(self):
         Screen().cut_screen()
-        result = Screen().get_location_picture("D:\\dh2\\game\\system\\3.PNG")
+        result = Screen().get_location_picture("C:\\dh2\\game\\system\\3.PNG")
         if result is not 0:
             Mouse().click_element(222, 264)
             Mouse().click_element(409, 506)
 
-    def task_box(self):
-        pass
+    # 创建队伍
+    def create_team(self):
+        self.keyboard.press_shortcut_key('alt', '5')
+        self.keyboard.press_shortcut_key('alt', 't')
+        self.mouse.click_element(415, 306, times=0.5)
+        self.keyboard.press_shortcut_key('alt', 'f')
+        self.mouse.click_element(701, 312, times=0.5)
+        self.mouse.click_element(715, 338, times=0.5, right=True)
+        self.screen.find_ele_picture('game\\bidou\\2', 'mouse', 387, 504)
+        self.mouse.click_element(414, 531, times=0.5, right=True)
+
+        self.mouse.click_element(701, 290, times=0.5)
+        for i in range(3):
+            self.mouse.click_element(715, 320+25*i, times=0.5, right=True)
+            self.screen.find_ele_picture('game\\bidou\\2', 'mouse', 387, 504)
+            self.mouse.click_element(414, 531, times=0.5, right=True)
+        self.keyboard.press_shortcut_key('alt', 'f')
+
+        for i in range(5):
+            self.mouse.click_element(347, 415, times=0.5)
+            time.sleep(1)
+            self.common.change_teamer(times=0.3)
 
     # 寻找共计目标
-    def find_attack(self,type,str='zidong'):
-        list = [[198,280],[198,320],[198,360]]
+    def find_attack(self, type, str='zidong', x_pos= 200, y_pos =350):
+        list_ = [[x_pos, y_pos], [x_pos, y_pos-40], [x_pos, y_pos-80]]
         endtime = time.time() + int(1000)
         while time.time() < endtime:
-            time.sleep(1.5)
             self.screen.cut_screen()
-            pos_zidong = self.screen.get_location_picture("D:\\dh2\\game\\system\\"+str+".png")
+            time.sleep(1.5)
+            pos_zidong = self.screen.get_location_picture("C:\\dh2\\game\\system\\"+str+".png")
             if pos_zidong is not 0:
                 if type is 'f5' or type is 'f6' or type is 'f7':
                     self.keyboard.press_key(type)
-                    for i in list:
-                        self.mouse.click_element(i[0], i[1], times=0.5)
-                        time.sleep(1)
+                    for i in list_:
+                        self.mouse.click_direct_element(i[0], i[1])
                         self.screen.cut_screen()
-                        pos_zidong = self.screen.get_location_picture("D:\\dh2\\game\\system\\"+str+".png")
+                        time.sleep(1.5)
+                        pos_zidong = self.screen.get_location_picture("C:\\dh2\\game\\system\\"+str+".png")
                         if pos_zidong is not 0:
                             return i
-                elif type is None:
-                    for i in list:
-                        self.mouse.click_element(i[0], i[1], times=0.5)
-                        time.sleep(1)
+                else:
+                    for i in list_:
+                        self.keyboard.press_shortcut_key('alt', 's')
+                        time.sleep(0.5)
+                        self.mouse.click_direct_element(i[0], i[1])
                         self.screen.cut_screen()
-                        pos_zidong = self.screen.get_location_picture("D:\\dh2\\game\\system\\"+str+".png")
+                        time.sleep(1)
+                        pos_zidong = self.screen.get_location_picture("C:\\dh2\\game\\system\\"+str+".png")
                         if pos_zidong is not 0:
                             return i
         return 'failed'
 
     def game_over(self):
-        endtime = time.time() + int(300)
+        endtime = time.time() + int(100)
         while time.time() < endtime:
             time.sleep(1)
             self.screen.cut_screen()
-            time.sleep(1)
-            result = self.screen.get_location_picture("D:\\dh2\\game\\system\\zidong.png", num=0.8)
+            time.sleep(1.5)
+            result = self.screen.get_location_picture("C:\\dh2\\game\\system\\zidong.png", num=0.8)
             if result is 0:
                 return True
         return False
 
+    # 补充酒店老板+巫医
+    def go_jiudian_wuyi(self, jiudian=None, wuyi=None):
+        self.get_focus()
+        for i in range(5):
+            if i is 0:
+                self.keyboard.press_shortcut_key('alt', '1')
+                time.sleep(0.5)
+            # jiudian laoban
+            if jiudian is not None:
+                if i is 0:
+                    self.mouse.click_element(502, 430)
+                self.screen.find_ele_picture('game\\system\\jiudian', 'mouse', 184, 328)
+                self.mouse.click_element(184, 328)
+            # wuyi
+            if wuyi is not None:
+                if i is 0:
+                    self.mouse.click_element(293, 410)
+                self.screen.find_ele_picture('game\\system\\wuyi', 'mouse', 188, 344)
+            if i is 0:
+                self.keyboard.press_shortcut_key('alt', '1')
+            self.change_teamer()
 
+    # 自动开始
+    def begin_zidong(self):
+        for i in range(5):
+            if i is 0:
+                self.keyboard.press_shortcut_key('alt', '2')
+                self.mouse.click_element(577, 457, times=0.5)
+                self.mouse.click_element(246, 247, times=0.5)
+                self.screen.find_ele_picture('game\\system\\changandong', 'mouse', 634, 222)
+                j = 0
+                while True:
+                    time.sleep(1)
+                    self.screen.cut_screen()
+                    time.sleep(1)
+                    result = self.screen.get_location_picture("C:\\dh2\\game\\system\\zidong.png", num=0.8)
+                    if result is 0:
+                        if (j % 2) == 0:
+                            self.mouse.click_element(634, 222, times=1, right=True)
+                        else:
+                            self.mouse.click_element(215, 442, times=1, right=True)
+                    else:
+                        self.find_attack(type='f5')
+                        break
+                    j += 1
+            else:
+                self.keyboard.press_shortcut_key('alt', '2')
+                self.mouse.click_element(503, 419, times=0.5)
+                self.mouse.click_element(428, 376, times=0.5)
 
-# if __name__ == '__main__':
-#     common = Common()
-#     common.get_focus()
-#     common.find_attack('f7')
-#     # time.sleep(1)
-#     # common.change_dog(4)
-#     # common.clear_task()
-#     common.iswalking()
+            self.change_teamer()
+            
+    # 喝药
+    def heyao(self):
+        self.mouse.click_element(583, 78, times=0.5, right=True)
+        self.mouse.click_element(267, 554, times=0.5, right=True)
+        self.mouse.click_element(229, 503, times=0.5, right=True)
+        pyautogui.rightClick()
+
+    # 组队
+    def make_group(self):
+        self.get_focus()
+        self.mouse.click_element(524, 642, times=1)
+        self.mouse.click_element(520, 540, times=1)
+        self.mouse.click_element(627, 562, times=1)
+        self.mouse.click_element(435, 617, times=1, right=True)
+        self.change_teamer()
+        for i in range(4):
+            self.mouse.click_direct_element(342, 416)
+            self.mouse.click_direct_element(436-50*i, 98)
+            time.sleep(1)
+            self.screen.cut_screen()
+            time.sleep(1.5)
+            result = self.screen.get_location_picture('C:\\dh2\\game\\system\\group.png', 0.8)
+            if result is not 0:
+                self.mouse.click_direct_element(175, 346)
+            self.change_teamer()
+        time.sleep(20)
+        self.keyboard.press_shortcut_key('alt', 't')
+        self.mouse.click_element(612, 221, times=1)
+        self.mouse.click_element(323, 404, times=1)
+        time.sleep(5)
+        self.keyboard.press_shortcut_key('alt', 't')
+
+    # 首次操作
+    def first_operate(self):
+        self.keyboard.press_shortcut_key('alt', '2')
+        self.mouse.click_element(500, 420)
+        time.sleep(1)
+        self.mouse.click_element(426, 375)
+        self.screen.find_ele_picture('game\\system\\wutai', 'mouse', 180, 380)
+        result = [200, 350]
+        time.sleep(1)
+        self.screen.find_ele_picture('system\\zidong')
+        self.keyboard.press_key('f7')
+        self.mouse.click_direct_element(result[0], result[1])
+        self.keyboard.press_shortcut_key('alt', 't')
+        self.mouse.click_direct_element(650, 400)
+        self.keyboard.press_shortcut_key('alt', '8')
+        self.change_teamer()
+
+        self.keyboard.press_key('f7')
+        self.mouse.click_direct_element(result[0], result[1])
+        self.keyboard.press_shortcut_key('alt', 'w')
+        self.mouse.click_direct_element(310, 200)
+        self.mouse.click_direct_element(result[0], result[1])
+        self.keyboard.press_shortcut_key('alt', '8')
+        self.change_teamer()
+
+        for i in range(2):
+            self.keyboard.press_key('f7')
+            pyautogui.click()
+            self.keyboard.press_shortcut_key('alt', 'd')
+            self.keyboard.press_shortcut_key('alt', '8')
+            self.change_teamer()
+
+        self.keyboard.press_key('f7')
+        self.mouse.click_direct_element(result[0], result[1])
+        self.keyboard.press_shortcut_key('alt', 't')
+        self.mouse.click_direct_element(730, 235)
+        self.keyboard.press_shortcut_key('alt', '8')
+        self.change_teamer()
+        self.get_focus()
+        time.sleep(20)
+        self.game_over()

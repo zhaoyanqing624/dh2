@@ -35,11 +35,11 @@ class Walking():
 
     def iswalking(self):
         screen = Screen()
-        screen.cut_screen_by_PIL(30, 65, 140, 85, "D:\\dh2\\system\\2.png")
+        screen.cut_screen_by_PIL(30, 65, 140, 85, "C:\\dh2\\system\\2.png")
         time.sleep(3)
-        screen.cut_screen_by_PIL(30, 65, 140, 85, "D:\\dh2\\system\\2_.png")
-        img1 = cv2.imread('D:\\dh2\\system\\2.png')
-        img2 = cv2.imread('D:\\dh2\\system\\2_.png')
+        screen.cut_screen_by_PIL(30, 65, 140, 85, "C:\\dh2\\system\\2_.png")
+        img1 = cv2.imread('C:\\dh2\\system\\2.png')
+        img2 = cv2.imread('C:\\dh2\\system\\2_.png')
         hash1 = self.dHash(img1)
         hash2 = self.dHash(img2)
         n = self.cmpHash(hash1, hash2)

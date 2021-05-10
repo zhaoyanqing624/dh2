@@ -16,7 +16,7 @@ def cicle(x):
         time.sleep(1)
         _Tools.getCutPicture.window_capture()
         time.sleep(1)
-        location = _Tools.getLocation.getPictureLocation("D:\\dh2\\jiefang\\"+x+".png", 0.8)
+        location = _Tools.getLocation.getPictureLocation("C:\\dh2\\jiefang\\"+x+".png", 0.8)
         if location != 0:
             break
 def click(x, y):
@@ -60,7 +60,7 @@ def start(flag):
 def goHome():
     time.sleep(3)
     while(True):
-        location = pyautogui.locateCenterOnScreen("D:\\dh2\\jiefang\\1_4.PNG", grayscale=True)
+        location = pyautogui.locateCenterOnScreen("C:\\dh2\\jiefang\\1_4.PNG", grayscale=True)
         if(location!=None):
             pyautogui.moveTo(location[0] + random.randint(0, 5), location[1], 1, pyautogui.easeInQuad)
             pyautogui.click()
@@ -73,9 +73,9 @@ def taskClassify(flag):
     time.sleep(1)
     _Tools.getCutPicture.window_capture()
     time.sleep(1)
-    loca = _Tools.getLocation.getPictureLocation("D:\\dh2\\jiefang\\0_1.png")
+    loca = _Tools.getLocation.getPictureLocation("C:\\dh2\\jiefang\\0_1.png")
     if loca == 0:
-        location = _Tools.getLocation.getPictureLocation("D:\\dh2\\jiefang\\0_3.png")
+        location = _Tools.getLocation.getPictureLocation("C:\\dh2\\jiefang\\0_3.png")
         if location !=0:
             pyautogui.moveTo(location[0],location[1])
             time.sleep(1)
@@ -88,7 +88,7 @@ def taskClassify(flag):
     time.sleep(3)
     for x in y:
         _Tools.getCutPicture.window_capture()
-        location = _Tools.getLocation.getPictureLocation("D:\\dh2\\jiefang\\"+x+".PNG")
+        location = _Tools.getLocation.getPictureLocation("C:\\dh2\\jiefang\\"+x+".PNG")
         if(location!=0):
             if(x=="1_1"):
                 print("寻找公输般")
@@ -101,11 +101,11 @@ def taskClassify(flag):
                     time.sleep(2)
                     _Tools.getWalking.isWalking_JF("1_1_1")
                     # 点击提交
-                    pay_location_ = pyautogui.locateCenterOnScreen("D:\\dh2\\jiefang\\1_1_1.PNG", grayscale=True)
+                    pay_location_ = pyautogui.locateCenterOnScreen("C:\\dh2\\jiefang\\1_1_1.PNG", grayscale=True)
                     pyautogui.moveTo(pay_location_[0] + random.randint(0, 5), pay_location_[1], 1, pyautogui.easeInQuad)
                     pyautogui.click()
                     time.sleep(1)
-                    pay_location = pyautogui.locateCenterOnScreen("D:\\dh2\\jiefang\\1_1_2.PNG", grayscale=True)
+                    pay_location = pyautogui.locateCenterOnScreen("C:\\dh2\\jiefang\\1_1_2.PNG", grayscale=True)
                     pyautogui.moveTo(pay_location[0] + random.randint(0, 5), pay_location[1], 1, pyautogui.easeInQuad)
                     pyautogui.click()
                     return "ok"
@@ -119,7 +119,7 @@ def taskClassify(flag):
                 click(166, 330)
                 time.sleep(2.5)
                 _Tools.getCutPicture.window_capture()
-                find = _Tools.getLocation.getPictureLocation("D:\\dh2\\jiefang\\1_2.PNG")
+                find = _Tools.getLocation.getPictureLocation("C:\\dh2\\jiefang\\1_2.PNG")
                 if(find!=0):
                     pyautogui.moveTo(find[0], find[1], 1,pyautogui.easeInQuad)
                     pyautogui.click()
@@ -133,20 +133,20 @@ def taskClassify(flag):
                 #     pyautogui.moveTo(x[0] + random.randint(0, 5), x[1], 1, pyautogui.easeInQuad)
                 #     pyautogui.click()
                 #     time.sleep(1)
-                #     tanfang_location = pyautogui.locateCenterOnScreen("D:\\dh2\\jiefang\\1_2_1.PNG", grayscale=True)
+                #     tanfang_location = pyautogui.locateCenterOnScreen("C:\\dh2\\jiefang\\1_2_1.PNG", grayscale=True)
                 #     if(tanfang_location!=None):
                 #         pyautogui.moveTo(tanfang_location[0] + random.randint(0, 5), tanfang_location[1], 1, pyautogui.easeInQuad)
                 #         pyautogui.click()
                 #         time.sleep(2.5)
                 #         _Tools.getCutPicture.window_capture()
-                #         find = _Tools.getLocation.getPictureLocation("D:\\dh2\\jiefang\\1_2.PNG")
+                #         find = _Tools.getLocation.getPictureLocation("C:\\dh2\\jiefang\\1_2.PNG")
                 #         if(find!=0):
                 #             pyautogui.moveTo(find[0], find[1], 1,pyautogui.easeInQuad)
                 #             pyautogui.click()
                 #             time.sleep(2.5)
                 #             _Tools.getCutPicture.window_capture()
                 #             time.sleep(1)
-                #             jiefang = _Tools.getLocation.getPictureLocation("D:\\dh2\\jiefang\\1_5.PNG")
+                #             jiefang = _Tools.getLocation.getPictureLocation("C:\\dh2\\jiefang\\1_5.PNG")
                 #             if(jiefang==0):
                 #                 time.sleep(1)
                 #                 _Tools.getWalking.isWalking_JF("1_2_2")
@@ -165,7 +165,7 @@ def taskClassify(flag):
                 click(166, 330)
                 time.sleep(2.5)
                 _Tools.getCutPicture.window_capture()
-                find = _Tools.getLocation.getPictureLocation("D:\\dh2\\jiefang\\1_3_.PNG")
+                find = _Tools.getLocation.getPictureLocation("C:\\dh2\\jiefang\\1_3_.PNG")
                 if(find!=0):
                     pyautogui.moveTo(find[0], find[1], 1,pyautogui.easeInQuad)
                     pyautogui.click()
@@ -185,21 +185,21 @@ def taskClassify(flag):
                 #     pyautogui.moveTo(x[0] + random.randint(0, 5), x[1], 1, pyautogui.easeInQuad)
                 #     pyautogui.click()
                 #     time.sleep(1)
-                #     tanfang_location = pyautogui.locateCenterOnScreen("D:\\dh2\\jiefang\\1_2_1.PNG", grayscale=True)
+                #     tanfang_location = pyautogui.locateCenterOnScreen("C:\\dh2\\jiefang\\1_2_1.PNG", grayscale=True)
                 #     if(tanfang_location!=None):
                 #         pyautogui.moveTo(tanfang_location[0] + random.randint(0, 5), tanfang_location[1], 1, pyautogui.easeInQuad)
                 #         pyautogui.click()
                 #         time.sleep(2.5)
                 #         _Tools.getCutPicture.window_capture()
                 #         time.sleep(1)
-                #         find = _Tools.getLocation.getPictureLocation("D:\\dh2\\jiefang\\1_3.PNG")
+                #         find = _Tools.getLocation.getPictureLocation("C:\\dh2\\jiefang\\1_3.PNG")
                 #         if(find!=0):
                 #             pyautogui.moveTo(find[0], find[1], 1,pyautogui.easeInQuad)
                 #             pyautogui.click()
                 #             time.sleep(1)
                 #             _Tools.getCutPicture.window_capture()
                 #             time.sleep(1)
-                #             jiefang = _Tools.getLocation.getPictureLocation("D:\\dh2\\jiefang\\1_5.PNG")
+                #             jiefang = _Tools.getLocation.getPictureLocation("C:\\dh2\\jiefang\\1_5.PNG")
                 #             if(jiefang==0):
                 #                 time.sleep(1)
                 #                 _Tools.getWalking.isWalking_JF("1_3_1")
@@ -245,7 +245,7 @@ def find_npc_home():
             [657, 362], [598, 332]]
     _Tools.getCutPicture.window_capture()
     time.sleep(1)
-    im = Image.open("D:\\dh2\\system\\0.PNG")
+    im = Image.open("C:\\dh2\\system\\0.PNG")
     img_array = im.load()
     for a in list:
         for i in range(a[0]-15, a[0]+15):
